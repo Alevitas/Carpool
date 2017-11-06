@@ -31,40 +31,15 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="f2b-jL-9hK">
-                                            <rect key="frame" x="106" y="46.5" width="163" height="30"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQS-pl-KSn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="53" height="30"/>
-                                                    <state key="normal" title="Pick Up"/>
-                                                    <connections>
-                                                        <action selector="onPickUpPressed:" destination="rTy-Kw-SUX" eventType="touchUpInside" id="dg7-AQ-pus"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a41-xs-lWl">
-                                                    <rect key="frame" x="103" y="0.0" width="60" height="30"/>
-                                                    <state key="normal" title="Drop Off"/>
-                                                    <connections>
-                                                        <action selector="onDropOffPressed:" destination="rTy-Kw-SUX" eventType="touchUpInside" id="0Sk-xt-nMJ"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="78G-E9-ojU" firstAttribute="trailing" secondItem="U6Q-px-YUB" secondAttribute="trailingMargin" id="0O9-5n-1gx"/>
                                         <constraint firstItem="78G-E9-ojU" firstAttribute="leading" secondItem="U6Q-px-YUB" secondAttribute="leadingMargin" id="2lb-yJ-TdY"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="f2b-jL-9hK" secondAttribute="trailing" constant="98" id="Akj-pr-hvN"/>
-                                        <constraint firstItem="f2b-jL-9hK" firstAttribute="leading" secondItem="U6Q-px-YUB" secondAttribute="leadingMargin" constant="98" id="Rk4-lI-2FR"/>
-                                        <constraint firstItem="f2b-jL-9hK" firstAttribute="top" secondItem="78G-E9-ojU" secondAttribute="bottom" constant="18" id="aNj-0a-trM"/>
                                         <constraint firstItem="78G-E9-ojU" firstAttribute="top" secondItem="U6Q-px-YUB" secondAttribute="topMargin" id="gEv-zn-LLg"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="f2b-jL-9hK" secondAttribute="bottom" constant="15" id="wE7-rX-GA7"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="dropOffLabel" destination="a41-xs-lWl" id="F0V-49-dqC"/>
                                     <outlet property="eventNameLabel" destination="78G-E9-ojU" id="bRn-Lp-7gH"/>
-                                    <outlet property="pickUpLabel" destination="mQS-pl-KSn" id="0d9-ib-T7r"/>
                                     <segue destination="KZF-gg-fW8" kind="show" id="UBx-38-h3x"/>
                                 </connections>
                             </tableViewCell>
