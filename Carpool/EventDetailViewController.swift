@@ -20,13 +20,16 @@ class EventDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Event received is: \(trip.event)")
-
-        descriptionLabel.text = trip.event.description
         
-        timeLabel.text = String(describing: trip.event.time)
-
-        locationLabel.text = trip.event.location.description
+        if let trip = trip {
+            print("Event received is: \(trip.event)")
+            
+            descriptionLabel.text = trip.event.description
+            
+            timeLabel.text = String(describing: trip.event.time)
+            
+            locationLabel.text = trip.event.location.description
+        }
     }
     
     
