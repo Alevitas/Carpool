@@ -8,4 +8,15 @@
 
 import UIKit
 
-
+class AddNewViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+    }
+    
+    
+    
+}
