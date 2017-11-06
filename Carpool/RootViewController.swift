@@ -20,9 +20,10 @@ class RootViewController: UITableViewController {
         
         API.fetchTripsOnce { (trip) in
             self.trips = trip
+            self.tableView.reloadData()
         print(trip)
         }
-        tableView.reloadData()
+        
     }
 
     
