@@ -16,6 +16,7 @@
 		371C0DAB1FB0EF3400F52156 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C0DAA1FB0EF3400F52156 /* EventDetailViewController.swift */; };
 		372E98351FB0FFF500136B59 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E98341FB0FFF500136B59 /* EventCell.swift */; };
 		372E98371FB1048400136B59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 372E98361FB1048300136B59 /* GoogleService-Info.plist */; };
+		372E98391FB10F5400136B59 /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E98381FB10F5400136B59 /* AddNewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		371C0DAA1FB0EF3400F52156 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		372E98341FB0FFF500136B59 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		372E98361FB1048300136B59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		372E98381FB10F5400136B59 /* AddNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
 		4506A82D0C5EC2D5DAE72E5B /* Pods-Carpool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carpool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Carpool/Pods-Carpool.debug.xcconfig"; sourceTree = "<group>"; };
 		5CBBF46E0B3EBFBD5E8A35B4 /* Pods-Carpool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carpool.release.xcconfig"; path = "Pods/Target Support Files/Pods-Carpool/Pods-Carpool.release.xcconfig"; sourceTree = "<group>"; };
 		B2454AD3696B70970B34AB51 /* Pods_Carpool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carpool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +73,7 @@
 				371C0D981FB0E74D00F52156 /* AppDelegate.swift */,
 				371C0D9A1FB0E74D00F52156 /* RootViewController.swift */,
 				371C0D9C1FB0E74D00F52156 /* Main.storyboard */,
+				372E98381FB10F5400136B59 /* AddNewViewController.swift */,
 				372E98341FB0FFF500136B59 /* EventCell.swift */,
 				371C0DAA1FB0EF3400F52156 /* EventDetailViewController.swift */,
 				371C0D9F1FB0E74D00F52156 /* Assets.xcassets */,
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372E98391FB10F5400136B59 /* AddNewViewController.swift in Sources */,
 				372E98351FB0FFF500136B59 /* EventCell.swift in Sources */,
 				371C0DAB1FB0EF3400F52156 /* EventDetailViewController.swift in Sources */,
 				371C0D9B1FB0E74D00F52156 /* RootViewController.swift in Sources */,

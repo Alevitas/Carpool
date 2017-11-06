@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Carpool-->
         <scene sceneID="hUi-ge-xge">
             <objects>
                 <tableViewController id="eGw-Ai-chR" customClass="RootViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,9 @@
                             <outlet property="delegate" destination="eGw-Ai-chR" id="omN-PI-B46"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="UfA-Oz-yDq"/>
+                    <navigationItem key="navigationItem" title="Carpool" id="Gvi-Mq-pc5">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="i3a-a7-RfL"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdA-MQ-wrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,6 +125,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byp-YT-ZER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1248.8" y="143.47826086956522"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EWO-MA-iY5">
+            <objects>
+                <viewController id="R3k-os-Awd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BZM-bB-CTu"/>
+                        <viewControllerLayoutGuide type="bottom" id="KDP-2p-Z7l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hoy-cM-DGv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Upu-Yo-ByA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fqo-ua-bpj">
