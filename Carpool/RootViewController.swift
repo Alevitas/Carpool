@@ -7,14 +7,41 @@
 //
 
 import UIKit
+import CarpoolKit
+import CoreLocation
+
 
 class RootViewController: UITableViewController {
 
+    var trips: [Trip] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        API.fetchTripsOnce { (trip) in
+            self.trips = trip
+        }
+        
+        
+        
+        
     }
 
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return trips.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Events", for: indexPath)
+        
+        cell.textLabel?.text = trips[indexPath.row].event.description
+        
+        return cell
+    }
+    
+    
 
 }
 
