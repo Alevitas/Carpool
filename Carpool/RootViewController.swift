@@ -53,10 +53,11 @@ class RootViewController: UITableViewController {
     }
 
     @IBAction func unwindFromAddNew(segue: UIStoryboardSegue) {
-        let addNewVC = segue.source as! AddNewViewController
+//        let addNewVC = segue.source as! AddNewViewController
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         trip = trips[indexPath.row]
+        performSegue(withIdentifier: "ToEventDetails", sender: self)
     }
 }
 
