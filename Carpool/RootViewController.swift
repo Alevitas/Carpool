@@ -13,6 +13,7 @@ class RootViewController: UITableViewController {
 
     var trips: [Trip] = []
     var trip: Trip!
+    var currentUser: User!
     
     
     override func viewDidLoad() {
@@ -45,7 +46,7 @@ class RootViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let eventDetailVC = segue.destination as? EventDetailViewController
         
-        
+        eventDetailVC?.currentUser = currentUser
         eventDetailVC?.trip = trip
        
     }
