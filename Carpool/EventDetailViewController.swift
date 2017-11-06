@@ -20,6 +20,7 @@ class EventDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Event received is: \(event)")
 
         descriptionLabel.text = event.description
         
