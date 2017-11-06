@@ -40,7 +40,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="eventNameLabel" destination="78G-E9-ojU" id="bRn-Lp-7gH"/>
-                                    <segue destination="KZF-gg-fW8" kind="show" id="UBx-38-h3x"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -56,6 +55,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="KZF-gg-fW8" kind="show" identifier="ToEventDetails" id="DnO-zw-8et"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdA-MQ-wrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

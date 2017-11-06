@@ -12,6 +12,8 @@ class AddNewViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
