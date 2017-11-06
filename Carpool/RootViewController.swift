@@ -12,6 +12,8 @@ import CarpoolKit
 class RootViewController: UITableViewController {
 
     var trips: [Trip] = []
+    var event: Event!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,15 @@ class RootViewController: UITableViewController {
         return cell
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let eventDetailVC = segue.destination as? EventDetailViewController
+        
+        
+        eventDetailVC?.event = event
+    }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        event = trips[indexPath.row].event
+    }
 }
 
