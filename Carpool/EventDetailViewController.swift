@@ -18,6 +18,10 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var pickUpButton: UIButton!
     @IBOutlet weak var dropOffButton: UIButton!
     
+    @IBOutlet weak var pickUpDriverLabel: UILabel!
+    
+    @IBOutlet weak var dropOffDriverLabel: UILabel!
+    
     var trip: Trip!
     var currentUser: User!
     
@@ -35,20 +39,37 @@ class EventDetailViewController: UIViewController {
             
             if !trip.pickUp.isClaimed {
                 pickUpButton.backgroundColor = UIColor.red
+            } else {
+                pickUpDriverLabel.text = trip.pickUp.driver?.name
             }
 
             if !trip.dropOff.isClaimed {
                 dropOffButton.backgroundColor = UIColor.red
+            } else {
+                dropOffDriverLabel.text = trip.dropOff.driver?.name
             }
         }
     }
     
     @IBAction func onPickUpButtonPressed(_ sender: Any) {
-        pickUpButton.backgroundColor = UIColor.green
+        let saveAlert = UIAlertController(title: "Do you want to claim this leg?", message: nil, preferredStyle: .actionSheet)
+        saveAlert.addAction(UIAlertAction(title: "Claim PickUp Leg", style: .default, handler: onClaimPickUp))
+        saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(saveAlert, animated: true, completion: nil)
     }
     
     @IBAction func onDropOffButtonPressed(_ sender: Any) {
-        dropOffButton.backgroundColor = UIColor.green
+        let saveAlert = UIAlertController(title: "Do you want to claim this leg?", message: nil, preferredStyle: .actionSheet)
+        saveAlert.addAction(UIAlertAction(title: "Claim DropOff Leg", style: .default, handler: onClaimDropOff))
+        saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(saveAlert, animated: true, completion: nil)
     }
     
+    func onClaimPickUp(action: UIAlertAction) {
+        pickUpButton.backgroundColor = UIColor.green
+    }
+    
+    func onClaimDropOff(action: UIAlertAction) {
+        dropOffButton.backgroundColor = UIColor.green
+    }
 }
