@@ -1,5 +1,5 @@
 //
-//  RootViewController.swift
+//  EventDetailViewController.swift
 //  Carpool
 //
 //  Created by Akiva Levitas on 11/6/17.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class RootViewController: UITableViewController {
-
+class EventDetailViewController: UIViewController {
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
-
+    
+    
 }
-
