@@ -47,6 +47,9 @@ class RootViewController: UITableViewController {
         
         
         eventDetailVC?.trip = trip
+        eventDetailVC?.locationLabel.text = trip.event.location
+        eventDetailVC?.timeLabel.text = trip.event.time
+        eventDetailVC?.descriptionLabel.text = trip.event.description
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
