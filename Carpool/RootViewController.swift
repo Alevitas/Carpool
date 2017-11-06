@@ -12,13 +12,15 @@ import CarpoolKit
 class RootViewController: UITableViewController {
 
     var trips: [Trip] = []
-    var event: Event!
+    var trip: Trip!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         API.fetchTripsOnce { (trip) in
             self.trips = trip
+        print(trip)
         }
         tableView.reloadData()
     }
@@ -31,7 +33,6 @@ class RootViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Events", for: indexPath)
         
@@ -44,11 +45,11 @@ class RootViewController: UITableViewController {
         let eventDetailVC = segue.destination as? EventDetailViewController
         
         
-        eventDetailVC?.event = event
+        eventDetailVC?.trip = trip
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        event = trips[indexPath.row].event
+        trip = trips[indexPath.row]
     }
 }
 
