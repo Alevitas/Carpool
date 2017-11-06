@@ -35,9 +35,9 @@ class RootViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Events", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Events", for: indexPath) as! EventCell
         
-        cell.textLabel?.text = trips[indexPath.row].event.description
+        cell.eventNameLabel.text = trips[indexPath.row].event.description
         
         return cell
     }
