@@ -47,8 +47,8 @@ class RootViewController: UITableViewController {
         
         
         eventDetailVC?.trip = trip
-        eventDetailVC?.locationLabel.text = trip.event.location
-        eventDetailVC?.timeLabel.text = trip.event.time
+        eventDetailVC?.locationLabel.text = trip.event.location.description
+        eventDetailVC?.timeLabel.text = String(describing: trip.event.time)
         eventDetailVC?.descriptionLabel.text = trip.event.description
     }
 
