@@ -67,14 +67,16 @@ class TripDetailViewController: UIViewController {
     func onClaimPickUp(action: UIAlertAction) {
         pickUpButton.backgroundColor = UIColor.green
         API.claimLeg(leg: trip.pickUp, trip: trip) { (error) in
-            print("Error claiming PickUp: \(error)")
+            pickUpDriverLabel.text = trip.pickUp.driver?.name
+            print("Error claiming PickUp: \(String(describing: error))")
         }
     }
     
     func onClaimDropOff(action: UIAlertAction) {
         dropOffButton.backgroundColor = UIColor.green
         API.claimLeg(leg: trip.dropOff, trip: trip) { (error) in
-            print("Error claiming DropOff: \(error)")
+            pickUpDriverLabel.text = trip.dropOff.driver?.name
+            print("Error claiming DropOff: \(String(describing: error))")
         }
     }
 }
