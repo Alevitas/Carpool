@@ -19,11 +19,10 @@ class RootViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        API.fetchTripsOnce { (trip) in
+        API.observeTrips { (trip) in
             self.trips = trip
-            
             self.tableView.reloadData()
-        print(trip)
+            print(self.trips)
         }
         
     }
