@@ -26,6 +26,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        print(datePickerOutlet.date)
         locationManager.delegate = self
         
     }
