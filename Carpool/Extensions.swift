@@ -36,3 +36,38 @@ extension Date {
     }
 }
 
+extension UILabel {
+    
+    // extension user defined Method
+    func setRoundEdge() {
+        //Width of border
+        self.layer.borderWidth = 1.0
+        //How much the edge to be rounded
+        self.layer.cornerRadius = 5.0
+        
+        // following properties are optional
+        //color for text
+        self.textColor = UIColor.blue
+        // Mask the bound
+        self.layer.masksToBounds = true
+        //clip the pixel contents
+        self.clipsToBounds = true
+    }
+}
+
+extension UIButton {
+    
+    // extension user defined Method
+    func setRoundEdge() {
+        //Width of border
+        self.layer.borderWidth = 1.0
+        //How much the edge to be rounded
+        self.layer.cornerRadius = 5.0
+        
+        // following properties are optional
+        // Mask the bound
+        self.layer.masksToBounds = true
+        //clip the pixel contents
+        self.clipsToBounds = true
+    }
+}

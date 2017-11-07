@@ -33,6 +33,8 @@ class TripDetailViewController: UIViewController {
             descriptionLabel.text = trip.event.description
             
             timeLabel.text = trip.event.time.prettyDate
+            dropOffButton.setRoundEdge()
+            pickUpButton.setRoundEdge()
             
             if !trip.pickUp.isClaimed {
                 pickUpButton.backgroundColor = UIColor.red
