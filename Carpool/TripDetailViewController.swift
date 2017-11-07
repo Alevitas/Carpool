@@ -75,7 +75,7 @@ class TripDetailViewController: UIViewController {
     func onClaimDropOff(action: UIAlertAction) {
         dropOffButton.backgroundColor = UIColor.green
         API.claimLeg(leg: trip.dropOff, trip: trip) { (error) in
-            pickUpDriverLabel.text = trip.dropOff.driver?.name
+            dropOffDriverLabel.text = trip.dropOff.driver?.name
             print("Error claiming DropOff: \(String(describing: error))")
         }
     }
