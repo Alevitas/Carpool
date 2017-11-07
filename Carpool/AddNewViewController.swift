@@ -29,6 +29,11 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         
     }
+    
+    
+    @IBAction func onDatePickerChanged(_ sender: UIDatePicker) {
+    }
+    
     @IBAction func onCancelButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
     }
