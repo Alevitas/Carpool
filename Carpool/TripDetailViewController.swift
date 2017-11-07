@@ -41,7 +41,7 @@ class TripDetailViewController: UIViewController {
             } else {
                 pickUpDriverLabel.text = trip.pickUp?.driver.name
             }
-
+            
             if trip.dropOff?.driver == nil {
                 dropOffButton.backgroundColor = UIColor.red
             } else {
