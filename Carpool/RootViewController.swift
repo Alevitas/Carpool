@@ -8,16 +8,19 @@
 
 import UIKit
 import CarpoolKit
+import FirebaseCommunity
 
 class RootViewController: UITableViewController {
 
     var trips: [Trip] = []
     var trip: Trip!
-    var currentUser: User!
+    var currentUser: String?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currentUser = Auth.auth().currentUser?.displayName
         
         API.observeTrips { (result) in
             switch result {
@@ -55,6 +58,7 @@ class RootViewController: UITableViewController {
         
         eventDetailVC?.currentUser = currentUser
         eventDetailVC?.trip = trip
+        
        
     }
 

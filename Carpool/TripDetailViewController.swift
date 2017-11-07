@@ -22,7 +22,7 @@ class TripDetailViewController: UIViewController {
     @IBOutlet weak var dropOffDriverLabel: UILabel!
     
     var trip: Trip!
-    var currentUser: User!
+    var currentUser: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
