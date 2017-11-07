@@ -12,13 +12,13 @@ import MapKit
 
 
 class AddNewViewController: UIViewController, CLLocationManagerDelegate {
-    @IBOutlet weak var descriptionTextView: UITextView!
+
     
+    @IBOutlet weak var descriptionTextFieldOutlet: UITextField!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
     
-    @IBOutlet weak var dropOffDriverLabel: UILabel!
+    @IBOutlet weak var locationSelectedLabel: UILabel!
     
-    @IBOutlet weak var pickUpDriverLabel: UILabel!
     
     let locationManager = CLLocationManager()
     var aLocation: CLLocation = CLLocation(latitude: -56.6462520, longitude: -36.6462520)
@@ -33,12 +33,13 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
         performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
     }
     @IBAction func onAddButtonPressed(_ sender: Any) {
-        API.createTrip(eventDescription: descriptionTextView.text, eventTime: datePickerOutlet.date, eventLocation: aLocation) { (trip) in
+        if let description = descriptionTextFieldOutlet.text {
+        API.createTrip(eventDescription: description, eventTime: datePickerOutlet.date, eventLocation: aLocation) { (trip) in
             
             
             self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
         }
-        
+        }
     }
 
     
