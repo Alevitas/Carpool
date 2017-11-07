@@ -22,12 +22,12 @@ class RootViewController: UITableViewController {
         API.observeTrips { (result) in
             switch result {
                 
-            case .success(_):
-                self.trips = trip
+            case .success(let tripsDownloaded):
+                self.trips = tripsDownloaded
                 self.tableView.reloadData()
                 print(self.trips)
-            case .failure(_):
-                <#code#>
+            case .failure(let error):
+                print(error)
             }
             
         }
