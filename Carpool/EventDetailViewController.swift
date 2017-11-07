@@ -14,7 +14,6 @@ class EventDetailViewController: UIViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var pickUpButton: UIButton!
     @IBOutlet weak var dropOffButton: UIButton!
     
@@ -33,9 +32,7 @@ class EventDetailViewController: UIViewController {
             
             descriptionLabel.text = trip.event.description
             
-            timeLabel.text = String(describing: trip.event.time)
-            
-            locationLabel.text = trip.event.location.description
+            timeLabel.text = trip.event.time.prettyDate
             
             if !trip.pickUp.isClaimed {
                 pickUpButton.backgroundColor = UIColor.red
