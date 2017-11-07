@@ -19,10 +19,17 @@ class RootViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        API.observeTrips { (trip) in
-            self.trips = trip
-            self.tableView.reloadData()
-            print(self.trips)
+        API.observeTrips { (result) in
+            switch result {
+                
+            case .success(_):
+                self.trips = trip
+                self.tableView.reloadData()
+                print(self.trips)
+            case .failure(_):
+                <#code#>
+            }
+            
         }
         
     }

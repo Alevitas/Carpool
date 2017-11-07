@@ -40,11 +40,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
-    @IBAction func setDropOffButton(_ sender: Any) {
-    }
-    @IBAction func setPickUpButton(_ sender: Any) {
-    }
-    
+
     
     
 }
