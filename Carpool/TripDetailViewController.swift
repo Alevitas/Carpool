@@ -36,16 +36,16 @@ class TripDetailViewController: UIViewController {
             dropOffButton.setRoundEdge()
             pickUpButton.setRoundEdge()
             
-            if !trip.pickUp.isClaimed {
+            if !(trip.pickUp?.isClaimed)! {
                 pickUpButton.backgroundColor = UIColor.red
             } else {
-                pickUpDriverLabel.text = trip.pickUp.driver?.name
+                pickUpDriverLabel.text = trip.pickUp?.driver?.name
             }
 
-            if !trip.dropOff.isClaimed {
+            if !(trip.dropOff?.isClaimed)! {
                 dropOffButton.backgroundColor = UIColor.red
             } else {
-                dropOffDriverLabel.text = trip.dropOff.driver?.name
+                dropOffDriverLabel.text = trip.dropOff?.driver?.name
             }
         }
     }
@@ -66,16 +66,16 @@ class TripDetailViewController: UIViewController {
     
     func onClaimPickUp(action: UIAlertAction) {
         pickUpButton.backgroundColor = UIColor.green
-        API.claim(leg: trip.pickUp, trip: trip) { (error) in
-            pickUpDriverLabel.text = trip.pickUp.driver?.name
+        API.claimPickUp(trip: trip) { (error) in
+            self.pickUpDriverLabel.text = self.trip.pickUp?.driver?.name
             print("Error claiming PickUp: \(String(describing: error))")
         }
     }
     
     func onClaimDropOff(action: UIAlertAction) {
         dropOffButton.backgroundColor = UIColor.green
-        API.claimLeg(leg: trip.dropOff, trip: trip) { (error) in
-            dropOffDriverLabel.text = trip.dropOff.driver?.name
+        API.claimDropOff(trip: trip) { (error) in
+            self.dropOffDriverLabel.text = self.trip.dropOff?.driver?.name
             print("Error claiming DropOff: \(String(describing: error))")
         }
     }
