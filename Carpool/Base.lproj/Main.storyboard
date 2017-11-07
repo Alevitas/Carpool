@@ -190,6 +190,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="531698055.557293">
                                     <!--2017-11-06 21:54:15 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="onDatePickerChanged:" destination="R3k-os-Awd" eventType="valueChanged" id="y2Q-0a-Ynu"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrF-Ca-5Ud">
                                 <rect key="frame" x="22" y="450" width="108" height="20.5"/>

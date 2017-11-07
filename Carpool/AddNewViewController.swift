@@ -12,7 +12,7 @@ import MapKit
 
 
 class AddNewViewController: UIViewController, CLLocationManagerDelegate {
-
+    
     
     @IBOutlet weak var descriptionTextFieldOutlet: UITextField!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
@@ -30,13 +30,11 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
         datePickerOutlet.minimumDate = Date()
         print(datePickerOutlet.date)
         locationManager.delegate = self
-        
     }
     
     
     @IBAction func onDatePickerChanged(_ sender: UIDatePicker) {
         datePicked = sender.date
-        
     }
     
     @IBAction func onCancelButtonPressed(_ sender: Any) {
@@ -44,14 +42,14 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
     }
     @IBAction func onAddButtonPressed(_ sender: Any) {
         if let description = descriptionTextFieldOutlet.text {
-        API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: aLocation) { (trip) in
-            
-            
-            self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
-        }
+            API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: aLocation) { (trip) in
+                
+                
+                self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+            }
         }
     }
-
+    
     
     
 }
