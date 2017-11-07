@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CarpoolKit
 
 class AddNewViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -26,7 +27,12 @@ class AddNewViewController: UIViewController {
         performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
     }
     @IBAction func onAddButtonPressed(_ sender: Any) {
-         performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+        API.createTrip(eventDescription: descriptionTextView.text, eventTime: datePickerOutlet.date, eventLocation: CLLocation()) { (trip) in
+            
+            
+            performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+        }
+        
     }
     @IBAction func setDropOffButton(_ sender: Any) {
     }
