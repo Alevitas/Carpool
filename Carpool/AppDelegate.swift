@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         Auth.auth().signInAnonymously { (user, error) in
-            print(error)
+            print("\(String(describing: error))")
         }
         // Override point for customization after application launch.
         return true
