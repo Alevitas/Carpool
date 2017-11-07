@@ -21,7 +21,7 @@ extension Date {
     }
     var prettyDate: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMM d, h:mm a"
+        dateFormatter.dateFormat = "EEEE, MMM d, YYYY h:mm a"
         return dateFormatter.string(from: self)
     }
     var prettyDay: String {
