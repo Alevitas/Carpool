@@ -2,22 +2,13 @@ import CoreLocation
 
 public struct Event: Codable, Keyed {
     public var key: String!
-
-    enum CodingKey: String {
-        case geohash = "location"
-        case description
-        case time
-        case owner
-    }
-
     public let description: String
     public let owner: User
     public let time: Date
+    let location: String
 
-    let geohash: String
-
-    public var location: CLLocation? {
-        return Geohash(value: geohash)?.location
+    public var clLocation: CLLocation? {
+        return Geohash(value: location)?.location
     }
 }
 

@@ -41,9 +41,11 @@ public enum API {
             guard let foo = bar.value as? [String: [String: Any]] else { throw API.Error.decode }
             return foo
         }.then {
-            when(fulfilled: $0.map{ Trip.make(key: $0, json: $1) })
-        }.then {
-            completion(.success($0))
+            when(resolved: $0.map{ Trip.make(key: $0, json: $1) })
+        }.then { results -> Void in
+            var trips: [Trip] = []
+            for case .fulfilled(let trip) in results { trips.append(trip) }
+            completion(.success(trips))
         }.catch {
             completion(.failure($0))
         }
@@ -95,7 +97,7 @@ public enum API {
                 "owner": uid
             ])
 
-            let event = Event(key: eventRef.key, description: desc, owner: user, time: time, geohash: geohash)
+            let event = Event(key: eventRef.key, description: desc, owner: user, time: time, location: geohash)
             let trip = Trip(key: tripRef.key, event: event, pickUp: nil, dropOff: Leg(driver: user))
             completion(.success(trip))
         }.catch {
