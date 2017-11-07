@@ -14,6 +14,11 @@ extension Date {
         dateFormatter.dateFormat = "E"
         return dateFormatter.string(from: self)
     }
+    var LongDayName: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: self)
+    }
     var hourDesc: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h a"
