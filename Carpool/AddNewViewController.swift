@@ -13,7 +13,9 @@ class AddNewViewController: UIViewController {
     
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
     
+    @IBOutlet weak var dropOffDriverLabel: UILabel!
     
+    @IBOutlet weak var pickUpDriverLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +27,10 @@ class AddNewViewController: UIViewController {
     }
     @IBAction func onAddButtonPressed(_ sender: Any) {
          performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+    }
+    @IBAction func setDropOffButton(_ sender: Any) {
+    }
+    @IBAction func setPickUpButton(_ sender: Any) {
     }
     
     
