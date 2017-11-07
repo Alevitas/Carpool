@@ -10,7 +10,7 @@ import UIKit
 import CarpoolKit
 import CoreLocation
 
-class EventDetailViewController: UIViewController {
+class TripDetailViewController: UIViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
