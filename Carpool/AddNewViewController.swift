@@ -20,7 +20,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var pickUpDriverLabel: UILabel!
     
     let locationManager = CLLocationManager()
-    var locationAtual: CLLocation = CLLocation(latitude: -56.6462520, longitude: -36.6462520)
+    var aLocation: CLLocation = CLLocation(latitude: -56.6462520, longitude: -36.6462520)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
         performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
     }
     @IBAction func onAddButtonPressed(_ sender: Any) {
-        API.createTrip(eventDescription: descriptionTextView.text, eventTime: datePickerOutlet.date, eventLocation: locationAtual) { (trip) in
+        API.createTrip(eventDescription: descriptionTextView.text, eventTime: datePickerOutlet.date, eventLocation: aLocation) { (trip) in
             
             
             self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
