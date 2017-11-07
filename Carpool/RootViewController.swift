@@ -37,7 +37,7 @@ class RootViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Events", for: indexPath) as! EventCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Trips", for: indexPath) as! TripCell
         
         cell.eventNameLabel.text = trips[indexPath.row].event.description
         
@@ -45,7 +45,7 @@ class RootViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let eventDetailVC = segue.destination as? EventDetailViewController
+        let eventDetailVC = segue.destination as? TripDetailViewController
         
         eventDetailVC?.currentUser = currentUser
         eventDetailVC?.trip = trip

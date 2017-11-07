@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventCell: UITableViewCell {
+class TripCell: UITableViewCell {
 
     @IBOutlet weak var eventNameLabel: UILabel!
     

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Events" id="rTy-Kw-SUX" customClass="EventCell" customModule="Carpool" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Trips" id="rTy-Kw-SUX" customClass="TripCell" customModule="Carpool" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rTy-Kw-SUX" id="U6Q-px-YUB">
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="556" y="141.67916041979012"/>
         </scene>
-        <!--Event Detail View Controller-->
+        <!--Trip Detail View Controller-->
         <scene sceneID="iBC-0g-GyI">
             <objects>
-                <viewController id="KZF-gg-fW8" customClass="EventDetailViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KZF-gg-fW8" customClass="TripDetailViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9a0-ur-B1i"/>
                         <viewControllerLayoutGuide type="bottom" id="uqO-sJ-vNY"/>
