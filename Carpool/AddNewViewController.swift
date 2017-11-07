@@ -22,11 +22,12 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     var aLocation: CLLocation = CLLocation(latitude: -56.6462520, longitude: -36.6462520)
+    var datePicked = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        datePickerOutlet.minimumDate = Date()
         print(datePickerOutlet.date)
         locationManager.delegate = self
         
@@ -34,6 +35,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func onDatePickerChanged(_ sender: UIDatePicker) {
+        datePicked = sender.date
+        
     }
     
     @IBAction func onCancelButtonPressed(_ sender: Any) {
@@ -41,7 +44,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
     }
     @IBAction func onAddButtonPressed(_ sender: Any) {
         if let description = descriptionTextFieldOutlet.text {
-        API.createTrip(eventDescription: description, eventTime: datePickerOutlet.date, eventLocation: aLocation) { (trip) in
+        API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: aLocation) { (trip) in
             
             
             self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
