@@ -6,3 +6,7 @@ target 'Carpool' do
 
   pod 'CarpoolKit', :git => 'https://github.com/codebasesav/CarpoolKit.git', :branch =>   'master'
 end
+
+pre_install do |installer|
+    def installer.verify_no_static_framework_transitive_dependencies; end
+end

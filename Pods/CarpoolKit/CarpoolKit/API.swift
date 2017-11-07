@@ -1,6 +1,5 @@
-import FirebaseDatabase
+import FirebaseCommunity
 import CoreLocation
-import FirebaseAuth
 import PromiseKit
 
 public enum API {

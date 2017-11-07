@@ -1,5 +1,3 @@
-import FirebaseAuth
-
 public struct User: Codable, Keyed {
     var key: String!
     public let name: String?
