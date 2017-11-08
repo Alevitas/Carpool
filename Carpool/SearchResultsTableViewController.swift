@@ -55,4 +55,9 @@ class SearchResultsTableViewController: UITableViewController, CLLocationManager
     }
     
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+    }
+    
 }
