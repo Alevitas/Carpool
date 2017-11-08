@@ -12,6 +12,7 @@ import MapKit
 
 
 class AddNewViewController: UIViewController, CLLocationManagerDelegate {
+    @IBOutlet weak var mapView: MKMapView!
     
     
     @IBOutlet weak var descriptionTextFieldOutlet: UITextField!
@@ -34,6 +35,17 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            mapView.showsUserLocation = true
+            
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        
+    }
     
     @IBAction func onDatePickerChanged(_ sender: UIDatePicker) {
         datePicked = sender.date
@@ -52,6 +64,34 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func onTextFieldReturnPressed(_ sender: UITextField) {
+        
+        let query = sender.text
+        performSegue(withIdentifier: "SearchResults", sender: query)
+        
+    }
     
     
+}
+
+extension RootViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 5000, 5000)
+        mapView.setRegion(coordinateRegion, animated: true)
+        
+        
+    }
+}
+
+extension RootViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        guard status == .authorizedWhenInUse else { return }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }
