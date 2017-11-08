@@ -28,7 +28,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     var datePicked = Date()
     var query: String?
     var region: CLRegion?
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,10 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         datePickerOutlet.minimumDate = Date()
         print(datePickerOutlet.date)
         locationManager.delegate = self
+        
+        if let aLocation = aLocation {
+            mapView.addAnnotation(aLocation as! MKAnnotation)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,21 +64,29 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     @IBAction func onAddButtonPressed(_ sender: Any) {
         if let description = descriptionTextFieldOutlet.text {
-            API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
-                
-                
-                self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+            if query == "" {
+                API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                    
+                    
+                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                }
+            } else {
+                API.createTrip(eventDescription: description + ("\n Adress:") + query!, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                    
+                    
+                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                }
             }
         }
     }
-   
+    
     
     @IBAction func onTextFieldReturn(_ sender: UITextField) {
         query = sender.text
         performSegue(withIdentifier: "SearchResults", sender: query)
     }
     
-  
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let SearchResultVC = segue.destination as! SearchResultsTableViewController
@@ -83,14 +95,14 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     @IBAction func unwindFromSearchResults(segue: UIStoryboardSegue) {
-    let searchResultsVC = segue.source as! SearchResultsTableViewController
+        let searchResultsVC = segue.source as! SearchResultsTableViewController
         aLocation = searchResultsVC.place
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status{
             
@@ -108,8 +120,15 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-       
+        
         region = CLCircularRegion(center: (locations.last?.coordinate)!, radius: 1000, identifier: "region")
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 10000, 10000)
+        mapView.setRegion(coordinateRegion, animated: true)
+        
     }
     
 }
