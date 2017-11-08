@@ -42,6 +42,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             mapView.showsUserLocation = true
+            locationManager.startUpdatingLocation()
             
         } else {
             locationManager.requestWhenInUseAuthorization()
@@ -99,9 +100,9 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         case .denied:
             print("user not accepted")
         case .authorizedAlways:
-            print("user  accepted")
+            locationManager.startUpdatingLocation()
         case .authorizedWhenInUse:
-            print("user accepted")
+            locationManager.startUpdatingLocation()
         }
     }
     
