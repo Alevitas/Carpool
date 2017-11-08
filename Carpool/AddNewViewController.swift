@@ -88,7 +88,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+       
+        region = CLCircularRegion(center: (locations.last?.coordinate)!, radius: 10000, identifier: "region")
     }
     
 }
