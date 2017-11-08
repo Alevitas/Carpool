@@ -20,6 +20,7 @@ class SearchResultsTableViewController: UITableViewController, CLLocationManager
     let geocoder = CLGeocoder()
     var region: CLRegion?
     var namesOfPlaces: [String] = []
+    var places: [CLPlacemark] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +32,8 @@ class SearchResultsTableViewController: UITableViewController, CLLocationManager
             
             for placemark in placemarks! {
                 self.geocoder.reverseGeocodeLocation(placemark.location!, completionHandler: { (placemark, error) in
-                    guard let name = placemark?.last?.name else { return }
-                    self.namesOfPlaces.append(name)
+                    guard let placemark = placemark else { return }
+                    self.places = placemark
                     self.tableView.reloadData()
                 })
             
@@ -42,13 +43,13 @@ class SearchResultsTableViewController: UITableViewController, CLLocationManager
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return namesOfPlaces.count
+        return places.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResults", for: indexPath)
         
-        cell.textLabel?.text = namesOfPlaces[indexPath.row]
+        cell.textLabel?.text = places[indexPath.row].name
         
         return cell
     }
