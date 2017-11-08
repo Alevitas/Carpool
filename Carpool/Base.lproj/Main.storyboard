@@ -342,8 +342,12 @@
                             <outlet property="delegate" destination="HqE-Ez-ssM" id="9RW-fb-mfU"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Ffp-og-oO7" kind="unwind" identifier="unwindfromsearchresults" unwindAction="unwindFromSearchResultsWithSegue:" id="fnO-Fn-X1w"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMv-NJ-458" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ffp-og-oO7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="563" y="1626"/>
         </scene>
