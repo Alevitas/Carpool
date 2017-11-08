@@ -48,8 +48,9 @@ class RootViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Trips", for: indexPath) as! TripCell
         
-        cell.eventNameLabel.text = trips[indexPath.row].event.description
-        
+//        cell.eventNameLabel.text = trips[indexPath.row].event.description
+        cell.eventNameLabel.text = trips[indexPath.row].alertText
+
         return cell
     }
     
