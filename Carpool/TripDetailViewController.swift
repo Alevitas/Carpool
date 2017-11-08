@@ -39,12 +39,6 @@ class TripDetailViewController: UIViewController {
             dropOffButton.setRoundEdge()
             pickUpButton.setRoundEdge()
             
-            dropOffButton.isHidden = false
-            dropOffDriverLabel.isHidden = false
-            
-            pickUpButton.isHidden = true
-            pickUpDriverLabel.isHidden = true
-            
             if trip.pickUp?.driver == nil {
                 pickUpButton.backgroundColor = UIColor.red
             } else {
@@ -62,23 +56,6 @@ class TripDetailViewController: UIViewController {
     @IBAction func onChildrenNameChanged(_ sender: UITextField) {
         if let child = sender.text {
             children.append(child)
-        }
-    }
-    
-    @IBAction func onDropOffPickUpSegControlChanged(_ sender: UISegmentedControl) {
-        if dropOffPickUpSegControl.selectedSegmentIndex == 0 {
-            pickUpButton.isHidden = true
-            pickUpDriverLabel.isHidden = true
-            
-            dropOffButton.isHidden = false
-            dropOffDriverLabel.isHidden = false
-        } else {
-            dropOffButton.isHidden = true
-            dropOffDriverLabel.isHidden = true
-            
-            pickUpButton.isHidden = false
-            pickUpDriverLabel.isHidden = false
-            
         }
     }
     
