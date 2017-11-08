@@ -8,15 +8,20 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 
 
-class SearchResultsTableViewController: UITableViewController {
+class SearchResultsTableViewController: UITableViewController, CLLocationManagerDelegate {
     
-//    var searchResults
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        locationManager.delegate = self
+        
         
     }
     
