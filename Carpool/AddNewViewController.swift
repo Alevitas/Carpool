@@ -17,6 +17,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var descriptionTextFieldOutlet: UITextField!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
     
+    @IBAction func dropOffPickUpSegControl(_ sender: Any) {
+    }
     @IBOutlet weak var locationSelectedLabel: UILabel!
     
     

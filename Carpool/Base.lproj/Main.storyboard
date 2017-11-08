@@ -75,64 +75,110 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQX-5d-vyH">
-                                <rect key="frame" x="16" y="72" width="343" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQX-5d-vyH">
+                                <rect key="frame" x="16" y="144.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ8-NG-0QX">
-                                <rect key="frame" x="16" y="124" width="343" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ8-NG-0QX">
+                                <rect key="frame" x="16" y="175" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mc-aV-beS">
-                                <rect key="frame" x="16" y="278" width="88" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mc-aV-beS">
+                                <rect key="frame" x="272" y="243.5" width="47" height="30"/>
                                 <state key="normal" title="Pickup"/>
                                 <connections>
                                     <action selector="onPickUpButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="XRf-Qa-UYV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlw-lI-JGu">
-                                <rect key="frame" x="16" y="176" width="88" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlw-lI-JGu">
+                                <rect key="frame" x="56" y="243.5" width="56" height="30"/>
                                 <state key="normal" title="DropOff"/>
                                 <connections>
                                     <action selector="onDropOffButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="4OB-2z-C6Z"/>
                                     <action selector="onPickUpButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="kjG-k0-0FI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unclaimed Pickup Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-uY-SZL">
-                                <rect key="frame" x="16" y="328" width="343" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unclaimed DropOff Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2t-f8-M3X">
+                                <rect key="frame" x="16" y="283.5" width="198" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unclaimed DropOff Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2t-f8-M3X">
-                                <rect key="frame" x="16" y="227" width="343" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cFi-Yr-VpS">
+                                <rect key="frame" x="16" y="205.5" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Drop Off"/>
+                                    <segment title="Pick Up"/>
+                                </segments>
+                                <connections>
+                                    <action selector="dropOffPickUpSegControl:" destination="FGA-RS-E40" eventType="valueChanged" id="u6K-SR-fRR"/>
+                                    <action selector="onDropOffPickUpSegControlChanged:" destination="KZF-gg-fW8" eventType="valueChanged" id="zcP-aW-39g"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unclaimed Pickup Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-uY-SZL">
+                                <rect key="frame" x="171" y="283.5" width="188" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Children" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvu-eO-vXg">
+                                <rect key="frame" x="16" y="74" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFL-Gm-LBF">
+                                <rect key="frame" x="16" y="104.5" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dlw-lI-JGu" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" constant="40" id="0Mh-Pi-DhW"/>
+                            <constraint firstItem="xFL-Gm-LBF" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="1Ch-Mo-7qn"/>
+                            <constraint firstItem="A2t-f8-M3X" firstAttribute="top" secondItem="dlw-lI-JGu" secondAttribute="bottom" constant="10" id="288-l4-Wp9"/>
+                            <constraint firstItem="xvu-eO-vXg" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="3SB-aV-5kA"/>
+                            <constraint firstItem="hZ8-NG-0QX" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="5Ol-qh-rsr"/>
+                            <constraint firstItem="LQX-5d-vyH" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="5yG-3t-lFh"/>
+                            <constraint firstItem="cFi-Yr-VpS" firstAttribute="top" secondItem="hZ8-NG-0QX" secondAttribute="bottom" constant="10" id="8S7-LR-zBq"/>
+                            <constraint firstItem="cFi-Yr-VpS" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="FiJ-FJ-V1Q"/>
+                            <constraint firstItem="hZ8-NG-0QX" firstAttribute="top" secondItem="LQX-5d-vyH" secondAttribute="bottom" constant="10" id="IKU-cs-cpW"/>
+                            <constraint firstItem="xvu-eO-vXg" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="MaB-Mx-AUo"/>
+                            <constraint firstItem="xFL-Gm-LBF" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="Nlq-IG-3k1"/>
+                            <constraint firstItem="hZ8-NG-0QX" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="O4E-Uc-0Kw"/>
+                            <constraint firstItem="A2t-f8-M3X" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="W2Y-6U-mK5"/>
+                            <constraint firstItem="xvu-eO-vXg" firstAttribute="top" secondItem="9a0-ur-B1i" secondAttribute="bottom" constant="10" id="WnC-rm-2Nd"/>
+                            <constraint firstItem="xFL-Gm-LBF" firstAttribute="top" secondItem="xvu-eO-vXg" secondAttribute="bottom" constant="10" id="Zhu-bA-JSg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7mc-aV-beS" secondAttribute="trailing" constant="40" id="eep-wy-AfJ"/>
+                            <constraint firstItem="LQX-5d-vyH" firstAttribute="top" secondItem="xFL-Gm-LBF" secondAttribute="bottom" constant="10" id="ekd-ww-bcQ"/>
+                            <constraint firstItem="LQX-5d-vyH" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="p37-qx-o57"/>
+                            <constraint firstItem="7mc-aV-beS" firstAttribute="top" secondItem="cFi-Yr-VpS" secondAttribute="bottom" constant="10" id="q0D-rE-0zK"/>
+                            <constraint firstItem="3Wv-uY-SZL" firstAttribute="top" secondItem="7mc-aV-beS" secondAttribute="bottom" constant="10" id="qVM-WW-NOe"/>
+                            <constraint firstItem="3Wv-uY-SZL" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="rEj-vp-Jwa"/>
+                            <constraint firstItem="3Wv-uY-SZL" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="tH0-y4-vzI"/>
+                            <constraint firstItem="A2t-f8-M3X" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="vQJ-5R-lUP"/>
+                            <constraint firstItem="dlw-lI-JGu" firstAttribute="top" secondItem="cFi-Yr-VpS" secondAttribute="bottom" constant="10" id="xpg-eB-cEx"/>
+                            <constraint firstItem="cFi-Yr-VpS" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="zEf-Ze-ngv"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="LQX-5d-vyH" id="NOY-CH-FWw"/>
                         <outlet property="dropOffButton" destination="dlw-lI-JGu" id="1kL-zh-Xtu"/>
                         <outlet property="dropOffDriverLabel" destination="A2t-f8-M3X" id="FV7-N8-d0J"/>
+                        <outlet property="dropOffPickUpSegControl" destination="cFi-Yr-VpS" id="iDF-y9-pkD"/>
                         <outlet property="pickUpButton" destination="7mc-aV-beS" id="D6U-Tj-djx"/>
                         <outlet property="pickUpDriverLabel" destination="3Wv-uY-SZL" id="bXS-5m-PPS"/>
                         <outlet property="timeLabel" destination="hZ8-NG-0QX" id="tcs-Bh-RQc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byp-YT-ZER" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FGA-RS-E40" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1248.8" y="143.47826086956522"/>
         </scene>
