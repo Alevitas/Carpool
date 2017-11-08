@@ -12,6 +12,7 @@ import MapKit
 
 
 class AddNewViewController: UIViewController, CLLocationManagerDelegate {
+    @IBOutlet weak var mapView: MKMapView!
     
     
     @IBOutlet weak var descriptionTextFieldOutlet: UITextField!
@@ -50,6 +51,12 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func onTextFieldReturnPressed(_ sender: UITextField) {
+        
+        let query = sender.text
+        performSegue(withIdentifier: "SearchResults", sender: query)
+        
+    }
     
     
 }
