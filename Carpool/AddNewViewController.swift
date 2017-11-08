@@ -24,10 +24,11 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     
     let locationManager = CLLocationManager()
-    var aLocation: CLLocation?
+    var aLocation: CLPlacemark?
     var datePicked = Date()
     var query: String?
     var region: CLRegion?
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +60,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     @IBAction func onAddButtonPressed(_ sender: Any) {
         if let description = descriptionTextFieldOutlet.text {
-            API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation ?? nil)!) { (trip) in
+            API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
                 
                 
                 self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
@@ -82,8 +83,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     @IBAction func unwindFromSearchResults(segue: UIStoryboardSegue) {
-    
-    
+    let searchResultsVC = segue.source as! SearchResultsTableViewController
+        aLocation = searchResultsVC.place
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

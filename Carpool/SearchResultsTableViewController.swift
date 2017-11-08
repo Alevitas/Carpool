@@ -21,6 +21,7 @@ class SearchResultsTableViewController: UITableViewController, CLLocationManager
     var region: CLRegion?
     var namesOfPlaces: [String] = []
     var places: [CLPlacemark] = []
+    var place: CLPlacemark?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,8 @@ class SearchResultsTableViewController: UITableViewController, CLLocationManager
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        place = places[indexPath.row]
+        performSegue(withIdentifier: "unwindfromsearchresults", sender: self)
         
     }
     
