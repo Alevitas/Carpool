@@ -16,6 +16,7 @@ class TripDetailViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var pickUpButton: UIButton!
     @IBOutlet weak var dropOffButton: UIButton!
+    @IBOutlet weak var childrenNameTextField: UITextField!
     
     
     @IBOutlet weak var dropOffPickUpSegControl: UISegmentedControl!
@@ -24,6 +25,7 @@ class TripDetailViewController: UIViewController {
     
     var trip: Trip!
     var currentUser: String?
+    var children: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,12 @@ class TripDetailViewController: UIViewController {
             } else {
                 dropOffDriverLabel.text = trip.dropOff?.driver.name
             }
+        }
+    }
+    
+    @IBAction func onChildrenNameChanged(_ sender: UITextField) {
+        if let child = sender.text {
+            children.append(child)
         }
     }
     
