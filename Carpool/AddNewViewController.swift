@@ -67,7 +67,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
    
     
-    @IBAction func onTextFieldReturn(_ sender: Any) {
+    @IBAction func onTextFieldReturn(_ sender: UITextField) {
         query = sender.text
         performSegue(withIdentifier: "SearchResults", sender: query)
     }
