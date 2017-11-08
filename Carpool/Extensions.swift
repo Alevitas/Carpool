@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CarpoolKit
 
 extension Date {
     var shortDayName: String {
@@ -14,7 +15,7 @@ extension Date {
         dateFormatter.dateFormat = "E"
         return dateFormatter.string(from: self)
     }
-    var LongDayName: String {
+    var longDayName: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         return dateFormatter.string(from: self)
@@ -26,12 +27,12 @@ extension Date {
     }
     var prettyDate: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMM d, YYYY h:mm a"
+        dateFormatter.dateFormat = "EEEE, MMM d, h:mm a"
         return dateFormatter.string(from: self)
     }
     var prettyDay: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E, MMM d"
+        dateFormatter.dateFormat = "EEEE, MMM d"
         return dateFormatter.string(from: self)
     }
     var dayHour: String {
@@ -74,5 +75,12 @@ extension UIButton {
         self.layer.masksToBounds = true
         //clip the pixel contents
         self.clipsToBounds = true
+    }
+}
+
+extension Trip {
+    var alertText: String {
+        let msg = "\(self.event.description) on \(self.event.time.prettyDay) at \(self.event.time.hourDesc)"
+        return msg
     }
 }

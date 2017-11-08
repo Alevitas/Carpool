@@ -18,6 +18,7 @@ class TripDetailViewController: UIViewController {
     @IBOutlet weak var dropOffButton: UIButton!
     @IBOutlet weak var childrenNameTextField: UITextField!
     
+    @IBOutlet weak var alertTextLabel: UILabel!
     
     @IBOutlet weak var dropOffPickUpSegControl: UISegmentedControl!
     @IBOutlet weak var pickUpDriverLabel: UILabel!
@@ -50,6 +51,7 @@ class TripDetailViewController: UIViewController {
             } else {
                 dropOffDriverLabel.text = trip.dropOff?.driver.name
             }
+            alertTextLabel.text = trip.alertText
         }
     }
     
