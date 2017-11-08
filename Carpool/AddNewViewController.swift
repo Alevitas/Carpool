@@ -65,13 +65,14 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             }
         }
     }
+   
     
-    @IBAction func onTextFieldReturnPressed(_ sender: UITextField) {
-        
+    @IBAction func onTextFieldReturn(_ sender: Any) {
         query = sender.text
         performSegue(withIdentifier: "SearchResults", sender: query)
-        
     }
+    
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let SearchResultVC = segue.destination as! SearchResultsTableViewController

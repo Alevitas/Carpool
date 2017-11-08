@@ -264,7 +264,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="onTextFieldReturnPressed:" destination="R3k-os-Awd" eventType="editingDidEnd" id="j3m-hD-ffx"/>
+                                    <action selector="onTextFieldReturn:" destination="R3k-os-Awd" eventType="editingDidEndOnExit" id="elm-JV-NLd"/>
                                 </connections>
                             </textField>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IKs-MZ-Spy">
