@@ -51,7 +51,7 @@
                     <navigationItem key="navigationItem" title="Carpool" id="Gvi-Mq-pc5">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="i3a-a7-RfL">
                             <connections>
-                                <segue destination="R3k-os-Awd" kind="presentation" id="TBj-gW-hvm"/>
+                                <segue destination="GWf-qA-kkQ" kind="presentation" id="TBj-gW-hvm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -305,18 +305,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aXo-p1-iG2"/>
                     <connections>
                         <outlet property="datePickerOutlet" destination="5TB-vU-pwM" id="Heg-2f-ebI"/>
                         <outlet property="descriptionTextFieldOutlet" destination="n5d-HT-Vtk" id="V8W-3I-0bm"/>
                         <outlet property="mapView" destination="IKs-MZ-Spy" id="ZHN-2o-PTY"/>
                         <segue destination="gef-00-er5" kind="unwind" identifier="UnwindFromAddNew" unwindAction="unwindFromAddNewWithSegue:" id="AEG-yQ-6yG"/>
-                        <segue destination="HqE-Ez-ssM" kind="presentation" identifier="SearchResults" id="wJs-VW-cn0"/>
+                        <segue destination="HqE-Ez-ssM" kind="show" identifier="SearchResults" id="n8R-sn-VJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Upu-Yo-ByA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gef-00-er5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="556" y="926.98650674662679"/>
+            <point key="canvasLocation" x="895.20000000000005" y="926.98650674662679"/>
         </scene>
         <!--Search Results Table View Controller-->
         <scene sceneID="dCC-Ky-BIP">
@@ -357,7 +358,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMv-NJ-458" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ffp-og-oO7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="563" y="1626"/>
+            <point key="canvasLocation" x="1588" y="927"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fqo-ua-bpj">
@@ -376,6 +377,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kc4-Nn-ckC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-186" y="142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Awj-Ul-HWM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GWf-qA-kkQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eCU-MW-ZYX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="R3k-os-Awd" kind="relationship" relationship="rootViewController" id="CYK-77-zLe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56X-1f-TaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="927"/>
         </scene>
     </scenes>
 </document>

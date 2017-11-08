@@ -98,7 +98,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         if let aLocation = aLocation {
             mapView.addAnnotation(aLocation.location!)
         }
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance((aLocation?.location?.coordinate)!, 10000, 10000)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance((aLocation?.location?.coordinate)!, 4000, 4000)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
