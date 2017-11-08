@@ -11,7 +11,7 @@ import CarpoolKit
 import MapKit
 
 
-class AddNewViewController: UIViewController, CLLocationManagerDelegate {
+class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     
@@ -22,8 +22,10 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
     
     
     let locationManager = CLLocationManager()
-    var aLocation: CLLocation = CLLocation(latitude: -56.6462520, longitude: -36.6462520)
+    var aLocation: CLLocation?
     var datePicked = Date()
+    var query: String?
+    var region: CLRegion?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +56,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
     }
     @IBAction func onAddButtonPressed(_ sender: Any) {
         if let description = descriptionTextFieldOutlet.text {
-            API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: aLocation) { (trip) in
+            API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation ?? nil)!) { (trip) in
                 
                 
                 self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
@@ -64,32 +66,40 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func onTextFieldReturnPressed(_ sender: UITextField) {
         
-        let query = sender.text
+        query = sender.text
         performSegue(withIdentifier: "SearchResults", sender: query)
         
     }
     
-    
-}
-
-extension RootViewController: MKMapViewDelegate {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let SearchResultVC = segue.destination as! SearchResultsTableViewController
+        SearchResultVC.region = region
+        SearchResultVC.query = query
+    }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 5000, 5000)
-        mapView.setRegion(coordinateRegion, animated: true)
-        
+//        let coordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 5000, 5000)
+//        //        mapView.setRegion(coordinateRegion, animated: true)
+//
         
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+    }
+    
 }
+
 
 extension RootViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         guard status == .authorizedWhenInUse else { return }
-        
+
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
 }
+

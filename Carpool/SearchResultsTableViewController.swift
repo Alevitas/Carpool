@@ -14,14 +14,19 @@ import CoreLocation
 
 class SearchResultsTableViewController: UITableViewController, CLLocationManagerDelegate {
     
+    
+    var query: String?
     let locationManager = CLLocationManager()
+    let geocoder = CLGeocoder()
+    var region: CLRegion?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         locationManager.delegate = self
-        
+        guard let query = query else { return }
+        geocoder.geocodeAddressString(query, in: <#T##CLRegion?#>, completionHandler: <#T##CLGeocodeCompletionHandler##CLGeocodeCompletionHandler##([CLPlacemark]?, Error?) -> Void#>)
         
     }
     
