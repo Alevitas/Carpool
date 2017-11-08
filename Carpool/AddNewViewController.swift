@@ -79,13 +79,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         SearchResultVC.query = query
     }
     
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        
-//        let coordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 5000, 5000)
-//        //        mapView.setRegion(coordinateRegion, animated: true)
-//
-        
-    }
+  
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
        
@@ -95,14 +89,4 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 }
 
 
-extension RootViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        guard status == .authorizedWhenInUse else { return }
-
-    }
-
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
-}
 
