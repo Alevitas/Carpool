@@ -80,11 +80,34 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         SearchResultVC.query = query
     }
     
-  
+    @IBAction func unwindFromSearchResults(segue: UIStoryboardSegue) {
+    
+    
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status{
+            
+        case .notDetermined:
+            print("user not accepted")
+        case .restricted:
+            print("user not accepted")
+        case .denied:
+            print("user not accepted")
+        case .authorizedAlways:
+            print("user  accepted")
+        case .authorizedWhenInUse:
+            print("user accepted")
+        }
+    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
        
-        region = CLCircularRegion(center: (locations.last?.coordinate)!, radius: 10000, identifier: "region")
+        region = CLCircularRegion(center: (locations.last?.coordinate)!, radius: 1000, identifier: "region")
     }
     
 }
