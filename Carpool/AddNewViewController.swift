@@ -37,9 +37,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         print(datePickerOutlet.date)
         locationManager.delegate = self
         
-        if let aLocation = aLocation {
-            mapView.addAnnotation(aLocation as! MKAnnotation)
-        }
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -97,6 +95,11 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBAction func unwindFromSearchResults(segue: UIStoryboardSegue) {
         let searchResultsVC = segue.source as! SearchResultsTableViewController
         aLocation = searchResultsVC.place
+        if let aLocation = aLocation {
+            mapView.addAnnotation(aLocation.location!)
+        }
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance((aLocation?.location?.coordinate)!, 10000, 10000)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -133,5 +136,9 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
 }
 
+
+extension CLLocation: MKAnnotation {
+    
+}
 
 
