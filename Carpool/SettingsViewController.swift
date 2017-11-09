@@ -10,6 +10,8 @@ import UIKit
 import FirebaseCommunity
 
 class SettingsViewController: UIViewController {
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var childrenAddedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,13 @@ class SettingsViewController: UIViewController {
         
         
     }
+    @IBAction func usernameTextFieldEnter(_ sender: Any) {
+    }
     
+    @IBAction func addChildrenTextFieldEnter(_ sender: Any) {
+    }
+    @IBAction func logoutButonPressed(_ sender: Any) {
+    }
     
     
 }
