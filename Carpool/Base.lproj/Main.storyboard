@@ -342,6 +342,7 @@
                         <outlet property="datePickerOutlet" destination="5TB-vU-pwM" id="Heg-2f-ebI"/>
                         <outlet property="descriptionTextFieldOutlet" destination="n5d-HT-Vtk" id="V8W-3I-0bm"/>
                         <outlet property="mapView" destination="IKs-MZ-Spy" id="ZHN-2o-PTY"/>
+                        <outlet property="shownInMapsButton" destination="Hgj-2S-Cht" id="sfX-ru-ZcD"/>
                         <segue destination="gef-00-er5" kind="unwind" identifier="UnwindFromAddNew" unwindAction="unwindFromAddNewWithSegue:" id="AEG-yQ-6yG"/>
                         <segue destination="HqE-Ez-ssM" kind="show" identifier="SearchResults" id="n8R-sn-VJc"/>
                     </connections>
