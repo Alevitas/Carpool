@@ -12,9 +12,9 @@ import MapKit
 
 
 class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
-    
-    
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var descriptionTextFieldOutlet: UITextField!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
     @IBOutlet weak var shownInMapsButton: UIButton!
@@ -55,6 +55,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             shownInMapsButton.isHidden = false
         }
         
+        cancelButton.setRoundEdge()
+        addButton.setRoundEdge()
         
     }
     
@@ -63,27 +65,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     
-    @IBAction func onCancelButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
-    }
-    @IBAction func onDoneButtonPressed(_ sender: UIBarButtonItem) {
-        
-        if let description = descriptionTextFieldOutlet.text {
-            if query == "" {
-                API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
-                    
-                    
-                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
-                }
-            } else {
-                API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
-                    
-                    
-                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
-                }
-            }
-        }
-    }
+    
+    
     
     @IBAction func onTextFieldReturn(_ sender: UITextField) {
         query = sender.text
@@ -126,6 +109,27 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     
+    @IBAction func addButtonPressed(_ sender: Any) {
+        if let description = descriptionTextFieldOutlet.text {
+            if query == "" {
+                API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                    
+                    
+                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                }
+            } else {
+                API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                    
+                    
+                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                }
+            }
+        }
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+          performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+    }
     
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     //        if let SearchResultVC = segue.destination as? SearchResultsTableViewController{
