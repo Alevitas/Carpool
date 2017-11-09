@@ -18,16 +18,13 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBOutlet weak var descriptionTextFieldOutlet: UITextField!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
     
-    @IBAction func dropOffPickUpSegControl(_ sender: Any) {
-    }
-    @IBOutlet weak var locationSelectedLabel: UILabel!
     
-    
+    let geocoder = CLGeocoder()
     let locationManager = CLLocationManager()
     var aLocation: CLPlacemark?
     var datePicked = Date()
-    var query: String?
     var region: CLRegion?
+    var query: String?
     
     
     override func viewDidLoad() {
@@ -82,7 +79,29 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     @IBAction func onTextFieldReturn(_ sender: UITextField) {
         query = sender.text
-        performSegue(withIdentifier: "SearchResults", sender: query)
+        //        performSegue(withIdentifier: "SearchResults", sender: query)
+        if let queryA = sender.text {
+            geocoder.geocodeAddressString(queryA) { (placemarks, error) in
+                
+                for placemark in placemarks! {
+                    self.geocoder.reverseGeocodeLocation(placemark.location!, completionHandler: { (placemark, error) in
+                        guard let placemark = placemark else { return }
+                        self.aLocation = placemark.first
+                    })
+                    
+                }
+            }
+        }
+        
+        let saveAlert = UIAlertController(title: "Is \(String(describing: aLocation?.name)) the address correct?", message: nil, preferredStyle: .actionSheet)
+        saveAlert.addAction(UIAlertAction(title: "Confirm location", style: .default, handler: onLocationSelection))
+        saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(saveAlert, animated: true, completion: nil)
+        
+    }
+    
+    func onLocationSelection(action: UIAlertAction) {
+        
     }
     
     @IBAction func onOpenInMapsPressed(_ sender: UIButton) {
@@ -95,12 +114,12 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let SearchResultVC = segue.destination as? SearchResultsTableViewController{
-            SearchResultVC.region = region
-            SearchResultVC.query = query
-        }
-    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if let SearchResultVC = segue.destination as? SearchResultsTableViewController{
+    //            SearchResultVC.region = region
+    //            SearchResultVC.query = query
+    //        }
+    //    }
     
     @IBAction func unwindFromSearchResults(segue: UIStoryboardSegue) {
         let searchResultsVC = segue.source as! SearchResultsTableViewController
@@ -150,8 +169,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 
 
 
-    
-    
+
+
 
 
 
