@@ -16,6 +16,7 @@ class RootViewController: UITableViewController {
     var trip: Trip!
     var currentUser: String?
     
+    @IBOutlet weak var segmentedButton: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,8 @@ class RootViewController: UITableViewController {
         cell.eventNameLabel.text = trips[indexPath.row].alertText
 
         return cell
+    }
+    @IBAction func onAddPressed(_ sender: Any) {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
