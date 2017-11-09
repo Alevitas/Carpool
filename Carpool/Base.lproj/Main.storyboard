@@ -208,7 +208,7 @@
             </objects>
             <point key="canvasLocation" x="1248.8" y="143.47826086956522"/>
         </scene>
-        <!--Add New View Controller-->
+        <!--Title-->
         <scene sceneID="EWO-MA-iY5">
             <objects>
                 <viewController id="R3k-os-Awd" customClass="AddNewViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
@@ -227,26 +227,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="FU4-hr-rdQ">
-                                <rect key="frame" x="98" y="617" width="178" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpa-nY-vc9">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="Add"/>
-                                        <connections>
-                                            <action selector="onAddButtonPressed:" destination="R3k-os-Awd" eventType="touchUpInside" id="I8t-4L-Li0"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWn-6b-EC7">
-                                        <rect key="frame" x="130" y="0.0" width="48" height="30"/>
-                                        <state key="normal" title="Cancel"/>
-                                        <connections>
-                                            <action selector="onCancelButtonPressed:" destination="R3k-os-Awd" eventType="touchUpInside" id="GQY-I9-aSG"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiu-yj-cqb">
                                 <rect key="frame" x="16" y="170" width="41" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -305,7 +285,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create New Event" id="aXo-p1-iG2"/>
+                    <navigationItem key="navigationItem" title="Title" id="tQm-c3-54M">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8fs-3W-QdR">
+                            <connections>
+                                <action selector="onCancelButtonPressed:" destination="R3k-os-Awd" id="215-ty-mbu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="NWt-nk-hCc">
+                            <connections>
+                                <action selector="onDoneButtonPressed:" destination="R3k-os-Awd" id="Zyj-No-dij"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="datePickerOutlet" destination="5TB-vU-pwM" id="Heg-2f-ebI"/>
                         <outlet property="descriptionTextFieldOutlet" destination="n5d-HT-Vtk" id="V8W-3I-0bm"/>
