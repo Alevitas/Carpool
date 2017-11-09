@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseCommunity
 
-let carpoolLoginNotificationName = Notification.Name("snapchapLoginNotification")
+let carpoolLoginNotificationName = Notification.Name("carpoolLoginNotification")
 
 class TabBarController: UITabBarController {
     
