@@ -35,6 +35,26 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         print(datePickerOutlet.date)
         locationManager.delegate = self
         
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        keyboardToolbar.isTranslucent = false
+        keyboardToolbar.barTintColor = UIColor.white
+        
+        let addButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(dismissKeyboard)
+        )
+        addButton.tintColor = UIColor.black
+        keyboardToolbar.items = [addButton]
+        descriptionTextFieldOutlet.inputAccessoryView = keyboardToolbar
+        
+        
+    }
+    
+    @objc func dismissKeyboard() {
+        
+        descriptionTextFieldOutlet.resignFirstResponder()
         
     }
     
