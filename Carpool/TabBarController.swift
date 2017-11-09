@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseCommunity
 
 let carpoolLoginNotificationName = Notification.Name("carpoolLoginNotification")
 
@@ -27,10 +26,6 @@ class TabBarController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if Auth.auth().currentUser == nil {
-            let loginVC = storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
-            present(loginVC, animated: animated)
-        }
     }
 }
 
