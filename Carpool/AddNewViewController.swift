@@ -37,7 +37,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         print(datePickerOutlet.date)
         locationManager.delegate = self
         
-       
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
