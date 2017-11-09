@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseCommunity
 
 class LoginViewController: UIViewController {
     
@@ -43,14 +42,9 @@ class LoginViewController: UIViewController {
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         if loginSignupSegControl.selectedSegmentIndex == 0 {
-            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                NotificationCenter.default.post(name: carpoolLoginNotificationName, object: nil)
-            }
+            // login
         } else if let confirmPassword = confirmPasswordTextField.text, password == confirmPassword {
-            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            })
+            // signup
         }
     }
 }
