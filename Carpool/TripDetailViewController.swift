@@ -26,7 +26,8 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     
     var trip: Trip!
     var child: Child!
-    var currentUser: String?
+    var loggedInUser: User!
+    var currentUser: String = ""
     var children: [Child] = []
     
     let locationManager = CLLocationManager()
@@ -39,10 +40,10 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         
         print("Event received is: \(trip.event)")
         locationManager.delegate = self
-        
+
         descriptionLabel.text = trip.event.description
         childrenNameTextField.text = makeListOfChildren(childrenList: trip.event.owner.children)
-        
+
         timeLabel.text = Date(timeIntervalSince1970: trip.event.time.timeIntervalSince1970).prettyDate
         dropOffButton.setRoundEdge()
         pickUpButton.setRoundEdge()
@@ -68,7 +69,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
                 case .success(let child):
                     self.children.append(child)
                 case .failure(let error):
-                    print("Error adding child.")
+                    print("Error adding child.", error)
                 }
             })
         }
