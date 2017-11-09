@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CarpoolKit
 
 class LoginViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var fullNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +43,19 @@ class LoginViewController: UIViewController {
             return
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        if loginSignupSegControl.selectedSegmentIndex == 0 {
-            // login
-        } else if let confirmPassword = confirmPasswordTextField.text, password == confirmPassword {
-            // signup
+        if let email = emailTextField.text,
+            let password = passwordTextField.text,
+            let confirmPassword = confirmPasswordTextField.text,
+            let fullName = fullNameTextField.text {
+                if loginSignupSegControl.selectedSegmentIndex == 0 {
+                    API.signIn(email: email, password: password, completion: { (result) in
+                        // user logged in
+                    })
+                } else if password == confirmPassword {
+                    API.signUp(email: email, password: password, fullName: fullName, completion: { (result) in
+                
+                    })
+                }
         }
     }
 }
