@@ -407,6 +407,9 @@
                                     <segment title="Login"/>
                                     <segment title="Signup"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onLoginSignupPressed:" destination="Gc6-Fo-Mpo" eventType="valueChanged" id="Czo-49-yE9"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-X2-0Ei">
                                 <rect key="frame" x="16" y="56" width="343" height="30"/>
@@ -429,6 +432,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byC-HH-sJH">
                                 <rect key="frame" x="8" y="170" width="359" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="onLoginButtonPressed:" destination="Gc6-Fo-Mpo" eventType="touchUpInside" id="vyW-xM-M7s"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -442,6 +448,13 @@
                             <constraint firstItem="Bha-X2-0Ei" firstAttribute="top" secondItem="82S-nl-VWT" secondAttribute="bottom" constant="8" id="xAW-1k-Nxx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="dU0-IA-tpy" id="BvO-Su-jdV"/>
+                        <outlet property="emailTextField" destination="Bha-X2-0Ei" id="9Fi-6I-vCb"/>
+                        <outlet property="loginSignupButton" destination="byC-HH-sJH" id="Iae-cH-sEv"/>
+                        <outlet property="loginSignupSegControl" destination="82S-nl-VWT" id="fUi-XT-yWR"/>
+                        <outlet property="passwordTextField" destination="9gK-Nu-fTA" id="dle-Xv-MAY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ci2-TY-b16" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
