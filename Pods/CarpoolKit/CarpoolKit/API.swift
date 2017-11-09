@@ -11,11 +11,18 @@ public enum API {
         case decode
         case legAndTripAreNotRelated
         case invalidJsonType
+        case emptyDescription
     }
 
     static func auth() -> Promise<Void> {
+
+        func foo() -> Promise<FirebaseCommunity.User> {
+            if let foo = Auth.auth().currentUser { return Promise(value: foo) }
+            return PromiseKit.wrap(Auth.auth().signInAnonymously)
+        }
+
         return firstly {
-            PromiseKit.wrap(Auth.auth().signInAnonymously)
+            foo()
         }.then { fbuser in
             Database.fetch(path: "users/\(fbuser.uid)").then {
                 (fbuser.uid, $0.string(for: "name"))
@@ -26,6 +33,34 @@ public enum API {
                 "name": "Anonymous Parent",
                 "ctime": Date().timeIntervalSince1970
             ])
+        }
+    }
+
+    public static func signUp(email: String, password: String, completion: @escaping (Result<User>) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { user, error in
+            firstly {
+                auth()
+            }.then {
+                fetchCurrentUser()
+            }.then {
+                completion(.success($0))
+            }.catch {
+                completion(.failure($0))
+            }
+        }
+    }
+
+    public static func signIn(email: String, password: String, completion: @escaping (Result<User>) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            firstly {
+                auth()
+                }.then {
+                    fetchCurrentUser()
+                }.then {
+                    completion(.success($0))
+                }.catch {
+                    completion(.failure($0))
+            }
         }
     }
 
@@ -84,6 +119,12 @@ public enum API {
 
     /// claims the initial leg by the current user, so pickUp leg is UNCLAIMED
     public static func createTrip(eventDescription desc: String, eventTime time: Date, eventLocation location: CLLocation?, completion: @escaping (Result<Trip>) -> Void) {
+        guard !desc.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return DispatchQueue.main.async {
+                completion(.failure(Error.emptyDescription))
+            }
+        }
+
         firstly {
             fetchCurrentUser()
         }.then { user -> Void in
