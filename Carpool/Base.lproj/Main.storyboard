@@ -305,7 +305,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aXo-p1-iG2"/>
+                    <navigationItem key="navigationItem" title="Create New Event" id="aXo-p1-iG2"/>
                     <connections>
                         <outlet property="datePickerOutlet" destination="5TB-vU-pwM" id="Heg-2f-ebI"/>
                         <outlet property="descriptionTextFieldOutlet" destination="n5d-HT-Vtk" id="V8W-3I-0bm"/>

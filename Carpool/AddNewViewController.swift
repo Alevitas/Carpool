@@ -96,7 +96,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         let searchResultsVC = segue.source as! SearchResultsTableViewController
         aLocation = searchResultsVC.place
         if let aLocation = aLocation {
-            mapView.addAnnotation(aLocation.location!)
+            mapView.addAnnotation((aLocation.location)!)
         }
         let coordinateRegion = MKCoordinateRegionMakeWithDistance((aLocation?.location?.coordinate)!, 4000, 4000)
         mapView.setRegion(coordinateRegion, animated: true)
