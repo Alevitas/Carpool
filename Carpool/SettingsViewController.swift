@@ -11,18 +11,23 @@ import FirebaseCommunity
 import CarpoolKit
 
 class SettingsViewController: UIViewController {
-    @IBOutlet weak var usernameTextField: UITextField!
+   
+    @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var childrenAddedLabel: UILabel!
+    @IBOutlet weak var usernameTextField: UITextField!
     var children: [Child] = []
-    
+//    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        logoutButton.setRoundEdge()
 //        childrenAddedLabel.text = makeListOfChildren(childrenList: )
     }
     @IBAction func usernameTextFieldEnter(_ sender: UITextField) {
+//        usernameTextField.placeholder = "\()"
+        API.set(userFullName: sender.text!)
+        
     }
     
     func makeListOfChildren(childrenList: [Child]) -> String {
