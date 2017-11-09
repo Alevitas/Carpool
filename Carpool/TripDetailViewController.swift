@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import MapKit
 import CarpoolKit
 import CoreLocation
 
-class TripDetailViewController: UIViewController {
+class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -27,16 +28,18 @@ class TripDetailViewController: UIViewController {
     var trip: Trip!
     var currentUser: String?
     var children: [String] = []
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let trip = trip {
             print("Event received is: \(trip.event)")
+            locationManager.delegate = self
             
             descriptionLabel.text = trip.event.description
             
-            timeLabel.text = trip.event.time.prettyDate
+            timeLabel.text = Date(timeIntervalSince1970: trip.event.time.timeIntervalSince1970).prettyDate
             dropOffButton.setRoundEdge()
             pickUpButton.setRoundEdge()
             
@@ -59,6 +62,13 @@ class TripDetailViewController: UIViewController {
         if let child = sender.text {
             children.append(child)
         }
+    }
+    
+    @IBAction func onOpenInMapsPressed(_ sender: Any) {
+        let placemark = MKPlacemark(coordinate: (trip.event.clLocation?.coordinate)!)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = trip.event.description
+        mapItem.openInMaps(launchOptions: nil)
     }
     
     @IBAction func onPickUpButtonPressed(_ sender: Any) {

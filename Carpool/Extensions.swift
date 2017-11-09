@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import CarpoolKit
 
 extension Date {
@@ -27,7 +28,7 @@ extension Date {
     }
     var prettyDate: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, MMM d, h:mm a"
+        dateFormatter.dateFormat = "EEEE, MMM d YYYY, h:mm a"
         return dateFormatter.string(from: self)
     }
     var prettyDay: String {
@@ -84,3 +85,16 @@ extension Trip {
         return msg
     }
 }
+
+extension MKMapItem: MKAnnotation { // Like Event in Carpool app
+    public var coordinate: CLLocationCoordinate2D {
+        return placemark.coordinate
+    }
+    public var title: String? {
+        return name
+    }
+    public var subtitle: String? {
+        return phoneNumber
+    }
+}
+
