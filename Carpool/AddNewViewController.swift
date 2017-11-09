@@ -17,6 +17,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     @IBOutlet weak var descriptionTextFieldOutlet: UITextField!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
+    @IBOutlet weak var shownInMapsButton: UIButton!
     
     
     let geocoder = CLGeocoder()
@@ -47,6 +48,13 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         } else {
             locationManager.requestWhenInUseAuthorization()
         }
+        
+        if aLocation == nil {
+            shownInMapsButton.isHidden = true
+        } else {
+            shownInMapsButton.isHidden = false
+        }
+        
         
     }
     
@@ -93,7 +101,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             }
         }
         
-        let saveAlert = UIAlertController(title: "Is \(String(describing: aLocation?.name)) the address correct?", message: nil, preferredStyle: .actionSheet)
+        let saveAlert = UIAlertController(title: "Is \(String(describing: aLocation?.name ?? "the address")) correct?", message: nil, preferredStyle: .actionSheet)
         saveAlert.addAction(UIAlertAction(title: "Confirm location", style: .default, handler: onLocationSelection))
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)
