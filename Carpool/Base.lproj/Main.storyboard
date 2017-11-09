@@ -253,10 +253,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New Carpool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIS-Dz-alS">
-                                <rect key="frame" x="84" y="20" width="207" height="26.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New Carpool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIS-Dz-alS">
+                                <rect key="frame" x="127" y="20" width="121" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -323,6 +323,22 @@
                                     <outlet property="delegate" destination="R3k-os-Awd" id="WXE-M2-ICD"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GP-qQ-s6A">
+                                <rect key="frame" x="38" y="20" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="R3k-os-Awd" eventType="touchUpInside" id="WQa-Om-yWB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I6-AC-o0t">
+                                <rect key="frame" x="285" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="R3k-os-Awd" eventType="touchUpInside" id="zuW-DP-JKK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -339,77 +355,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="2I6-AC-o0t" id="sMT-tX-b31"/>
+                        <outlet property="cancelButton" destination="4GP-qQ-s6A" id="nQj-wf-xBL"/>
                         <outlet property="datePickerOutlet" destination="5TB-vU-pwM" id="Heg-2f-ebI"/>
                         <outlet property="descriptionTextFieldOutlet" destination="n5d-HT-Vtk" id="V8W-3I-0bm"/>
                         <outlet property="mapView" destination="IKs-MZ-Spy" id="ZHN-2o-PTY"/>
                         <outlet property="shownInMapsButton" destination="Hgj-2S-Cht" id="sfX-ru-ZcD"/>
                         <segue destination="gef-00-er5" kind="unwind" identifier="UnwindFromAddNew" unwindAction="unwindFromAddNewWithSegue:" id="AEG-yQ-6yG"/>
-                        <segue destination="HqE-Ez-ssM" kind="show" identifier="SearchResults" id="n8R-sn-VJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Upu-Yo-ByA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gef-00-er5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="895.20000000000005" y="926.98650674662679"/>
-        </scene>
-        <!--Search Results Table View Controller-->
-        <scene sceneID="dCC-Ky-BIP">
-            <objects>
-                <tableViewController id="HqE-Ez-ssM" customClass="SearchResultsTableViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UUc-jT-Nrd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResults" textLabel="oUr-UG-y2S" style="IBUITableViewCellStyleDefault" id="kRp-9l-Ynb">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kRp-9l-Ynb" id="Z3h-ZN-2Kl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oUr-UG-y2S">
-                                            <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="HqE-Ez-ssM" id="IHh-5Z-N6U"/>
-                            <outlet property="delegate" destination="HqE-Ez-ssM" id="9RW-fb-mfU"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <segue destination="Ffp-og-oO7" kind="unwind" identifier="unwindfromsearchresults" unwindAction="unwindFromSearchResultsWithSegue:" id="fnO-Fn-X1w"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hMv-NJ-458" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Ffp-og-oO7" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1588" y="927"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Awj-Ul-HWM">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GWf-qA-kkQ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eCU-MW-ZYX">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="R3k-os-Awd" kind="relationship" relationship="rootViewController" id="CYK-77-zLe"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="56X-1f-TaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="143" y="927"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="YMz-ua-v9f">
@@ -522,7 +480,4 @@
     <resources>
         <image name="second" width="16" height="16"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="H3d-9J-Kz5"/>
-    </inferredMetricsTieBreakers>
 </document>
