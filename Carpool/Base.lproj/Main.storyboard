@@ -279,6 +279,9 @@
                                 <rect key="frame" x="139" y="602" width="96" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show in Maps"/>
+                                <connections>
+                                    <action selector="onOpenInMapsPressed:" destination="R3k-os-Awd" eventType="touchUpInside" id="VlG-F1-BLw"/>
+                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IKs-MZ-Spy">
                                 <rect key="frame" x="36" y="425" width="302" height="169"/>
