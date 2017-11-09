@@ -147,9 +147,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 }
 
 
-extension CLLocation: MKAnnotation {
-    
-}
+
 
 
     

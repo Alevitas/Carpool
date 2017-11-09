@@ -8,6 +8,13 @@
 
 import UIKit
 import CarpoolKit
+import CoreLocation
+import MapKit
+
+
+extension CLLocation: MKAnnotation {
+    
+}
 
 extension Date {
     var shortDayName: String {
