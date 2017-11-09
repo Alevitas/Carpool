@@ -35,7 +35,18 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         print(datePickerOutlet.date)
         locationManager.delegate = self
         
+        let ViewForDoneButtonOnKeyboard = UIToolbar()
+        ViewForDoneButtonOnKeyboard.sizeToFit()
+        let btnDoneOnKeyboard = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneBtnfromKeyboardClicked))
+        ViewForDoneButtonOnKeyboard.items = [btnDoneOnKeyboard]
+        descriptionTextFieldOutlet.inputAccessoryView = ViewForDoneButtonOnKeyboard
         
+    }
+    
+    @IBAction func doneBtnfromKeyboardClicked (sender: Any) {
+        print("Done Button Clicked.")
+        //Hide Keyboard by endEditing or Anything you want.
+        self.view.endEditing(true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
