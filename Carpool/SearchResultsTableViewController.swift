@@ -29,6 +29,7 @@ class SearchResultsTableViewController: UITableViewController, CLLocationManager
         
         locationManager.delegate = self
         guard let query = query else { return }
+        
         geocoder.geocodeAddressString(query) { (placemarks, error) in
             
             for placemark in placemarks! {
