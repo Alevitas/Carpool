@@ -20,6 +20,8 @@
 		4E4B40021FB3B311009FF5F0 /* Savannah.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4E4B40011FB3B311009FF5F0 /* Savannah.gpx */; };
 		4E6C2F931FB1FED000DD32D1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C2F921FB1FED000DD32D1 /* Extensions.swift */; };
 		4E716F9E1FB246EA00AD349F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E716F9D1FB246E900AD349F /* GoogleService-Info.plist */; };
+		4ED0D1511FB4BBA700B56E23 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED0D1501FB4BBA700B56E23 /* LoginViewController.swift */; };
+		4ED0D1531FB4BC7D00B56E23 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED0D1521FB4BC7D00B56E23 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		4E4B40011FB3B311009FF5F0 /* Savannah.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Savannah.gpx; path = ../../../../Downloads/Savannah.gpx; sourceTree = "<group>"; };
 		4E6C2F921FB1FED000DD32D1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4E716F9D1FB246E900AD349F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4ED0D1501FB4BBA700B56E23 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4ED0D1521FB4BC7D00B56E23 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8F438D89E51C8DE2D44A90E0 /* Pods-Carpool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carpool.release.xcconfig"; path = "Pods/Target Support Files/Pods-Carpool/Pods-Carpool.release.xcconfig"; sourceTree = "<group>"; };
 		F45429F92ED4BE0F7454A741 /* Pods_Carpool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carpool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -90,6 +94,8 @@
 				4E4B40011FB3B311009FF5F0 /* Savannah.gpx */,
 				4E6C2F921FB1FED000DD32D1 /* Extensions.swift */,
 				371C0D9C1FB0E74D00F52156 /* Main.storyboard */,
+				4ED0D1501FB4BBA700B56E23 /* LoginViewController.swift */,
+				4ED0D1521FB4BC7D00B56E23 /* TabBarController.swift */,
 				37A150121FB36FD000268B4D /* SearchResultsTableViewController.swift */,
 				372E98381FB10F5400136B59 /* AddNewViewController.swift */,
 				372E98341FB0FFF500136B59 /* TripCell.swift */,
@@ -253,7 +259,9 @@
 				372E98391FB10F5400136B59 /* AddNewViewController.swift in Sources */,
 				4E6C2F931FB1FED000DD32D1 /* Extensions.swift in Sources */,
 				372E98351FB0FFF500136B59 /* TripCell.swift in Sources */,
+				4ED0D1531FB4BC7D00B56E23 /* TabBarController.swift in Sources */,
 				371C0DAB1FB0EF3400F52156 /* TripDetailViewController.swift in Sources */,
+				4ED0D1511FB4BBA700B56E23 /* LoginViewController.swift in Sources */,
 				371C0D9B1FB0E74D00F52156 /* RootViewController.swift in Sources */,
 				37A150131FB36FD000268B4D /* SearchResultsTableViewController.swift in Sources */,
 				371C0D991FB0E74D00F52156 /* AppDelegate.swift in Sources */,
