@@ -38,10 +38,8 @@ class SearchResultsTableViewController: UITableViewController, CLLocationManager
                     self.places = placemark
                     self.tableView.reloadData()
                 })
-            
             }
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
