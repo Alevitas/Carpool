@@ -85,6 +85,14 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         performSegue(withIdentifier: "SearchResults", sender: query)
     }
     
+    @IBAction func onOpenInMapsPressed(_ sender: UIButton) {
+        if let addressDict = aLocation?.addressDictionary, let coordinate = aLocation?.location?.coordinate {
+            let mkPlacemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict as? [String : Any])
+            let mapItem = MKMapItem(placemark: mkPlacemark)
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+        }
+        
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -139,8 +147,11 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 }
 
 
-extension CLLocation: MKAnnotation {
+
+
+
     
-}
+    
+
 
 
