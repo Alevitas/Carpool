@@ -12,6 +12,7 @@ public enum API {
         case legAndTripAreNotRelated
         case invalidJsonType
         case emptyDescription
+        case notAString
 
         /// sign-up or sign-in failed
         case signInFailed(underlyingError: Swift.Error)
@@ -27,7 +28,7 @@ public enum API {
         return firstly {
             foo()
         }.then { fbuser in
-            Database.fetch(path: "users/\(fbuser.uid)").then {
+            Database.fetch(path: "users", fbuser.uid).then {
                 (fbuser.uid, $0.string(for: "name"))
             }
         }.then { uid, name -> Void in
@@ -39,20 +40,24 @@ public enum API {
         }
     }
 
-    public static func signUp(email: String, password: String, completion: @escaping (Result<User>) -> Void) {
+    public static func signUp(email: String, password: String, fullName: String, completion: @escaping (Result<User>) -> Void) {
         if let user = Auth.auth().currentUser {
             link(user: user, email: email, password: password, completion: completion)
         } else {
-            Auth.auth().createUser(withEmail: email, password: password) { user, error in
-                firstly {
-                    auth()
-                }.then {
-                    fetchCurrentUser()
-                }.then {
-                    completion(.success($0))
-                }.catch {
-                    completion(.failure($0))
+            firstly {
+                PromiseKit.wrap{ Auth.auth().createUser(withEmail: email, password: password, completion: $0) }
+            }.then { user in
+                auth().then {
+                    Database.database().reference().child("users").child(user.uid).updateChildValues([
+                        "name": fullName
+                    ])
                 }
+            }.then {
+                fetchCurrentUser()
+            }.then {
+                completion(.success($0))
+            }.catch {
+                completion(.failure($0))
             }
         }
     }
@@ -78,16 +83,16 @@ public enum API {
         if let user = Auth.auth().currentUser {
             link(user: user, email: email, password: password, completion: completion)
         } else {
-            Auth.auth().signIn(withEmail: email, password: password) { user, error in
-                firstly {
-                    auth()
-                    }.then {
-                        fetchCurrentUser()
-                    }.then {
-                        completion(.success($0))
-                    }.catch {
-                        completion(.failure($0))
-                }
+            firstly {
+                PromiseKit.wrap{ Auth.auth().signIn(withEmail: email, password: password, completion: $0) }
+            }.then { _ in
+                auth()
+            }.then {
+                fetchCurrentUser()
+            }.then {
+                completion(.success($0))
+            }.catch {
+                completion(.failure($0))
             }
         }
     }
@@ -192,7 +197,15 @@ public enum API {
         ])
     }
 
-    static func fetchCurrentUser() -> Promise<User> {
+    public static func fetchCurrentUser(completion: @escaping (Result<User>) -> Void) {
+        fetchCurrentUser().then {
+            completion(.success($0))
+        }.catch {
+            completion(.failure($0))
+        }
+    }
+
+    public static func fetchCurrentUser() -> Promise<User> {
         return firstly {
             auth()
         }.then { () -> Promise<User> in
@@ -224,7 +237,7 @@ public enum API {
         }
     }
 
-    public static func fetchUser(id uid: String, completion: @escaping (Result<User>) -> Void) {
+    static func fetchUser(id uid: String, completion: @escaping (Result<User>) -> Void) {
         firstly {
             fetchUser(id: uid)
         }.then {
@@ -246,12 +259,7 @@ public enum API {
 
     static func claim(_ key: String, trip: Trip, completion: @escaping (Swift.Error?) -> Void) {
         firstly {
-            auth()
-        }.then { _ -> Promise<User> in
-            guard let uid = Auth.auth().currentUser?.uid else {
-                throw Error.notAuthorized
-            }
-            return API.fetchUser(id: uid)
+            fetchCurrentUser()
         }.then { user -> Void in
             Database.database().reference().child("trips").child(trip.key).updateChildValues([
                 key: [user.key: user.name ?? "Anonymous Parent"]
@@ -316,7 +324,7 @@ extension DataSnapshot {
     }
 
     func string() throws -> String {
-        guard let string = value as? String else { throw API.Error.invalidJsonType }
+        guard let string = value as? String else { throw API.Error.notAString }
         return string
     }
 
