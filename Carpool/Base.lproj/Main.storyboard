@@ -72,7 +72,7 @@
                             <outlet property="delegate" destination="eGw-Ai-chR" id="omN-PI-B46"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="rYH-yd-YxE"/>
+                    <tabBarItem key="tabBarItem" title="Trips" id="rYH-yd-YxE"/>
                     <navigationItem key="navigationItem" title="Carpool" id="Gvi-Mq-pc5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="i3a-a7-RfL"/>
                     </navigationItem>

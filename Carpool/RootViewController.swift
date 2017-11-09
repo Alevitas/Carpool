@@ -66,6 +66,11 @@ class RootViewController: UITableViewController {
        
     }
 
+    @IBAction func unwindFromEventDetail(segue: UIStoryboardSegue) {
+        
+    }
+    
+    
     @IBAction func unwindFromAddNew(segue: UIStoryboardSegue) {
 //        let addNewVC = segue.source as! AddNewViewController
     }
