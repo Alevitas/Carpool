@@ -29,6 +29,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     var currentUser: String?
     var children: [String] = []
     let locationManager = CLLocationManager()
+    var aLocation: CLPlacemark?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,10 +66,11 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     }
     
     @IBAction func onOpenInMapsPressed(_ sender: Any) {
-        let placemark = MKPlacemark(coordinate: (trip.event.clLocation?.coordinate)!)
-        let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = trip.event.description
-        mapItem.openInMaps(launchOptions: nil)
+        if let addressDict = aLocation?.addressDictionary, let coordinate = aLocation?.location?.coordinate {
+            let mkPlacemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict as? [String : Any])
+            let mapItem = MKMapItem(placemark: mkPlacemark)
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+        }
     }
     
     @IBAction func onPickUpButtonPressed(_ sender: Any) {
