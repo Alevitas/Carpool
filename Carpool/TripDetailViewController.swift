@@ -28,6 +28,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     var child: Child!
     var currentUser: String?
     var children: [Child] = []
+    
     let locationManager = CLLocationManager()
     var aLocation: CLPlacemark?
     
@@ -40,7 +41,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         locationManager.delegate = self
         
         descriptionLabel.text = trip.event.description
-        // childrenNameTextField.text = trip.event.owner.children
+        childrenNameTextField.text = makeListOfChildren(childrenList: trip.event.owner.children)
         
         timeLabel.text = Date(timeIntervalSince1970: trip.event.time.timeIntervalSince1970).prettyDate
         dropOffButton.setRoundEdge()
@@ -93,6 +94,15 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         saveAlert.addAction(UIAlertAction(title: "Claim DropOff Leg", style: .default, handler: onClaimDropOff))
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)
+    }
+    
+    func makeListOfChildren(childrenList: [Child]) -> String {
+        var childNames: [String] = []
+        
+        for child in childrenList {
+            childNames.append(child.name)
+        }
+        return childNames.joined(separator: ", ")
     }
     
     func onClaimPickUp(action: UIAlertAction) {
