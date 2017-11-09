@@ -57,10 +57,12 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         datePicked = sender.date
     }
     
+    
     @IBAction func onCancelButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
     }
-    @IBAction func onAddButtonPressed(_ sender: Any) {
+    @IBAction func onDoneButtonPressed(_ sender: UIBarButtonItem) {
+        
         if let description = descriptionTextFieldOutlet.text {
             if query == "" {
                 API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
@@ -77,7 +79,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             }
         }
     }
-    
     
     @IBAction func onTextFieldReturn(_ sender: UITextField) {
         query = sender.text
