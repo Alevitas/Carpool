@@ -20,8 +20,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     @IBOutlet weak var childrenNameTextField: UITextField!
     
     @IBOutlet weak var alertTextLabel: UILabel!
-    
-    @IBOutlet weak var dropOffPickUpSegControl: UISegmentedControl!
+
     @IBOutlet weak var pickUpDriverLabel: UILabel!
     @IBOutlet weak var dropOffDriverLabel: UILabel!
     
@@ -34,29 +33,29 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let trip = trip {
-            print("Event received is: \(trip.event)")
-            locationManager.delegate = self
-            
-            descriptionLabel.text = trip.event.description
-            
-            timeLabel.text = Date(timeIntervalSince1970: trip.event.time.timeIntervalSince1970).prettyDate
-            dropOffButton.setRoundEdge()
-            pickUpButton.setRoundEdge()
-            
-            if trip.pickUp?.driver == nil {
-                pickUpButton.backgroundColor = UIColor.red
-            } else {
-                pickUpDriverLabel.text = trip.pickUp?.driver.name
-            }
-            
-            if trip.dropOff?.driver == nil {
-                dropOffButton.backgroundColor = UIColor.red
-            } else {
-                dropOffDriverLabel.text = trip.dropOff?.driver.name
-            }
-            alertTextLabel.text = trip.alertText
+        guard let trip = trip else { return }
+        
+        print("Event received is: \(trip.event)")
+        locationManager.delegate = self
+        
+        descriptionLabel.text = trip.event.description
+        
+        timeLabel.text = Date(timeIntervalSince1970: trip.event.time.timeIntervalSince1970).prettyDate
+        dropOffButton.setRoundEdge()
+        pickUpButton.setRoundEdge()
+        
+        if trip.pickUp?.driver == nil {
+            pickUpButton.backgroundColor = UIColor.red
+        } else {
+            pickUpDriverLabel.text = trip.pickUp?.driver.name
         }
+        
+        if trip.dropOff?.driver == nil {
+            dropOffButton.backgroundColor = UIColor.red
+        } else {
+            dropOffDriverLabel.text = trip.dropOff?.driver.name
+        }
+        alertTextLabel.text = trip.alertText
     }
     
     @IBAction func onChildrenNameChanged(_ sender: UITextField) {
