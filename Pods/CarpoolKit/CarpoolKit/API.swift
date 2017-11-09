@@ -12,6 +12,9 @@ public enum API {
         case legAndTripAreNotRelated
         case invalidJsonType
         case emptyDescription
+
+        /// sign-up or sign-in failed
+        case signInFailed(underlyingError: Swift.Error)
     }
 
     static func auth() -> Promise<Void> {
@@ -37,29 +40,54 @@ public enum API {
     }
 
     public static func signUp(email: String, password: String, completion: @escaping (Result<User>) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { user, error in
-            firstly {
-                auth()
-            }.then {
-                fetchCurrentUser()
-            }.then {
-                completion(.success($0))
-            }.catch {
-                completion(.failure($0))
-            }
-        }
-    }
-
-    public static func signIn(email: String, password: String, completion: @escaping (Result<User>) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { user, error in
-            firstly {
-                auth()
+        if let user = Auth.auth().currentUser {
+            link(user: user, email: email, password: password, completion: completion)
+        } else {
+            Auth.auth().createUser(withEmail: email, password: password) { user, error in
+                firstly {
+                    auth()
                 }.then {
                     fetchCurrentUser()
                 }.then {
                     completion(.success($0))
                 }.catch {
                     completion(.failure($0))
+                }
+            }
+        }
+    }
+
+    private static func link(user: FirebaseCommunity.User, email: String, password: String, completion: @escaping (Result<User>) -> Void) {
+        let creds = EmailAuthProvider.credential(withEmail: email, password: password)
+        user.link(with: creds, completion: { user, error in
+            if user != nil {
+                fetchCurrentUser().then {
+                    completion(.success($0))
+                }.catch {
+                    completion(.failure($0))
+                }
+            } else if let error = error {
+                completion(.failure(Error.signInFailed(underlyingError: error)))
+            } else {
+                completion(.failure(Error.signInFailed(underlyingError: PMKError.invalidCallingConvention)))
+            }
+        })
+    }
+
+    public static func signIn(email: String, password: String, completion: @escaping (Result<User>) -> Void) {
+        if let user = Auth.auth().currentUser {
+            link(user: user, email: email, password: password, completion: completion)
+        } else {
+            Auth.auth().signIn(withEmail: email, password: password) { user, error in
+                firstly {
+                    auth()
+                    }.then {
+                        fetchCurrentUser()
+                    }.then {
+                        completion(.success($0))
+                    }.catch {
+                        completion(.failure($0))
+                }
             }
         }
     }
