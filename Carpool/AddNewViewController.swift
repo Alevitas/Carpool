@@ -101,6 +101,11 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func onLocationSelection(action: UIAlertAction) {
+        if let aLocation = aLocation {
+            mapView.addAnnotation((aLocation.location)!)
+        }
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance((aLocation?.location?.coordinate)!, 4000, 4000)
+        mapView.setRegion(coordinateRegion, animated: true)
         
     }
     
@@ -121,15 +126,15 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     //        }
     //    }
     
-    @IBAction func unwindFromSearchResults(segue: UIStoryboardSegue) {
-        let searchResultsVC = segue.source as! SearchResultsTableViewController
-        aLocation = searchResultsVC.place
-        if let aLocation = aLocation {
-            mapView.addAnnotation((aLocation.location)!)
-        }
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance((aLocation?.location?.coordinate)!, 4000, 4000)
-        mapView.setRegion(coordinateRegion, animated: true)
-    }
+//    @IBAction func unwindFromSearchResults(segue: UIStoryboardSegue) {
+//        let searchResultsVC = segue.source as! SearchResultsTableViewController
+//        aLocation = searchResultsVC.place
+//        if let aLocation = aLocation {
+//            mapView.addAnnotation((aLocation.location)!)
+//        }
+//        let coordinateRegion = MKCoordinateRegionMakeWithDistance((aLocation?.location?.coordinate)!, 4000, 4000)
+//        mapView.setRegion(coordinateRegion, animated: true)
+//    }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
