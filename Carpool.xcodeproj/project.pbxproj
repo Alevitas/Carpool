@@ -17,6 +17,7 @@
 		372E98391FB10F5400136B59 /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E98381FB10F5400136B59 /* AddNewViewController.swift */; };
 		37A150131FB36FD000268B4D /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A150121FB36FD000268B4D /* SearchResultsTableViewController.swift */; };
 		4E16CF0EF6CB8B3D80A39362 /* Pods_Carpool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45429F92ED4BE0F7454A741 /* Pods_Carpool.framework */; };
+		4E4B40021FB3B311009FF5F0 /* Savannah.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 4E4B40011FB3B311009FF5F0 /* Savannah.gpx */; };
 		4E6C2F931FB1FED000DD32D1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6C2F921FB1FED000DD32D1 /* Extensions.swift */; };
 		4E716F9E1FB246EA00AD349F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E716F9D1FB246E900AD349F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		372E98341FB0FFF500136B59 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
 		372E98381FB10F5400136B59 /* AddNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
 		37A150121FB36FD000268B4D /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		4E4B40011FB3B311009FF5F0 /* Savannah.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Savannah.gpx; path = ../../../../Downloads/Savannah.gpx; sourceTree = "<group>"; };
 		4E6C2F921FB1FED000DD32D1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4E716F9D1FB246E900AD349F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8F438D89E51C8DE2D44A90E0 /* Pods-Carpool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carpool.release.xcconfig"; path = "Pods/Target Support Files/Pods-Carpool/Pods-Carpool.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				371C0D981FB0E74D00F52156 /* AppDelegate.swift */,
 				4E716F9D1FB246E900AD349F /* GoogleService-Info.plist */,
 				371C0D9A1FB0E74D00F52156 /* RootViewController.swift */,
+				4E4B40011FB3B311009FF5F0 /* Savannah.gpx */,
 				4E6C2F921FB1FED000DD32D1 /* Extensions.swift */,
 				371C0D9C1FB0E74D00F52156 /* Main.storyboard */,
 				37A150121FB36FD000268B4D /* SearchResultsTableViewController.swift */,
@@ -171,6 +174,7 @@
 				371C0DA31FB0E74D00F52156 /* LaunchScreen.storyboard in Resources */,
 				4E716F9E1FB246EA00AD349F /* GoogleService-Info.plist in Resources */,
 				371C0DA01FB0E74D00F52156 /* Assets.xcassets in Resources */,
+				4E4B40021FB3B311009FF5F0 /* Savannah.gpx in Resources */,
 				371C0D9E1FB0E74D00F52156 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -69,7 +69,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
                 }
             } else {
-                API.createTrip(eventDescription: description + ("\n Adress:") + query!, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
                     
                     
                     self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
@@ -87,9 +87,10 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let SearchResultVC = segue.destination as! SearchResultsTableViewController
-        SearchResultVC.region = region
-        SearchResultVC.query = query
+        if let SearchResultVC = segue.destination as? SearchResultsTableViewController{
+            SearchResultVC.region = region
+            SearchResultVC.query = query
+        }
     }
     
     @IBAction func unwindFromSearchResults(segue: UIStoryboardSegue) {
