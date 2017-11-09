@@ -8,10 +8,12 @@
 
 import UIKit
 import FirebaseCommunity
+import CarpoolKit
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var childrenAddedLabel: UILabel!
+    var children: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +21,15 @@ class SettingsViewController: UIViewController {
         
         
     }
-    @IBAction func usernameTextFieldEnter(_ sender: Any) {
+    @IBAction func usernameTextFieldEnter(_ sender: UITextField) {
     }
     
-    @IBAction func addChildrenTextFieldEnter(_ sender: Any) {
+    @IBAction func addChildrenTextFieldEnter(_ sender: UITextField) {
+        if let child = sender.text {
+            API.addChild(name: child) { (<#Result<Child>#>) in
+                <#code#>
+            }
+        }
     }
     @IBAction func logoutButonPressed(_ sender: Any) {
     }
