@@ -175,14 +175,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlG-gN-4cX">
-                                <rect key="frame" x="264" y="213" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Open in Maps"/>
-                                <connections>
-                                    <action selector="onOpenInMapsPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="mbZ-1N-KMK"/>
-                                </connections>
-                            </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iqM-it-Ck8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -232,6 +224,16 @@
                             <connections>
                                 <segue destination="NFz-6J-j7a" kind="unwind" unwindAction="unwindFromEventDetailWithSegue:" id="Kjk-6m-ciN"/>
                             </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="als-6y-mTV">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HlG-gN-4cX">
+                                <rect key="frame" x="264" y="7" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Open in Maps"/>
+                                <connections>
+                                    <action selector="onOpenInMapsPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="mbZ-1N-KMK"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
