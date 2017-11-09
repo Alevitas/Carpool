@@ -317,16 +317,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgj-2S-Cht">
-                                <rect key="frame" x="139" y="602" width="96" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Show in Maps"/>
-                                <connections>
-                                    <action selector="onOpenInMapsPressed:" destination="R3k-os-Awd" eventType="touchUpInside" id="VlG-F1-BLw"/>
-                                </connections>
-                            </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IKs-MZ-Spy">
-                                <rect key="frame" x="36" y="425" width="302" height="169"/>
+                                <rect key="frame" x="19" y="425" width="337" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="R3k-os-Awd" id="WXE-M2-ICD"/>
@@ -346,6 +338,14 @@
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addButtonPressed:" destination="R3k-os-Awd" eventType="touchUpInside" id="zuW-DP-JKK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgj-2S-Cht">
+                                <rect key="frame" x="139" y="617" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show in Maps"/>
+                                <connections>
+                                    <action selector="onOpenInMapsPressed:" destination="R3k-os-Awd" eventType="touchUpInside" id="VlG-F1-BLw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -376,7 +376,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Upu-Yo-ByA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gef-00-er5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1969" y="883"/>
+            <point key="canvasLocation" x="1968.8" y="882.90854572713647"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="YMz-ua-v9f">
