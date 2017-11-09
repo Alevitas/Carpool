@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +40,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="eventNameLabel" destination="78G-E9-ojU" id="bRn-Lp-7gH"/>
-                                    <segue destination="KZF-gg-fW8" kind="show" identifier="ToEventDetails" id="3Py-hI-W91"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -68,6 +67,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="segmentedButton" destination="Kfa-Pa-mMA" id="1Fn-V4-Z3n"/>
+                        <segue destination="KZF-gg-fW8" kind="show" identifier="ToEventDetails" id="2nR-K8-TQA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdA-MQ-wrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
