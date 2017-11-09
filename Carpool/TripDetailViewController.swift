@@ -25,8 +25,9 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     @IBOutlet weak var dropOffDriverLabel: UILabel!
     
     var trip: Trip!
+    var child: Child!
     var currentUser: String?
-    var children: [String] = []
+    var children: [Child] = []
     let locationManager = CLLocationManager()
     var aLocation: CLPlacemark?
     
@@ -39,6 +40,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         locationManager.delegate = self
         
         descriptionLabel.text = trip.event.description
+        // childrenNameTextField.text = trip.event.owner.children
         
         timeLabel.text = Date(timeIntervalSince1970: trip.event.time.timeIntervalSince1970).prettyDate
         dropOffButton.setRoundEdge()
@@ -59,8 +61,15 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     }
     
     @IBAction func onChildrenNameChanged(_ sender: UITextField) {
-        if let child = sender.text {
-            children.append(child)
+        if let childName = sender.text {
+            API.addChild(name: childName, completion: { ( result ) in
+                switch result {
+                case .success(let child):
+                    self.children.append(child)
+                case .failure(let error):
+                    print("Error adding child.")
+                }
+            })
         }
     }
     
