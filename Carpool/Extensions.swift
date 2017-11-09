@@ -30,7 +30,7 @@ extension Date {
     }
     var hourDesc: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h a"
+        dateFormatter.dateFormat = "h:mm a"
         return dateFormatter.string(from: self)
     }
     var prettyDate: String {
@@ -47,6 +47,13 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E, h a"
         return dateFormatter.string(from: self)
+    }
+}
+
+extension Trip {
+    var alertText: String {
+        let msg = "\(self.event.description) on \(self.event.time.prettyDay) at \(self.event.time.hourDesc)"
+        return msg
     }
 }
 
@@ -83,13 +90,6 @@ extension UIButton {
         self.layer.masksToBounds = true
         //clip the pixel contents
         self.clipsToBounds = true
-    }
-}
-
-extension Trip {
-    var alertText: String {
-        let msg = "\(self.event.description) on \(self.event.time.prettyDay) at \(self.event.time.hourDesc)"
-        return msg
     }
 }
 
