@@ -161,16 +161,6 @@
                                     <segue destination="NFz-6J-j7a" kind="unwind" unwindAction="unwindFromEventDetailWithSegue:" id="HwZ-Fw-zqy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mc-aV-beS">
-                                <rect key="frame" x="219" y="233" width="140" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="njB-Ir-mbM"/>
-                                </constraints>
-                                <state key="normal" title="Pickup"/>
-                                <connections>
-                                    <action selector="onPickUpButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="XRf-Qa-UYV"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pickup Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-uY-SZL">
                                 <rect key="frame" x="200" y="331" width="159" height="40"/>
                                 <constraints>
@@ -197,7 +187,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6hk-Fv-AKH">
-                                <rect key="frame" x="16" y="309" width="343" height="128"/>
+                                <rect key="frame" x="16" y="309" width="343" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ryX-9s-8lg">
@@ -210,9 +200,21 @@
                                             <action selector="onLegDatePickerChanged:" destination="KZF-gg-fW8" eventType="valueChanged" id="SZB-Vd-exY"/>
                                         </connections>
                                     </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLH-un-q3j">
+                                        <rect key="frame" x="131" y="162" width="81" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Select Time"/>
+                                        <connections>
+                                            <action selector="onSelectTimeButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="266-ct-ws5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHk-rC-0Vp">
+                                <rect key="frame" x="220" y="233" width="139" height="30"/>
+                                <state key="normal" title="Pickup"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -221,12 +223,11 @@
                             <constraint firstItem="nM4-Du-tQD" firstAttribute="top" secondItem="3yI-gs-iya" secondAttribute="topMargin" constant="8" id="EtU-co-Nkf"/>
                             <constraint firstItem="xFL-Gm-LBF" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="FJE-1P-haa"/>
                             <constraint firstItem="LQX-5d-vyH" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="FmJ-81-FLH"/>
-                            <constraint firstItem="7mc-aV-beS" firstAttribute="top" secondItem="LQX-5d-vyH" secondAttribute="bottom" constant="8" id="Jhc-Uf-NyR"/>
-                            <constraint firstItem="7mc-aV-beS" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="JzB-2W-V5P"/>
                             <constraint firstItem="nM4-Du-tQD" firstAttribute="top" secondItem="3yI-gs-iya" secondAttribute="top" constant="8" id="MO0-CN-t7k"/>
                             <constraint firstItem="xvu-eO-vXg" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="N7B-ZT-R22"/>
                             <constraint firstItem="xFL-Gm-LBF" firstAttribute="top" secondItem="xvu-eO-vXg" secondAttribute="bottom" constant="8" id="RlV-Vh-kyq"/>
                             <constraint firstItem="xvu-eO-vXg" firstAttribute="top" secondItem="9a0-ur-B1i" secondAttribute="bottom" constant="8" id="beE-MX-TH3"/>
+                            <constraint firstItem="BHk-rC-0Vp" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="cTM-wz-ewp"/>
                             <constraint firstItem="nM4-Du-tQD" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="mgg-Vm-crf"/>
                             <constraint firstItem="xvu-eO-vXg" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="rEg-dJ-wFt"/>
                             <constraint firstItem="xFL-Gm-LBF" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="tlq-MY-cyP"/>
@@ -252,12 +253,13 @@
                     <connections>
                         <outlet property="alertTextLabel" destination="Hl2-tE-Jcu" id="pxT-gR-ehg"/>
                         <outlet property="childrenNameTextField" destination="xFL-Gm-LBF" id="tkp-jW-0qD"/>
+                        <outlet property="datePickerView" destination="6hk-Fv-AKH" id="Zqw-3v-G3T"/>
                         <outlet property="descriptionLabel" destination="LQX-5d-vyH" id="NOY-CH-FWw"/>
                         <outlet property="dropOffButton" destination="dlw-lI-JGu" id="1kL-zh-Xtu"/>
                         <outlet property="dropOffDriverLabel" destination="A2t-f8-M3X" id="FV7-N8-d0J"/>
                         <outlet property="dropOffTimeButton" destination="9oi-YI-J3D" id="QAG-pO-Ql7"/>
                         <outlet property="legDatePicker" destination="ryX-9s-8lg" id="zPU-IE-HSy"/>
-                        <outlet property="pickUpButton" destination="7mc-aV-beS" id="D6U-Tj-djx"/>
+                        <outlet property="pickUpButton" destination="BHk-rC-0Vp" id="d3r-d1-aN3"/>
                         <outlet property="pickUpDriverLabel" destination="3Wv-uY-SZL" id="bXS-5m-PPS"/>
                         <outlet property="pickUpTimeButton" destination="2Et-jd-Ea9" id="B5T-bR-p1w"/>
                     </connections>

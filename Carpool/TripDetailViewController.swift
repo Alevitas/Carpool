@@ -18,6 +18,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     @IBOutlet weak var dropOffButton: UIButton!
     @IBOutlet weak var dropOffTimeButton: UIButton!
     @IBOutlet weak var pickUpTimeButton: UIButton!
+    @IBOutlet weak var datePickerView: UIView!
     
     @IBOutlet weak var childrenNameTextField: UITextField!
     @IBOutlet weak var legDatePicker: UIDatePicker!
@@ -47,9 +48,10 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         descriptionLabel.text = trip.event.description
         childrenNameTextField.text = makeListOfChildren(childrenList: trip.event.owner.children)
 
-        dropOffTimeButton.setTitle(trip.event.time.prettyDate, for: .normal)
-        pickUpTimeButton.setTitle(trip.event.endTime?.prettyDate, for: .normal)
-        legDatePicker.isHidden = true
+        self.title = trip.event.time.prettyDay
+        dropOffTimeButton.setTitle(trip.event.time.hourDesc, for: .normal)
+        pickUpTimeButton.setTitle(trip.event.endTime?.hourDesc, for: .normal)
+        datePickerView.isHidden = true
         
         dropOffButton.setRoundEdge()
         pickUpButton.setRoundEdge()
@@ -69,16 +71,21 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     }
     
     
+    @IBAction func onSelectTimeButtonPressed(_ sender: UIButton) {
+    }
+    
     @IBAction func onDropOffTimeButtonPressed(_ sender: UIButton) {
-        legDatePicker.isHidden = false
+        UIView.animate(withDuration: 0.3, animations: {
+            self.datePickerView.isHidden = !self.datePickerView.isHidden
+        })
         legDatePicker.date = trip.event.time
     }
     
     @IBAction func onPickUpTimeButtonPressed(_ sender: UIButton) {
-        if let endTime = trip.event.endTime {
-            legDatePicker.isHidden = false
-            legDatePicker.date = endTime
-        }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.datePickerView.isHidden = !self.datePickerView.isHidden
+        })
+        legDatePicker.date = trip.event.endTime!
     }
     
     @IBAction func onLegDatePickerChanged(_ sender: UIDatePicker) {
