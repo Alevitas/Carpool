@@ -33,6 +33,8 @@ class SettingsViewController: UIViewController {
         logoutButton.setRoundEdge()
         if let user = currentUser, let currentChildren = user._children {
             childrenAddedLabel.text = makeListOfChildren(childrenList: currentChildren )
+        } else {
+            print("error")
         }
     }
     @IBAction func usernameTextFieldEnter(_ sender: UITextField) {
