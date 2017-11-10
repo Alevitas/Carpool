@@ -77,21 +77,21 @@ class RootViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Trips", for: indexPath) as! TripCell
         
         //        cell.eventNameLabel.text = trips[indexPath.row].event.description
-        cell.eventDetailsView.layer.cornerRadius = 10
-        cell.eventDetailsView.layer.borderWidth = 1.0
-        cell.eventDetailsView.layer.borderColor = UIColor.black.cgColor
-        cell.eventDetailsView.layer.shadowColor = UIColor.black.cgColor
-        cell.eventDetailsView.layer.shadowOpacity = 0.3
-        cell.eventDetailsView.layer.shadowOffset = CGSize(width: 3, height: 3)
-        cell.eventDetailsView.layer.shadowRadius = 1.0
-        
-        cell.legStatusView.layer.cornerRadius = 10
-        cell.legStatusView.layer.borderWidth = 1.0
-        cell.legStatusView.layer.borderColor = UIColor.black.cgColor
-        cell.legStatusView.layer.shadowColor = UIColor.black.cgColor
-        cell.legStatusView.layer.shadowOpacity = 0.3
-        cell.legStatusView.layer.shadowOffset = CGSize(width: 3, height: 3)
-        cell.legStatusView.layer.shadowRadius = 1.0
+//        cell.eventDetailsView.layer.cornerRadius = 10
+//        cell.eventDetailsView.layer.borderWidth = 1.0
+//        cell.eventDetailsView.layer.borderColor = UIColor.black.cgColor
+//        cell.eventDetailsView.layer.shadowColor = UIColor.black.cgColor
+//        cell.eventDetailsView.layer.shadowOpacity = 0.3
+//        cell.eventDetailsView.layer.shadowOffset = CGSize(width: 3, height: 3)
+//        cell.eventDetailsView.layer.shadowRadius = 1.0
+//        
+//        cell.legStatusView.layer.cornerRadius = 10
+//        cell.legStatusView.layer.borderWidth = 1.0
+//        cell.legStatusView.layer.borderColor = UIColor.black.cgColor
+//        cell.legStatusView.layer.shadowColor = UIColor.black.cgColor
+//        cell.legStatusView.layer.shadowOpacity = 0.3
+//        cell.legStatusView.layer.shadowOffset = CGSize(width: 3, height: 3)
+//        cell.legStatusView.layer.shadowRadius = 1.0
         
         
         cell.eventNameLabel.text = trips[indexPath.row].alertText
