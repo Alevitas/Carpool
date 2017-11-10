@@ -57,6 +57,9 @@
                                     <segment title="All"/>
                                     <segment title="Mine"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onSegmentedControlChange:" destination="eGw-Ai-chR" eventType="valueChanged" id="kFZ-je-0Pt"/>
+                                </connections>
                             </segmentedControl>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="i3a-a7-RfL">

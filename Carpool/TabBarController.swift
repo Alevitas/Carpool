@@ -14,7 +14,7 @@ let carpoolLoginNotificationName = Notification.Name("carpoolLoginNotification")
 class TabBarController: UITabBarController {
     
     
-    var currentUser: User!
+    var currentUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +30,17 @@ class TabBarController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        API.fetchCurrentUser()
-//        if currentUser == nil {
-//
-//        }
+        API.fetchCurrentUser { (result) in
+            switch result {
+                
+            case .success(let user):
+                self.currentUser = user
+            case .failure(_):
+                let loginVC = self.storyboard!.instantiateViewController(withIdentifier: "LoginVC")
+                self.present(loginVC, animated: animated)
+            }
+        }
+        
     }
 }
 

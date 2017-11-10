@@ -22,6 +22,22 @@ class RootViewController: UITableViewController {
         super.viewDidLoad()
         
         currentUser = Auth.auth().currentUser?.displayName
+        API.observeTrips { (result) in
+            switch result {
+                
+            case .success(let tripsDownloaded):
+                self.trips = tripsDownloaded
+                self.tableView.reloadData()
+                print(self.trips)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+    }
+    
+    
+    @IBAction func onSegmentedControlChange(_ sender: UISegmentedControl) {
         if segmentedButton.selectedSegmentIndex == 0 {
             API.observeTrips { (result) in
                 switch result {
@@ -49,8 +65,6 @@ class RootViewController: UITableViewController {
         }
         
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trips.count
@@ -85,7 +99,7 @@ class RootViewController: UITableViewController {
         
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-
+        
         do {
             try API.delete(trip: trips[indexPath.row])
             trips.remove(at: indexPath.row)
