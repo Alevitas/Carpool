@@ -12,9 +12,8 @@ import MapKit
 
 
 class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-    @IBOutlet weak var addButton: UIButton!
+
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var descriptionTextFieldOutlet: UITextField!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
     @IBOutlet weak var shownInMapsButton: UIButton!
@@ -86,8 +85,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             shownInMapsButton.isHidden = false
         }
         
-        cancelButton.setRoundEdge()
-        addButton.setRoundEdge()
         
     }
     
@@ -101,7 +98,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     @IBAction func onTextFieldReturn(_ sender: UITextField) {
         query = sender.text
-        //        performSegue(withIdentifier: "SearchResults", sender: query)
         if let queryA = sender.text {
             geocoder.geocodeAddressString(queryA) { (placemarks, error) in
                 
