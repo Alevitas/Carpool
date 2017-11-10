@@ -84,6 +84,17 @@ class RootViewController: UITableViewController {
     @IBAction func unwindFromAddNew(segue: UIStoryboardSegue) {
         
     }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+
+        do {
+            try API.delete(trip: trips[indexPath.row])
+            trips.remove(at: indexPath.row)
+            tableView.reloadData()
+        } catch {
+            print("error happened here")
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         trip = trips[indexPath.row]
         performSegue(withIdentifier: "ToEventDetails", sender: self)
