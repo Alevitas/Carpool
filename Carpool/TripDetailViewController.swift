@@ -86,6 +86,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     @IBAction func onPickUpButtonPressed(_ sender: Any) {
         let saveAlert = UIAlertController(title: "Do you want to claim this leg?", message: nil, preferredStyle: .actionSheet)
         saveAlert.addAction(UIAlertAction(title: "Claim PickUp Leg", style: .default, handler: onClaimPickUp))
+        saveAlert.addAction(UIAlertAction(title: "Unclaim PickUp Leg", style: .default, handler: onUnclaimPickup))
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)
     }
@@ -114,6 +115,13 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         }
     }
     
+    func onUnclaimPickup(action: UIAlertAction) {
+        pickUpButton.backgroundColor = UIColor.red
+        API.unclaimPickUp(trip: trip) { (error) in
+            self.pickUpDriverLabel.text = "Driver unclaimed."
+        }
+    }
+    
     func onClaimDropOff(action: UIAlertAction) {
         dropOffButton.backgroundColor = UIColor.green
         API.claimDropOff(trip: trip) { (error) in
@@ -121,4 +129,12 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
             print("Error claiming DropOff: \(String(describing: error))")
         }
     }
+
+    func onUnclaimDropOff(action: UIAlertAction) {
+        dropOffButton.backgroundColor = UIColor.red
+        API.unclaimDropOff(trip: trip) { (error) in
+            self.dropOffDriverLabel.text = "Driver unclaimed."
+        }
+    }
+    
 }
