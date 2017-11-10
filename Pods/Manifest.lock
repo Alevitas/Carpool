@@ -48,7 +48,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CarpoolKit:
-    :commit: b0bbad17433a47d877a462f14e8464727f569069
+    :commit: dadc05e3cb7b93fcd490a513d2ca411d7ee90908
     :git: https://github.com/codebasesav/CarpoolKit.git
 
 SPEC CHECKSUMS:
