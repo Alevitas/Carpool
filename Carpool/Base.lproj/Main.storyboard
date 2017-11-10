@@ -307,9 +307,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkq-bE-fOW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkq-bE-fOW">
                                 <rect key="frame" x="16" y="74" width="93" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -331,6 +330,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kkq-bE-fOW" firstAttribute="top" secondItem="BZM-bB-CTu" secondAttribute="bottom" constant="10" id="HH5-bu-9RF"/>
+                            <constraint firstItem="Kkq-bE-fOW" firstAttribute="leading" secondItem="hoy-cM-DGv" secondAttribute="leadingMargin" id="SeD-iz-TNz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kkq-bE-fOW" secondAttribute="trailing" constant="250" id="Zug-IE-yBp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create new trip" id="tQm-c3-54M">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8fs-3W-QdR">
