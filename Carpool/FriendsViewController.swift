@@ -8,13 +8,25 @@
 
 import Foundation
 import UIKit
+import CarpoolKit
 
 class FriendsViewController: UITableViewController {
+    
+    
+    var friends: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        API.observeFriends(sender: self) { (result) in
+            switch result {
+                
+            case .success(let downloadedFriends):
+                self.friends = downloadedFriends
+            case .failure(_):
+                print("error")
+            }
+        }
         
         
     }
