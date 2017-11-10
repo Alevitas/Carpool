@@ -12,6 +12,10 @@ import CarpoolKit
 import CoreLocation
 import MapKit
 
+enum DropOffPickUp: String {
+    case dropOff
+    case pickUp
+}
 
 extension CLLocation: MKAnnotation {
     
