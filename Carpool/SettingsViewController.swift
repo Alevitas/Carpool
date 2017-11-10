@@ -7,25 +7,37 @@
 //
 
 import UIKit
-import FirebaseCommunity
 import CarpoolKit
 
 class SettingsViewController: UIViewController {
-   
+    
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var childrenAddedLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     var children: [Child] = []
-//    var user: User?
+    var currentUser: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        API.fetchCurrentUser { (result) in
+            switch result {
+                
+            case .success(let user):
+                self.currentUser = user
+            case .failure(_):
+                print("Error retreiving current user")
+            }
+        }
+        
         logoutButton.setRoundEdge()
-//        childrenAddedLabel.text = makeListOfChildren(childrenList: )
+        if let currentChildren = currentUser._children{
+            childrenAddedLabel.text = makeListOfChildren(childrenList: currentChildren )
+        }
     }
     @IBAction func usernameTextFieldEnter(_ sender: UITextField) {
-//        usernameTextField.placeholder = "\()"
+        
+        usernameTextField.placeholder = "\(String(describing: currentUser.name ?? "Username"))"
         API.set(userFullName: sender.text!)
         
     }
@@ -46,7 +58,7 @@ class SettingsViewController: UIViewController {
                 switch result {
                 case .success(let child):
                     self.children.append(child)
-                case .failure(let error):
+                case .failure(_):
                     print("Error adding child.")
                 }
             }
