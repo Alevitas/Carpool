@@ -14,10 +14,12 @@ import CoreLocation
 class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var dropOffTime: UILabel!
+    @IBOutlet weak var pickUpTime: UILabel!
     @IBOutlet weak var pickUpButton: UIButton!
     @IBOutlet weak var dropOffButton: UIButton!
     @IBOutlet weak var childrenNameTextField: UITextField!
+    @IBOutlet weak var legDatePicker: UIDatePicker!
     
     @IBOutlet weak var alertTextLabel: UILabel!
 
@@ -44,7 +46,10 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         descriptionLabel.text = trip.event.description
         childrenNameTextField.text = makeListOfChildren(childrenList: trip.event.owner.children)
 
-        timeLabel.text = Date(timeIntervalSince1970: trip.event.time.timeIntervalSince1970).prettyDate
+        dropOffTime.text = trip.event.time.prettyDate
+        pickUpTime.text = trip.event.endTime?.prettyDate
+        legDatePicker.isHidden = true
+        
         dropOffButton.setRoundEdge()
         pickUpButton.setRoundEdge()
         
@@ -60,6 +65,10 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
             dropOffDriverLabel.text = trip.dropOff?.driver.name
         }
         alertTextLabel.text = trip.alertText
+    }
+    
+    
+    @IBAction func onLegDatePickerChanged(_ sender: UIDatePicker) {
     }
     
     @IBAction func onChildrenNameChanged(_ sender: UITextField) {
