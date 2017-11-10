@@ -11,7 +11,7 @@ import CarpoolKit
 import FirebaseCommunity
 
 class RootViewController: UITableViewController {
-
+    
     var trips: [Trip] = []
     var trip: Trip!
     var currentUser: String?
@@ -22,22 +22,34 @@ class RootViewController: UITableViewController {
         super.viewDidLoad()
         
         currentUser = Auth.auth().currentUser?.displayName
-        
-        API.observeTrips { (result) in
-            switch result {
-                
-            case .success(let tripsDownloaded):
-                self.trips = tripsDownloaded
-                self.tableView.reloadData()
-                print(self.trips)
-            case .failure(let error):
-                print(error)
+        if segmentedButton.selectedSegmentIndex == 0 {
+            API.observeTrips { (result) in
+                switch result {
+                    
+                case .success(let tripsDownloaded):
+                    self.trips = tripsDownloaded
+                    self.tableView.reloadData()
+                    print(self.trips)
+                case .failure(let error):
+                    print(error)
+                }
             }
-            
+        } else {
+            API.observeMyTrips(completion: { (result) in
+                switch result {
+                    
+                case .success(let tripsDownloaded):
+                    self.trips = tripsDownloaded
+                    self.tableView.reloadData()
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            })
         }
         
     }
-
+    
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,30 +61,28 @@ class RootViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Trips", for: indexPath) as! TripCell
         
-//        cell.eventNameLabel.text = trips[indexPath.row].event.description
+        //        cell.eventNameLabel.text = trips[indexPath.row].event.description
         cell.eventNameLabel.text = trips[indexPath.row].alertText
-
+        
         return cell
     }
-    @IBAction func onAddPressed(_ sender: Any) {
-    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let eventDetailVC = segue.destination as? TripDetailViewController
         
-        //eventDetailVC?.currentUser = currentUser!
         eventDetailVC?.trip = trip
         
-       
+        
     }
-
+    
     @IBAction func unwindFromEventDetail(segue: UIStoryboardSegue) {
         
     }
     
     
     @IBAction func unwindFromAddNew(segue: UIStoryboardSegue) {
-//        let addNewVC = segue.source as! AddNewViewController
+        
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         trip = trips[indexPath.row]
