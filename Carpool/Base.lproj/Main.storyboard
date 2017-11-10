@@ -64,7 +64,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="i3a-a7-RfL">
                             <connections>
-                                <segue destination="R3k-os-Awd" kind="presentation" id="Udk-SB-21y"/>
+                                <segue destination="p3S-Jd-I5I" kind="presentation" id="Udk-SB-21y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -266,13 +266,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New Carpool" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIS-Dz-alS">
-                                <rect key="frame" x="127" y="20" width="121" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiu-yj-cqb">
                                 <rect key="frame" x="16" y="140" width="41" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -328,22 +321,6 @@
                                     <outlet property="delegate" destination="R3k-os-Awd" id="WXE-M2-ICD"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GP-qQ-s6A">
-                                <rect key="frame" x="38" y="20" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="R3k-os-Awd" eventType="touchUpInside" id="WQa-Om-yWB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2I6-AC-o0t">
-                                <rect key="frame" x="285" y="20" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <action selector="addButtonPressed:" destination="R3k-os-Awd" eventType="touchUpInside" id="zuW-DP-JKK"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hgj-2S-Cht">
                                 <rect key="frame" x="139" y="617" width="96" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -358,18 +335,16 @@
                     <navigationItem key="navigationItem" title="Create new trip" id="tQm-c3-54M">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8fs-3W-QdR">
                             <connections>
-                                <action selector="onCancelButtonPressed:" destination="R3k-os-Awd" id="215-ty-mbu"/>
+                                <action selector="onCancelButtonPressed:" destination="R3k-os-Awd" id="OEG-IM-qwd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="NWt-nk-hCc">
                             <connections>
-                                <action selector="onDoneButtonPressed:" destination="R3k-os-Awd" id="Zyj-No-dij"/>
+                                <action selector="onDoneButtonPressed:" destination="R3k-os-Awd" id="kte-F2-GfL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addButton" destination="2I6-AC-o0t" id="sMT-tX-b31"/>
-                        <outlet property="cancelButton" destination="4GP-qQ-s6A" id="nQj-wf-xBL"/>
                         <outlet property="datePickerOutlet" destination="5TB-vU-pwM" id="Heg-2f-ebI"/>
                         <outlet property="descriptionTextFieldOutlet" destination="n5d-HT-Vtk" id="V8W-3I-0bm"/>
                         <outlet property="mapView" destination="IKs-MZ-Spy" id="ZHN-2o-PTY"/>
@@ -380,7 +355,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Upu-Yo-ByA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gef-00-er5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1968.8" y="882.90854572713647"/>
+            <point key="canvasLocation" x="2308" y="882.90854572713647"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="YMz-ua-v9f">
@@ -581,6 +556,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPX-OG-0fx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1036" y="142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iRe-2x-KJK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p3S-Jd-I5I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ene-wD-cBF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="R3k-os-Awd" kind="relationship" relationship="rootViewController" id="Sk5-Ee-xBE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dmy-Sj-Ci0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646" y="883"/>
         </scene>
     </scenes>
     <resources>

@@ -43,6 +43,26 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     
+    @IBAction func onCancelButtonPressed(_ sender: Any) {
+         performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+    }
+    @IBAction func onDoneButtonPressed(_ sender: UIBarButtonItem) {
+        if let description = descriptionTextFieldOutlet.text {
+            if query == "" {
+                API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                    
+                    
+                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                }
+            } else {
+                API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                    
+                    
+                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                }
+            }
+        }
+    }
     @IBAction func doneBtnfromKeyboardClicked (sender: Any) {
         print("Done Button Clicked.")
         //Hide Keyboard by endEditing or Anything you want.
@@ -120,27 +140,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     
-    @IBAction func addButtonPressed(_ sender: Any) {
-        if let description = descriptionTextFieldOutlet.text {
-            if query == "" {
-                API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
-                    
-                    
-                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
-                }
-            } else {
-                API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
-                    
-                    
-                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
-                }
-            }
-        }
-    }
-    
-    @IBAction func cancelButtonPressed(_ sender: Any) {
-          performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
-    }
+  
     
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     //        if let SearchResultVC = segue.destination as? SearchResultsTableViewController{
