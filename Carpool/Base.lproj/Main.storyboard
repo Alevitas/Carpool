@@ -86,34 +86,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQX-5d-vyH">
-                                <rect key="frame" x="16" y="162" width="343" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQX-5d-vyH">
+                                <rect key="frame" x="16" y="172" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="7e3-fn-Z8D"/>
+                                    <constraint firstAttribute="height" constant="40" id="7e3-fn-Z8D"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ8-NG-0QX">
-                                <rect key="frame" x="16" y="228" width="343" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ8-NG-0QX">
+                                <rect key="frame" x="16" y="231" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="9AW-1m-APh"/>
+                                    <constraint firstAttribute="height" constant="40" id="9AW-1m-APh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlw-lI-JGu">
-                                <rect key="frame" x="56" y="280" width="56" height="30"/>
+                                <rect key="frame" x="56" y="291" width="56" height="30"/>
                                 <state key="normal" title="DropOff"/>
                                 <connections>
                                     <action selector="onDropOffButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="4OB-2z-C6Z"/>
                                     <action selector="onPickUpButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="kjG-k0-0FI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Unclaimed DropOff Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2t-f8-M3X">
-                                <rect key="frame" x="16" y="319.5" width="198" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DropOff Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2t-f8-M3X">
+                                <rect key="frame" x="16" y="331" width="159" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="h2s-dU-dh9"/>
                                 </constraints>
@@ -121,27 +121,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mc-aV-beS">
-                                <rect key="frame" x="56" y="383" width="47" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="njB-Ir-mbM"/>
-                                </constraints>
-                                <state key="normal" title="Pickup"/>
-                                <connections>
-                                    <action selector="onPickUpButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="XRf-Qa-UYV"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Children" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvu-eO-vXg">
-                                <rect key="frame" x="16" y="72" width="343" height="44"/>
+                                <rect key="frame" x="16" y="72" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="dNe-nF-7gu"/>
+                                    <constraint firstAttribute="height" constant="40" id="dNe-nF-7gu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFL-Gm-LBF">
-                                <rect key="frame" x="16" y="124" width="343" height="44"/>
+                                <rect key="frame" x="16" y="120" width="343" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="pJp-MR-8cr"/>
                                 </constraints>
@@ -152,15 +142,6 @@
                                     <action selector="onChildrenNameChanged:" destination="KZF-gg-fW8" eventType="editingDidEnd" id="Cex-am-Gi8"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unclaimed Pickup Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-uY-SZL">
-                                <rect key="frame" x="16" y="446" width="343" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="4Co-5l-TVl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alert Text:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="217-rv-JFO">
                                 <rect key="frame" x="16" y="506" width="78" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -186,6 +167,25 @@
                                     <segue destination="NFz-6J-j7a" kind="unwind" unwindAction="unwindFromEventDetailWithSegue:" id="HwZ-Fw-zqy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mc-aV-beS">
+                                <rect key="frame" x="240" y="286" width="47" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="njB-Ir-mbM"/>
+                                </constraints>
+                                <state key="normal" title="Pickup"/>
+                                <connections>
+                                    <action selector="onPickUpButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="XRf-Qa-UYV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Pickup Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-uY-SZL">
+                                <rect key="frame" x="200" y="337" width="159" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4Co-5l-TVl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -193,9 +193,8 @@
                             <constraint firstItem="xvu-eO-vXg" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="3SB-aV-5kA"/>
                             <constraint firstItem="hZ8-NG-0QX" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="5Ol-qh-rsr"/>
                             <constraint firstItem="LQX-5d-vyH" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="5yG-3t-lFh"/>
-                            <constraint firstItem="7mc-aV-beS" firstAttribute="top" secondItem="A2t-f8-M3X" secondAttribute="bottom" constant="20" id="6Aq-YE-ElZ"/>
+                            <constraint firstItem="LQX-5d-vyH" firstAttribute="top" secondItem="xFL-Gm-LBF" secondAttribute="bottom" constant="4" id="6rn-Hx-2E0"/>
                             <constraint firstItem="dlw-lI-JGu" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" constant="40" id="8JI-XX-yax"/>
-                            <constraint firstItem="7mc-aV-beS" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" constant="40" id="Dyc-3N-8Pq"/>
                             <constraint firstItem="nM4-Du-tQD" firstAttribute="top" secondItem="3yI-gs-iya" secondAttribute="topMargin" constant="8" id="EtU-co-Nkf"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7mc-aV-beS" secondAttribute="trailingMargin" id="F4X-9g-ALI"/>
                             <constraint firstItem="3Wv-uY-SZL" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="FtY-w6-VgY"/>
@@ -250,7 +249,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byp-YT-ZER" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NFz-6J-j7a" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2863" y="141"/>
+            <point key="canvasLocation" x="2861.5999999999999" y="139.880059970015"/>
         </scene>
         <!--Create new trip-->
         <scene sceneID="EWO-MA-iY5">
