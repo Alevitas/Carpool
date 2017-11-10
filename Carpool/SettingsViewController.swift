@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController {
         }
         
         logoutButton.setRoundEdge()
-        if let currentChildren = currentUser._children{
+        if let user = currentUser, let currentChildren = user._children {
             childrenAddedLabel.text = makeListOfChildren(childrenList: currentChildren )
         }
     }
