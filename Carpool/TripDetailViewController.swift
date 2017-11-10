@@ -33,6 +33,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     var loggedInUser: User!
     var currentUser: String = ""
     var children: [Child] = []
+    var dropOffPickUp: DropOffPickUp = .dropOff
     
     let locationManager = CLLocationManager()
     var aLocation: CLPlacemark?
@@ -70,11 +71,18 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         alertTextLabel.text = trip.alertText
     }
     
-    
     @IBAction func onSelectTimeButtonPressed(_ sender: UIButton) {
+        switch dropOffPickUp {
+        case .dropOff:
+            dropOffTimeButton.setTitle(legDatePicker.date.hourDesc, for: .normal)
+        case .pickUp:
+            pickUpTimeButton.setTitle(legDatePicker.date.hourDesc, for: .normal)
+        }
+        datePickerView.isHidden = true
     }
     
     @IBAction func onDropOffTimeButtonPressed(_ sender: UIButton) {
+        dropOffPickUp = .dropOff
         UIView.animate(withDuration: 0.3, animations: {
             self.datePickerView.isHidden = !self.datePickerView.isHidden
         })
@@ -82,6 +90,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     }
     
     @IBAction func onPickUpTimeButtonPressed(_ sender: UIButton) {
+        dropOffPickUp = .pickUp
         UIView.animate(withDuration: 0.3, animations: {
             self.datePickerView.isHidden = !self.datePickerView.isHidden
         })
@@ -89,6 +98,12 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     }
     
     @IBAction func onLegDatePickerChanged(_ sender: UIDatePicker) {
+        switch dropOffPickUp {
+        case .dropOff:
+            dropOffTimeButton.setTitle(legDatePicker.date.hourDesc, for: .normal)
+        case .pickUp:
+            pickUpTimeButton.setTitle(legDatePicker.date.hourDesc, for: .normal)
+        }
     }
     
     @IBAction func onChildrenNameChanged(_ sender: UITextField) {
