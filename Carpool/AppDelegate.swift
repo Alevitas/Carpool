@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         FirebaseCommunity.Database.database().isPersistenceEnabled = true
-        API.set(userFullName: "Garkiva")
+        
         Auth.auth().signInAnonymously { (user, error) in
             print("\(String(describing: error))")
         }
