@@ -23,7 +23,7 @@ class RootViewController: UITableViewController {
         
         
         currentUser = Auth.auth().currentUser?.displayName
-        API.observeTrips { (result) in
+        API.observeTrips(sender: self) { (result) in
             switch result {
                 
             case .success(let tripsDownloaded):
@@ -40,7 +40,7 @@ class RootViewController: UITableViewController {
     
     @IBAction func onSegmentedControlChange(_ sender: UISegmentedControl) {
         if segmentedButton.selectedSegmentIndex == 0 {
-            API.observeTrips { (result) in
+            API.observeTrips(sender: self) { (result) in
                 switch result {
                     
                 case .success(let tripsDownloaded):
@@ -52,7 +52,7 @@ class RootViewController: UITableViewController {
                 }
             }
         } else {
-            API.observeMyTrips(completion: { (result) in
+            API.observeMyTrips(sender: self, observer: { (result) in
                 switch result {
                     
                 case .success(let tripsDownloaded):
