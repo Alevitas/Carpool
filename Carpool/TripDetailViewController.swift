@@ -70,9 +70,15 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     
     
     @IBAction func onDropOffTimeButtonPressed(_ sender: UIButton) {
+        legDatePicker.isHidden = false
+        legDatePicker.date = trip.event.time
     }
     
     @IBAction func onPickUpTimeButtonPressed(_ sender: UIButton) {
+        if let endTime = trip.event.endTime {
+            legDatePicker.isHidden = false
+            legDatePicker.date = endTime
+        }
     }
     
     @IBAction func onLegDatePickerChanged(_ sender: UIDatePicker) {
