@@ -418,7 +418,7 @@
                                 <action selector="onCancelButtonPressed:" destination="R3k-os-Awd" id="OEG-IM-qwd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="NWt-nk-hCc">
+                        <barButtonItem key="rightBarButtonItem" title="Confirm" id="NWt-nk-hCc">
                             <connections>
                                 <action selector="onDoneButtonPressed:" destination="R3k-os-Awd" id="kte-F2-GfL"/>
                             </connections>
