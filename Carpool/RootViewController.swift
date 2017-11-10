@@ -21,6 +21,7 @@ class RootViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         currentUser = Auth.auth().currentUser?.displayName
         API.observeTrips { (result) in
             switch result {
@@ -77,10 +78,7 @@ class RootViewController: UITableViewController {
         
         //        cell.eventNameLabel.text = trips[indexPath.row].event.description
         cell.eventNameLabel.text = trips[indexPath.row].alertText
-        cell.contentView.layer.cornerRadius = 5
-        cell.contentView.layer.masksToBounds = true
-        cell.contentView.layer.borderColor = UIColor.black.cgColor
-        cell.contentView.layer.allowsGroupOpacity = true
+        
         return cell
     }
     
