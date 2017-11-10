@@ -11,15 +11,17 @@ import UIKit
 class TripCell: UITableViewCell {
 
     @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var eventDetailsView: UIView!
+    @IBOutlet weak var legStatusView: UIView!
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.layer.cornerRadius = 5
-        contentView.layer.masksToBounds = true
-        contentView.layer.borderColor = UIColor.black.cgColor
-        contentView.layer.allowsGroupOpacity = true
-        contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(10, 10, 10, 10))
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        contentView.layer.cornerRadius = 5
+//        contentView.layer.masksToBounds = true
+//        contentView.layer.borderColor = UIColor.black.cgColor
+//        contentView.layer.allowsGroupOpacity = true
+//        contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(10, 10, 10, 10))
+//    }
     
     
     
