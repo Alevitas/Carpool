@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         usernameLabel.text = "\(String(describing: currentUser?.name ?? "Username"))"
         
         API.fetchCurrentUser { (result) in

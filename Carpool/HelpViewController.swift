@@ -14,9 +14,14 @@ class HelpViewController: UIViewController {
     @IBOutlet weak var sectionLabel: UILabel!
     @IBOutlet weak var infoTextView: UITextView!
     
+    @IBOutlet weak var instructionTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        infoTextView.layer.cornerRadius = 10
+        instructionTextView.layer.cornerRadius = 10
         
         
     }

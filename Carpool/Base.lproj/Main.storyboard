@@ -757,7 +757,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.57706457376480103" green="0.97687667608261108" blue="0.93873387575149536" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Gkr-J4-wwr" firstAttribute="trailing" secondItem="E9c-Wy-6T3" secondAttribute="trailingMargin" id="2Vx-iS-g19"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="EKe-Rv-8v8" secondAttribute="trailing" id="4YT-MZ-o04"/>
@@ -790,6 +790,7 @@
                     <navigationItem key="navigationItem" title="Help" id="prh-sn-9Gl"/>
                     <connections>
                         <outlet property="infoTextView" destination="EM9-Ew-lYU" id="CqS-cV-IBD"/>
+                        <outlet property="instructionTextView" destination="tfI-AB-13f" id="5th-R6-4Bd"/>
                         <outlet property="sectionLabel" destination="Gkr-J4-wwr" id="KaR-6i-JvX"/>
                     </connections>
                 </viewController>
