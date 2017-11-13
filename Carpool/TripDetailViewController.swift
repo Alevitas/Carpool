@@ -133,7 +133,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     }
     
     @IBAction func onChildrenNameChanged(_ sender: UITextField) {
-        if let childName = sender.text {
+        if let childName = sender.text, childName != "" {
             API.addChild(name: childName, completion: { ( result ) in
                 switch result {
                 case .success(let child):
@@ -142,6 +142,8 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
                     print("Error adding child.", error)
                 }
             })
+        } else {
+            //TODO Error: Don't let them add if the child name is empty
         }
     }
     
