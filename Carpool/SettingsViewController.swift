@@ -16,18 +16,18 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var usernameLabel: UILabel!
     var children: [Child] = []
-    var currentUser: User!
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        usernameLabel.text = "\(String(describing: currentUser.name ?? "Username"))"
+        usernameLabel.text = "\(String(describing: currentUser?.name ?? "Username"))"
         
         API.fetchCurrentUser { (result) in
             switch result {
                 
             case .success(let user):
-                self.currentUser = user
+                currentUser = user
             case .failure(_):
                 print("Error retreiving current user")
             }
