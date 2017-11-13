@@ -13,6 +13,7 @@ import CoreLocation
 
 class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    @IBOutlet weak var openInMapsButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pickUpButton: UIButton!
     @IBOutlet weak var dropOffButton: UIButton!
@@ -31,33 +32,34 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     var trip: Trip!
     var child: Child!
     var loggedInUser: User!
-//    var currentUser: String = ""
     var children: [Child] = []
     var dropOffPickUp: DropOffPickUp = .dropOff
     
     let locationManager = CLLocationManager()
     var aLocation: CLPlacemark?
     
+    var hasLocation: Bool {
+        return trip.event.clLocation != nil
+    }
+    
     var myDropOffLeg: Bool {
-        guard let dropOffDriver = trip.dropOff?.driver else { return false }
-        if dropOffDriver == currentUser {
-            return true
-        }
-        return false
+        return trip.dropOff?.driver == currentUser
     }
     
     var myPickUpLeg: Bool {
-        guard let pickUpDriver = trip.pickUp?.driver else { return false }
-        if pickUpDriver == currentUser {
-            return true
-        }
-        return false
+        return trip.pickUp?.driver == currentUser
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let trip = trip else { return }
+        
+        if hasLocation {
+            openInMapsButton.isHidden = false
+        } else {
+            openInMapsButton.isHidden = true
+        }
         
         print("Event received is: \(trip.event)")
         locationManager.delegate = self
