@@ -31,12 +31,28 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     var trip: Trip!
     var child: Child!
     var loggedInUser: User!
-    var currentUser: String = ""
+//    var currentUser: String = ""
     var children: [Child] = []
     var dropOffPickUp: DropOffPickUp = .dropOff
     
     let locationManager = CLLocationManager()
     var aLocation: CLPlacemark?
+    
+    var myDropOffLeg: Bool {
+        guard let dropOffDriver = trip.dropOff?.driver else { return false }
+        if dropOffDriver == currentUser {
+            return true
+        }
+        return false
+    }
+    
+    var myPickUpLeg: Bool {
+        guard let pickUpDriver = trip.pickUp?.driver else { return false }
+        if pickUpDriver == currentUser {
+            return true
+        }
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,16 +145,24 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     
     @IBAction func onPickUpButtonPressed(_ sender: Any) {
         let saveAlert = UIAlertController(title: "Do you want to claim this leg?", message: nil, preferredStyle: .actionSheet)
-        saveAlert.addAction(UIAlertAction(title: "Claim PickUp Leg", style: .default, handler: onClaimPickUp))
-        saveAlert.addAction(UIAlertAction(title: "Unclaim PickUp Leg", style: .default, handler: onUnclaimPickup))
+        if !myPickUpLeg {
+            saveAlert.addAction(UIAlertAction(title: "Claim PickUp Leg", style: .default, handler: onClaimPickUp))
+        }
+        if myPickUpLeg {
+            saveAlert.addAction(UIAlertAction(title: "Unclaim PickUp Leg", style: .default, handler: onUnclaimPickup))
+        }
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)
     }
     
     @IBAction func onDropOffButtonPressed(_ sender: Any) {
         let saveAlert = UIAlertController(title: "Do you want to claim this leg?", message: nil, preferredStyle: .actionSheet)
-        saveAlert.addAction(UIAlertAction(title: "Claim DropOff Leg", style: .default, handler: onClaimDropOff))
-        saveAlert.addAction(UIAlertAction(title: "Unclaim DropOff Leg", style: .default, handler: onUnclaimDropOff))
+        if !myDropOffLeg {
+            saveAlert.addAction(UIAlertAction(title: "Claim DropOff Leg", style: .default, handler: onClaimDropOff))
+        }
+        if myDropOffLeg {
+            saveAlert.addAction(UIAlertAction(title: "Unclaim DropOff Leg", style: .default, handler: onUnclaimDropOff))
+        }
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)
     }
