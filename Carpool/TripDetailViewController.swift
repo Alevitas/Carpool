@@ -35,6 +35,14 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     var children: [Child] = []
     var dropOffPickUp: DropOffPickUp = .dropOff
     
+    var dropOffLegClaimed: Bool {
+        return trip.dropOff != nil
+    }
+    
+    var pickUpLegClaimed: Bool {
+        return trip.pickUp != nil
+    }
+    
     let locationManager = CLLocationManager()
     var aLocation: CLPlacemark?
     
@@ -75,13 +83,13 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         dropOffButton.setRoundEdge()
         pickUpButton.setRoundEdge()
         
-        if trip.pickUp?.driver == nil {
+        if !pickUpLegClaimed {
             pickUpButton.backgroundColor = UIColor.red
         } else {
             pickUpDriverLabel.text = trip.pickUp?.driver.name
         }
         
-        if trip.dropOff?.driver == nil {
+        if !dropOffLegClaimed {
             dropOffButton.backgroundColor = UIColor.red
         } else {
             dropOffDriverLabel.text = trip.dropOff?.driver.name
