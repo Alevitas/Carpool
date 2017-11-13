@@ -30,14 +30,12 @@ public enum API {
         return firstly {
             foo()
         }.then { fbuser in
-            Database.fetch(path: "users", fbuser.uid).then {
-                (fbuser.uid, $0.string(for: "name"))
+            Database.fetch(path: "users", fbuser.uid)
+        }.then { snapshot -> Void in
+            let ctime = snapshot.childSnapshot(forPath: "ctime")
+            if ctime.value == nil {
+                ctime.ref.setValue(Date().timeIntervalSince1970)
             }
-        }.then { uid, name -> Void in
-            if name != nil { return }
-            Database.database().reference().child("users").child(uid).setValue([
-                "ctime": Date().timeIntervalSince1970
-            ])
         }
     }
 
@@ -265,7 +263,7 @@ public enum API {
                 "dropOff": [fbuser.uid: user.name!],
                 "event": [eventRef.key: eventDict],
                 "owner": [fbuser.uid: user.name!]
-                ])
+            ])
 
             var eventDict2 = eventDict
             eventDict2["trips"] = [tripRef.key: true]
@@ -532,10 +530,12 @@ public enum API {
             let reaper = Lifetime()
             reaper.ref = Database.database().reference().child("users").child(user.key).child("friends")
             reaper.observer = reaper.ref.observe(.value) { snapshot in
-                do {
-                    observer(.success(try snapshot.array()))
-                } catch {
-                    observer(.failure(error))
+                when(fulfilled: snapshot.children.map {
+                    fetchUser(id: ($0 as! DataSnapshot).key)
+                }).then {
+                    observer(.success($0))
+                }.catch {
+                    observer(.failure($0))
                 }
             }
             sender.view.addSubview(reaper)
