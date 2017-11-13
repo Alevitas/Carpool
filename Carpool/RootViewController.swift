@@ -57,7 +57,9 @@ class RootViewController: UITableViewController {
         }
         
     }
-  
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
     
     @IBAction func onSegmentedControlChange(_ sender: UISegmentedControl) {
         if segmentedButton.selectedSegmentIndex == 0 {
