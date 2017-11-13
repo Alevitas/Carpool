@@ -17,13 +17,14 @@ class RootViewController: UITableViewController {
     var currentUser: String?
     
     var legsChecked: LegsClaimed {
-        if trip.pickUp == nil, trip.dropOff == nil {
+        guard let tripPickup = trip.pickUp, let tripDropOff = trip.dropOff else { return .red }
+        if tripPickup == nil, tripDropOff == nil {
             return .red
-        } else if (trip.pickUp != nil) , trip.dropOff == nil {
+        } else if (tripPickup != nil) , tripDropOff == nil {
             return .yellow
-        } else if trip.pickUp == nil, (trip.dropOff != nil) {
+        } else if tripPickup == nil, (tripDropOff != nil) {
             return .yellow
-        } else if (trip.pickUp != nil) , (trip.dropOff != nil) {
+        } else if (tripPickup != nil) , (tripDropOff != nil) {
             return .green
         }
         return .red
