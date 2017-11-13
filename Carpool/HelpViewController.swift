@@ -20,6 +20,8 @@ class HelpViewController: UIViewController {
         
         
     }
+    
+    
     @IBAction func carpoolScreenButtonPressed(_ sender: Any) {
         sectionLabel.text = "Carpool Screen:"
         infoTextView.text = "On this screen you are presented all of the trips along with their main details. The color of the left bubble shows whether or not both drop off and pickup are claimed. If red, both are unclaimed; green, both are claimed; yellow if either one is claimed and the other is unclaimed. Selecting a row will open up the event details screen. Pressing on the plus sign on the top right opens the create new event screen."
