@@ -42,7 +42,7 @@ class RootViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "Tableviewbackground"))
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
         currentUser = Auth.auth().currentUser?.displayName
        API.observeTheTripsOfMyFriends(sender: self) { (result) in
             switch result {
