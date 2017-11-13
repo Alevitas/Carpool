@@ -31,11 +31,7 @@ class TripCell: UITableViewCell {
         legStatusView.layer.shadowColor = UIColor.black.cgColor
         legStatusView.layer.shadowOpacity = 0.3
         legStatusView.layer.shadowOffset = CGSize(width: 3, height: 3)
-        legStatusView.layer.shadowRadius = 1.0//        contentView.layer.cornerRadius = 5
-//        contentView.layer.masksToBounds = true
-//        contentView.layer.borderColor = UIColor.black.cgColor
-//        contentView.layer.allowsGroupOpacity = true
-//        contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(10, 10, 10, 10))
+        legStatusView.layer.shadowRadius = 1.0
     }
     
     

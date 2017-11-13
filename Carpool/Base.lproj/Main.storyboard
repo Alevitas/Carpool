@@ -46,6 +46,19 @@
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XL2-12-BS4">
                                             <rect key="frame" x="8" y="8" width="84" height="84"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_1014537_cc" translatesAutoresizingMaskIntoConstraints="NO" id="60O-op-LHf">
+                                                    <rect key="frame" x="6" y="37" width="72" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq8-xi-AYg">
+                                                    <rect key="frame" x="8" y="8" width="68" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="84" id="W6I-nI-3Be"/>
@@ -127,7 +140,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hk-Fv-AKH">
-                                <rect key="frame" x="16" y="309" width="343" height="192"/>
+                                <rect key="frame" x="16" y="309" width="343" height="99.5"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ryX-9s-8lg">
                                         <rect key="frame" x="0.0" y="-17" width="343" height="162"/>
@@ -766,6 +779,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="noun_1014537_cc" width="322" height="218"/>
         <image name="second" width="16" height="16"/>
     </resources>
 </document>
