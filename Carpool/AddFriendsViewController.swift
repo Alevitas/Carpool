@@ -42,7 +42,7 @@ class AddFriendsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendSearch", for: indexPath) as! FriendCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendSearch", for: indexPath) as! AddFriendCell
         
         cell.friendNameLabel.text = friends[indexPath.row].name
         

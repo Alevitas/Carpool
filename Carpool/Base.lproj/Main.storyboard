@@ -623,7 +623,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendSearch" rowHeight="60" id="Rfs-EI-Xbt">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendSearch" rowHeight="60" id="Rfs-EI-Xbt" customClass="AddFriendCell" customModule="Carpool" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rfs-EI-Xbt" id="hdP-Pj-wsh">
@@ -647,6 +647,10 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.37583996208973014" green="1" blue="0.9752346262969307" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addFriendView" destination="kQd-Zl-5A3" id="l11-Ct-MDk"/>
+                                    <outlet property="friendNameLabel" destination="frb-2y-Jpt" id="YdE-58-TFv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
