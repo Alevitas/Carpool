@@ -19,12 +19,9 @@ class FriendCell: UITableViewCell {
         
         
         friendView.layer.cornerRadius = 10
-        friendView.layer.borderWidth = 1.0
+        friendView.layer.borderWidth = 0.5
         friendView.layer.borderColor = UIColor.black.cgColor
-        friendView.layer.shadowColor = UIColor.black.cgColor
-        friendView.layer.shadowOpacity = 0.3
-        friendView.layer.shadowOffset = CGSize(width: 3, height: 3)
-        friendView.layer.shadowRadius = 1.0
+        
         
         
     }

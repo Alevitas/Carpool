@@ -41,6 +41,7 @@ class FriendsViewController: UITableViewController {
         if sender.selectedSegmentIndex == 0 {
             segmentedSection = true
             searchBarView.isHidden = true
+            friendSearch.isHidden = true
             API.observeFriends(sender: self) { (result) in
                 switch result {
                     
@@ -54,6 +55,7 @@ class FriendsViewController: UITableViewController {
         } else {
             segmentedSection = false
             searchBarView.isHidden = false
+            friendSearch.isHidden = false
             friends = []
             tableView.reloadData()
         }
@@ -65,6 +67,7 @@ class FriendsViewController: UITableViewController {
             case .success(let downloadedFriends):
                 self.friends = downloadedFriends
                 self.tableView.reloadData()
+                print(self.friends)
             case .failure(_):
                 print("error")
             }
