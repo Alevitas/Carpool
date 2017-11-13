@@ -16,15 +16,22 @@ class RootViewController: UITableViewController {
     var trip: Trip!
     var currentUser: String?
     
+    var dropOffLegClaimed: Bool {
+        return trip.dropOff != nil
+    }
+    
+    var pickUpLegClaimed: Bool {
+        return trip.pickUp != nil
+    }
+    
     var legsChecked: LegsClaimed {
-        guard let tripPickup = trip.pickUp, let tripDropOff = trip.dropOff else { return .red }
-        if tripPickup == nil, tripDropOff == nil {
+        if !pickUpLegClaimed, !dropOffLegClaimed {
             return .red
-        } else if (tripPickup != nil), tripDropOff == nil {
+        } else if pickUpLegClaimed , !dropOffLegClaimed {
             return .yellow
-        } else if tripPickup == nil, (tripDropOff != nil) {
+        } else if !pickUpLegClaimed, dropOffLegClaimed {
             return .yellow
-        } else if (tripPickup != nil), (tripDropOff != nil) {
+        } else if pickUpLegClaimed , dropOffLegClaimed {
             return .green
         }
         return .red
@@ -37,7 +44,7 @@ class RootViewController: UITableViewController {
         
         
         currentUser = Auth.auth().currentUser?.displayName
-        API.observeTheTripsOfMyFriends(sender: self) { (result) in
+        API.observeTrips(sender: self) { (result) in
             switch result {
                 
             case .success(let tripsDownloaded):
@@ -54,7 +61,7 @@ class RootViewController: UITableViewController {
     
     @IBAction func onSegmentedControlChange(_ sender: UISegmentedControl) {
         if segmentedButton.selectedSegmentIndex == 0 {
-            API.observeTheTripsOfMyFriends(sender: self) { (result) in
+            API.observeTrips(sender: self) { (result) in
                 switch result {
                     
                 case .success(let tripsDownloaded):
@@ -92,6 +99,7 @@ class RootViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Trips", for: indexPath) as! TripCell
         
         //        cell.eventNameLabel.text = trips[indexPath.row].event.description
+        trip = trips[indexPath.row]
         switch legsChecked {
             
         case .red:
