@@ -17,15 +17,11 @@ class RootViewController: UITableViewController {
     var currentUser: String?
     
     var dropOffLegClaimed: Bool {
-        guard trip.dropOff != nil else { return false }
-
-        return true
+        return trip.dropOff != nil
     }
     
     var pickUpLegClaimed: Bool {
-        guard trip.pickUp != nil else { return false }
-
-        return true
+        return trip.pickUp != nil
     }
     
     var legsChecked: LegsClaimed {
@@ -65,7 +61,7 @@ class RootViewController: UITableViewController {
     
     @IBAction func onSegmentedControlChange(_ sender: UISegmentedControl) {
         if segmentedButton.selectedSegmentIndex == 0 {
-            API.observeTheTripsOfMyFriends(sender: self) { (result) in
+            API.observeTrips(sender: self) { (result) in
                 switch result {
                     
                 case .success(let tripsDownloaded):
