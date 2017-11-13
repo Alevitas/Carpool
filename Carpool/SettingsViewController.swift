@@ -14,11 +14,14 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var childrenAddedLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var usernameLabel: UILabel!
     var children: [Child] = []
     var currentUser: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameLabel.text = "\(String(describing: currentUser.name ?? "Username"))"
         
         API.fetchCurrentUser { (result) in
             switch result {
@@ -37,12 +40,7 @@ class SettingsViewController: UIViewController {
             print("error")
         }
     }
-    @IBAction func usernameTextFieldEnter(_ sender: UITextField) {
-        
-        usernameTextField.placeholder = "\(String(describing: currentUser.name ?? "Username"))"
-        API.set(userFullName: sender.text!)
-        
-    }
+    
     
     func makeListOfChildren(childrenList: [Child]) -> String {
         var childNames: [String] = []
