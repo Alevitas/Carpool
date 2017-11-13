@@ -21,11 +21,11 @@ class AddFriendsViewController: UITableViewController {
         
     }
     
-    @IBAction func onSearchtextFieldReturn(_ sender: UITextField) {
+    @IBAction func onSearchFieldReturn(_ sender: UITextField) {
         API.search(forUsersWithName: sender.text!) { (result) in
             switch result{
                 
-            case .success(let downloadedFriends as [User]):
+            case .success(let downloadedFriends):
                 self.friends = downloadedFriends
                 self.tableView.reloadData()
                 print(self.friends)
@@ -35,6 +35,7 @@ class AddFriendsViewController: UITableViewController {
         }
         searchTextField.text = ""
     }
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
