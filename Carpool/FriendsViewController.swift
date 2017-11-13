@@ -14,7 +14,7 @@ class FriendsViewController: UITableViewController {
    
     
     var friends: [User] = []
-    var segmentedSection: Bool!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,19 +53,17 @@ class FriendsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if segmentedSection == true {
-            
-        } else {
-         API.add(friend: friends[indexPath.row])
-        }
+      
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if segmentedSection == true {
+   
             API.remove(friend: friends[indexPath.row])
             friends.remove(at: indexPath.row)
             tableView.reloadData()
-        }
+        
     }
     
 }

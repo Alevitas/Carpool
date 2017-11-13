@@ -141,7 +141,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hk-Fv-AKH">
-                                <rect key="frame" x="16" y="309" width="343" height="192"/>
+                                <rect key="frame" x="16" y="309" width="343" height="99.5"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ryX-9s-8lg">
                                         <rect key="frame" x="0.0" y="-17" width="343" height="162"/>
@@ -601,9 +601,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fYS-Ip-X2v">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fYS-Ip-X2v">
                                     <rect key="frame" x="8" y="15" width="359" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -613,6 +612,12 @@
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" red="0.45519447326660156" green="0.97599083185195923" blue="0.97772854566574097" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="fYS-Ip-X2v" secondAttribute="bottom" constant="15" id="Bpw-7J-nin"/>
+                                <constraint firstItem="fYS-Ip-X2v" firstAttribute="leading" secondItem="IUs-dB-sJ8" secondAttribute="leading" constant="8" id="clC-hk-Y7a"/>
+                                <constraint firstAttribute="trailing" secondItem="fYS-Ip-X2v" secondAttribute="trailing" constant="8" id="cmd-wK-XjO"/>
+                                <constraint firstItem="fYS-Ip-X2v" firstAttribute="top" secondItem="IUs-dB-sJ8" secondAttribute="top" constant="15" id="x6j-6j-oOB"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendSearch" rowHeight="60" id="Rfs-EI-Xbt">
@@ -835,7 +840,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="yTd-nc-whg"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="noun_889293_cc copy" id="yTd-nc-whg"/>
                     <connections>
                         <outlet property="childrenAddedLabel" destination="zB4-Cc-qJP" id="eas-wn-BZ5"/>
                         <outlet property="logoutButton" destination="bRg-oX-N7D" id="WLx-2a-DxY"/>
@@ -850,7 +855,7 @@
         <scene sceneID="ctV-vv-Eec">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZC4-dr-cLx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trips" id="rYH-yd-YxE"/>
+                    <tabBarItem key="tabBarItem" title="Trips" image="noun_1014537_cc copy" id="rYH-yd-YxE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qcx-x3-O4A">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -887,7 +892,7 @@
         <scene sceneID="jXa-ND-R10">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Du5-V2-7Ks" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="oaj-c2-YgH"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="noun_1381918_cc copy" id="oaj-c2-YgH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d5g-LN-CVG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -906,7 +911,7 @@
         <scene sceneID="ZLH-VE-X60">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fbv-K7-D0e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Help" id="rug-f1-NHn"/>
+                    <tabBarItem key="tabBarItem" title="Help" image="noun_974815_cc copy" id="rug-f1-NHn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PqN-2u-dvJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -924,6 +929,10 @@
     </scenes>
     <resources>
         <image name="noun_1014537_cc" width="322" height="218"/>
+        <image name="noun_1014537_cc copy" width="25" height="17"/>
+        <image name="noun_1381918_cc copy" width="25" height="17"/>
+        <image name="noun_889293_cc copy" width="25" height="26"/>
+        <image name="noun_974815_cc copy" width="25" height="24"/>
         <image name="second" width="16" height="16"/>
     </resources>
 </document>
