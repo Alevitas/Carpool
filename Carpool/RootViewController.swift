@@ -16,15 +16,26 @@ class RootViewController: UITableViewController {
     var trip: Trip!
     var currentUser: String?
     
+    var dropOffLegClaimed: Bool {
+        guard (trip.pickUp?.driver) != nil else { return false }
+
+        return true
+    }
+    
+    var pickUpLegClaimed: Bool {
+        guard (trip.pickUp?.driver) != nil else { return false }
+
+        return true
+    }
+    
     var legsChecked: LegsClaimed {
-        guard let tripPickup = trip.pickUp, let tripDropOff = trip.dropOff else { return .red }
-        if tripPickup == nil, tripDropOff == nil {
+        if !pickUpLegClaimed, !dropOffLegClaimed {
             return .red
-        } else if (tripPickup != nil) , tripDropOff == nil {
+        } else if pickUpLegClaimed , !dropOffLegClaimed {
             return .yellow
-        } else if tripPickup == nil, (tripDropOff != nil) {
+        } else if !pickUpLegClaimed, dropOffLegClaimed {
             return .yellow
-        } else if (tripPickup != nil) , (tripDropOff != nil) {
+        } else if pickUpLegClaimed , dropOffLegClaimed {
             return .green
         }
         return .red
