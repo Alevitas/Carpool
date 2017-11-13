@@ -33,6 +33,7 @@ class AddFriendsViewController: UITableViewController {
                 print("error")
             }
         }
+        searchTextField.text = ""
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
