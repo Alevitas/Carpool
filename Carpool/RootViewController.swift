@@ -111,7 +111,8 @@ class RootViewController: UITableViewController {
         }
         
         cell.eventNameLabel.text = trips[indexPath.row].alertText
-        
+        cell.eventTimeLabel.text = trips[indexPath.row].event.time.shortMonDay
+
         return cell
     }
     
