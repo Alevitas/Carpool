@@ -17,13 +17,14 @@ class RootViewController: UITableViewController {
     var currentUser: String?
     
     var legsChecked: LegsClaimed {
-        if trip.pickUp == nil, trip.dropOff == nil {
+        guard let tripPickup = trip.pickUp, let tripDropOff = trip.dropOff else { return .red }
+        if tripPickup == nil, tripDropOff == nil {
             return .red
-        } else if (trip.pickUp != nil) , trip.dropOff == nil {
+        } else if (tripPickup != nil) , tripDropOff == nil {
             return .yellow
-        } else if trip.pickUp == nil, (trip.dropOff != nil) {
+        } else if tripPickup == nil, (tripDropOff != nil) {
             return .yellow
-        } else if (trip.pickUp != nil) , (trip.dropOff != nil) {
+        } else if (tripPickup != nil) , (tripDropOff != nil) {
             return .green
         }
         return .red
@@ -36,7 +37,7 @@ class RootViewController: UITableViewController {
         
         
         currentUser = Auth.auth().currentUser?.displayName
-        API.observeTrips(sender: self) { (result) in
+        API.observeTheTripsOfMyFriends(sender: self) { (result) in
             switch result {
                 
             case .success(let tripsDownloaded):
@@ -53,7 +54,7 @@ class RootViewController: UITableViewController {
     
     @IBAction func onSegmentedControlChange(_ sender: UISegmentedControl) {
         if segmentedButton.selectedSegmentIndex == 0 {
-            API.observeTrips(sender: self) { (result) in
+            API.observeTheTripsOfMyFriends(sender: self) { (result) in
                 switch result {
                     
                 case .success(let tripsDownloaded):
