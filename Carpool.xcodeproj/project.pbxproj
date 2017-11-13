@@ -16,6 +16,7 @@
 		372E98351FB0FFF500136B59 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E98341FB0FFF500136B59 /* TripCell.swift */; };
 		372E98391FB10F5400136B59 /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E98381FB10F5400136B59 /* AddNewViewController.swift */; };
 		376F2B231FB4F84B00C233FA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376F2B221FB4F84B00C233FA /* SettingsViewController.swift */; };
+		379A998F1FB9FC5A008AE7D7 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A998E1FB9FC5A008AE7D7 /* HelpViewController.swift */; };
 		37A150131FB36FD000268B4D /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A150121FB36FD000268B4D /* SearchResultsTableViewController.swift */; };
 		37A3372A1FB650B8002757F5 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A337291FB650B8002757F5 /* FriendsViewController.swift */; };
 		37D78A401FB65C84002A29D4 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D78A3F1FB65C84002A29D4 /* FriendCell.swift */; };
@@ -40,6 +41,7 @@
 		372E98341FB0FFF500136B59 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
 		372E98381FB10F5400136B59 /* AddNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
 		376F2B221FB4F84B00C233FA /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		379A998E1FB9FC5A008AE7D7 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		37A150121FB36FD000268B4D /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		37A337291FB650B8002757F5 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		37D78A3F1FB65C84002A29D4 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				4E4B40011FB3B311009FF5F0 /* Savannah.gpx */,
 				4E6C2F921FB1FED000DD32D1 /* Extensions.swift */,
 				371C0D9C1FB0E74D00F52156 /* Main.storyboard */,
+				379A998E1FB9FC5A008AE7D7 /* HelpViewController.swift */,
 				37A337291FB650B8002757F5 /* FriendsViewController.swift */,
 				37D78A3F1FB65C84002A29D4 /* FriendCell.swift */,
 				376F2B221FB4F84B00C233FA /* SettingsViewController.swift */,
@@ -268,6 +271,7 @@
 				372E98391FB10F5400136B59 /* AddNewViewController.swift in Sources */,
 				4E6C2F931FB1FED000DD32D1 /* Extensions.swift in Sources */,
 				372E98351FB0FFF500136B59 /* TripCell.swift in Sources */,
+				379A998F1FB9FC5A008AE7D7 /* HelpViewController.swift in Sources */,
 				376F2B231FB4F84B00C233FA /* SettingsViewController.swift in Sources */,
 				4ED0D1531FB4BC7D00B56E23 /* TabBarController.swift in Sources */,
 				371C0DAB1FB0EF3400F52156 /* TripDetailViewController.swift in Sources */,
