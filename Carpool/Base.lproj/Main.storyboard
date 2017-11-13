@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -681,62 +681,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instructions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c75-My-Bya">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c75-My-Bya">
                                 <rect key="frame" x="113" y="94" width="148" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Thanks for choosing our Carpool App. This section is all about it's functionality and how to read the information presented. " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfI-AB-13f">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Thanks for choosing our Carpool App. This section is all about it's functionality and how to read the information presented. " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfI-AB-13f">
                                 <rect key="frame" x="16" y="132" width="343" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carpool Screen:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkr-J4-wwr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carpool Screen:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkr-J4-wwr">
                                 <rect key="frame" x="16" y="212" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM9-Ew-lYU">
-                                <rect key="frame" x="16" y="241" width="343" height="169"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM9-Ew-lYU">
+                                <rect key="frame" x="16" y="241" width="343" height="186"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="GOB-as-9mT"/>
+                                </constraints>
                                 <string key="text">On this screen you are presented all of the trips along with their main details. The color of the left bubble shows whether or not both drop off and pickup are claimed. If red, both are unclaimed; green, both are claimed; yellow if either one is claimed and the other is unclaimed. Selecting a row will open up the event details screen. Pressing on the plus sign on the top right opens the create new event screen.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKe-Rv-8v8">
-                                <rect key="frame" x="106" y="429" width="163" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKe-Rv-8v8">
+                                <rect key="frame" x="106" y="449" width="163" height="30"/>
                                 <state key="normal" title="How to create new trips"/>
                                 <connections>
                                     <action selector="createNewButtonPressed:" destination="KRx-vX-Nh3" eventType="touchUpInside" id="sx4-o7-Gtd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ne3-Yy-NOD">
-                                <rect key="frame" x="93" y="467" width="191" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ne3-Yy-NOD">
+                                <rect key="frame" x="92" y="487" width="191" height="30"/>
                                 <state key="normal" title="How to modify existing trips"/>
                                 <connections>
                                     <action selector="modifyExistingPressed:" destination="KRx-vX-Nh3" eventType="touchUpInside" id="DhH-Ns-IUe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyK-0F-75K">
-                                <rect key="frame" x="122" y="505" width="130" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyK-0F-75K">
+                                <rect key="frame" x="122" y="525" width="130" height="30"/>
                                 <state key="normal" title="How to add friends"/>
                                 <connections>
                                     <action selector="addFriendButtonPressed:" destination="KRx-vX-Nh3" eventType="touchUpInside" id="cz2-6c-ehE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbS-YY-JPr">
-                                <rect key="frame" x="93" y="543" width="189" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbS-YY-JPr">
+                                <rect key="frame" x="92" y="563" width="189" height="30"/>
                                 <state key="normal" title="Carpool screen Instructions"/>
                                 <connections>
                                     <action selector="carpoolScreenButtonPressed:" destination="KRx-vX-Nh3" eventType="touchUpInside" id="Ctl-6k-oE5"/>
@@ -744,6 +739,34 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gkr-J4-wwr" firstAttribute="trailing" secondItem="E9c-Wy-6T3" secondAttribute="trailingMargin" id="2Vx-iS-g19"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EKe-Rv-8v8" secondAttribute="trailing" constant="90" id="4YT-MZ-o04"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c75-My-Bya" secondAttribute="trailing" constant="98" id="5zd-yS-ogC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GbS-YY-JPr" secondAttribute="trailing" constant="78" id="6Mi-pS-exh"/>
+                            <constraint firstItem="GbS-YY-JPr" firstAttribute="top" secondItem="XyK-0F-75K" secondAttribute="bottom" constant="8" id="C7s-fJ-06Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XyK-0F-75K" secondAttribute="trailing" constant="107" id="FCZ-FO-oFR"/>
+                            <constraint firstItem="EKe-Rv-8v8" firstAttribute="top" secondItem="EM9-Ew-lYU" secondAttribute="bottom" constant="22" id="Qxc-9Z-JvC"/>
+                            <constraint firstItem="ne3-Yy-NOD" firstAttribute="top" secondItem="EKe-Rv-8v8" secondAttribute="bottom" constant="8" id="RiK-ju-YEV"/>
+                            <constraint firstItem="Gkr-J4-wwr" firstAttribute="top" secondItem="tfI-AB-13f" secondAttribute="bottom" constant="8" id="Rye-QO-xb5"/>
+                            <constraint firstItem="EM9-Ew-lYU" firstAttribute="centerX" secondItem="E9c-Wy-6T3" secondAttribute="centerX" id="SN1-JF-EOJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ne3-Yy-NOD" secondAttribute="trailing" constant="76" id="U8w-1j-wbQ"/>
+                            <constraint firstItem="EKe-Rv-8v8" firstAttribute="leading" secondItem="E9c-Wy-6T3" secondAttribute="leadingMargin" constant="90" id="UPK-2i-2f9"/>
+                            <constraint firstItem="GbS-YY-JPr" firstAttribute="leading" secondItem="E9c-Wy-6T3" secondAttribute="leadingMargin" constant="76" id="bo8-qj-14U"/>
+                            <constraint firstItem="Yjs-oP-5AG" firstAttribute="top" secondItem="GbS-YY-JPr" secondAttribute="bottom" constant="25" id="eT9-uK-3sk"/>
+                            <constraint firstItem="tfI-AB-13f" firstAttribute="leading" secondItem="E9c-Wy-6T3" secondAttribute="leadingMargin" id="f5s-rf-eB1"/>
+                            <constraint firstItem="c75-My-Bya" firstAttribute="leading" secondItem="E9c-Wy-6T3" secondAttribute="leadingMargin" constant="97" id="m7H-1W-3WS"/>
+                            <constraint firstItem="EM9-Ew-lYU" firstAttribute="leading" secondItem="E9c-Wy-6T3" secondAttribute="leadingMargin" id="qoD-aD-q6J"/>
+                            <constraint firstItem="EM9-Ew-lYU" firstAttribute="trailing" secondItem="E9c-Wy-6T3" secondAttribute="trailingMargin" id="rcf-fd-LXF"/>
+                            <constraint firstItem="Gkr-J4-wwr" firstAttribute="leading" secondItem="E9c-Wy-6T3" secondAttribute="leadingMargin" id="sMR-bG-AAG"/>
+                            <constraint firstItem="tfI-AB-13f" firstAttribute="top" secondItem="c75-My-Bya" secondAttribute="bottom" constant="8" id="tKD-C8-LW0"/>
+                            <constraint firstItem="XyK-0F-75K" firstAttribute="top" secondItem="ne3-Yy-NOD" secondAttribute="bottom" constant="8" id="tVw-jj-K4n"/>
+                            <constraint firstItem="ne3-Yy-NOD" firstAttribute="leading" secondItem="E9c-Wy-6T3" secondAttribute="leadingMargin" constant="76" id="vZd-3j-eJj"/>
+                            <constraint firstItem="c75-My-Bya" firstAttribute="top" secondItem="jiD-Zk-MIf" secondAttribute="bottom" constant="30" id="vaN-w3-ZLs"/>
+                            <constraint firstItem="tfI-AB-13f" firstAttribute="trailing" secondItem="E9c-Wy-6T3" secondAttribute="trailingMargin" id="wBk-KC-SL9"/>
+                            <constraint firstItem="XyK-0F-75K" firstAttribute="leading" secondItem="E9c-Wy-6T3" secondAttribute="leadingMargin" constant="106" id="xWH-qN-owX"/>
+                            <constraint firstItem="EM9-Ew-lYU" firstAttribute="top" secondItem="Gkr-J4-wwr" secondAttribute="bottom" constant="8" id="xuV-EO-0mf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="prh-sn-9Gl"/>
                     <connections>
