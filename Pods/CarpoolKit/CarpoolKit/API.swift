@@ -480,11 +480,19 @@ public enum API {
         return firstly {
             Database.fetch(path: "users")
         }.then(on: .global()) { snapshot in
-            return try snapshot.children.map { snapshot in
-                let snapshot = snapshot as! DataSnapshot
-                let _children: [Child] = try snapshot.childSnapshot(forPath: "children").array()
-                let name = try snapshot.childSnapshot(forPath: "name").string()
-                return CarpoolKit.User(key: snapshot.key, name: name, _children: _children)
+            return snapshot.children.flatMap { snapshot in
+                do {
+                    let snapshot = snapshot as! DataSnapshot
+                    return User(
+                        key: snapshot.key,
+                        name: try snapshot.childSnapshot(forPath: "name").string(),
+                        _children: try snapshot.childSnapshot(forPath: "children").children.map { snapshot in
+                            let snapshot = snapshot as! DataSnapshot
+                            return Child(key: snapshot.key, name: try snapshot.string())
+                        })
+                } catch {
+                    return nil
+                }
             }.filter {
                 guard let parts = $0.name?.lowercased().split(separator: " ") else {
                     return false
