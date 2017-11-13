@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -176,7 +176,7 @@
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iqM-it-Ck8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup Driver" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-uY-SZL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pickup Driver" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-uY-SZL">
                                 <rect key="frame" x="200" y="260" width="159" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4Co-5l-TVl"/>
@@ -198,10 +198,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6hk-Fv-AKH">
-                                <rect key="frame" x="16" y="326.5" width="343" height="174.5"/>
+                                <rect key="frame" x="16" y="350" width="343" height="151"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ryX-9s-8lg">
-                                        <rect key="frame" x="0.0" y="-17" width="343" height="162"/>
+                                        <rect key="frame" x="0.0" y="16" width="343" height="118"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <date key="date" timeIntervalSinceReferenceDate="532024970.00286603">
                                             <!--2017-11-10 16:42:50 +0000-->
@@ -222,17 +222,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oi-YI-J3D">
-                                <rect key="frame" x="16" y="288.5" width="97" height="30"/>
+                                <rect key="frame" x="16" y="288.5" width="97" height="53.5"/>
                                 <state key="normal" title="Drop Off Time"/>
                                 <connections>
                                     <action selector="onDropOffTimeButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="vTH-HS-8Ku"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Et-jd-Ea9">
-                                <rect key="frame" x="208" y="284.5" width="150" height="34"/>
-                                <state key="normal" title="Pick Up Time"/>
-                                <connections>
-                                    <action selector="onPickUpTimeButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="JcI-0Y-6Zl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl2-tE-Jcu">
@@ -242,12 +235,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Et-jd-Ea9">
+                                <rect key="frame" x="268" y="312" width="91" height="30"/>
+                                <state key="normal" title="Pick Up Time"/>
+                                <connections>
+                                    <action selector="onPickUpTimeButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="JcI-0Y-6Zl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58423007189999998" green="1" blue="0.9397938576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6hk-Fv-AKH" firstAttribute="top" secondItem="9oi-YI-J3D" secondAttribute="bottom" constant="8" symbolic="YES" id="3Lk-qf-hcN"/>
                             <constraint firstItem="LQX-5d-vyH" firstAttribute="top" secondItem="xFL-Gm-LBF" secondAttribute="bottom" constant="8" id="4MX-U4-Kgo"/>
-                            <constraint firstItem="2Et-jd-Ea9" firstAttribute="top" secondItem="BHk-rC-0Vp" secondAttribute="bottom" constant="8" symbolic="YES" id="6qr-oN-9Vy"/>
                             <constraint firstItem="Hl2-tE-Jcu" firstAttribute="top" secondItem="6hk-Fv-AKH" secondAttribute="bottom" constant="8" symbolic="YES" id="6yW-sp-Ixh"/>
                             <constraint firstItem="BHk-rC-0Vp" firstAttribute="leading" secondItem="dlw-lI-JGu" secondAttribute="trailing" constant="55" id="CkB-gc-9NI"/>
                             <constraint firstItem="LQX-5d-vyH" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="DBL-Yc-y7X"/>
@@ -257,7 +256,7 @@
                             <constraint firstItem="6hk-Fv-AKH" firstAttribute="centerX" secondItem="iqM-it-Ck8" secondAttribute="centerX" id="MdX-HK-IKY"/>
                             <constraint firstItem="xvu-eO-vXg" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="N7B-ZT-R22"/>
                             <constraint firstItem="9oi-YI-J3D" firstAttribute="top" secondItem="A2t-f8-M3X" secondAttribute="bottom" constant="8" id="Nqu-Ns-Wz5"/>
-                            <constraint firstItem="2Et-jd-Ea9" firstAttribute="top" secondItem="3Wv-uY-SZL" secondAttribute="bottom" constant="4" id="Ofg-Rr-p5n"/>
+                            <constraint firstItem="2Et-jd-Ea9" firstAttribute="top" secondItem="3Wv-uY-SZL" secondAttribute="bottom" constant="8" id="Ofg-Rr-p5n"/>
                             <constraint firstItem="BHk-rC-0Vp" firstAttribute="baseline" secondItem="dlw-lI-JGu" secondAttribute="baseline" id="OqP-Od-alc"/>
                             <constraint firstItem="iqM-it-Ck8" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leading" id="QRF-dS-DT3"/>
                             <constraint firstItem="3Wv-uY-SZL" firstAttribute="top" secondItem="BHk-rC-0Vp" secondAttribute="bottom" constant="8" id="Rc3-bG-Nax"/>
@@ -272,6 +271,7 @@
                             <constraint firstItem="dlw-lI-JGu" firstAttribute="top" secondItem="LQX-5d-vyH" secondAttribute="bottom" constant="10" id="qx2-gb-iXz"/>
                             <constraint firstItem="xvu-eO-vXg" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="rEg-dJ-wFt"/>
                             <constraint firstItem="xFL-Gm-LBF" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="tlq-MY-cyP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Et-jd-Ea9" secondAttribute="trailing" id="uAh-TK-kQZ"/>
                             <constraint firstItem="6hk-Fv-AKH" firstAttribute="leading" secondItem="Hl2-tE-Jcu" secondAttribute="leading" id="uiJ-Zi-t4U"/>
                             <constraint firstItem="6hk-Fv-AKH" firstAttribute="leading" secondItem="dlw-lI-JGu" secondAttribute="leading" id="vU9-DF-L7M"/>
                             <constraint firstItem="A2t-f8-M3X" firstAttribute="top" secondItem="dlw-lI-JGu" secondAttribute="bottom" constant="8" id="xIW-bD-Y7x"/>
