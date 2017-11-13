@@ -16,6 +16,19 @@ class RootViewController: UITableViewController {
     var trip: Trip!
     var currentUser: String?
     
+    var legsChecked: LegsClaimed {
+        if trip.pickUp == nil, trip.dropOff == nil {
+            return .red
+        } else if (trip.pickUp != nil) , trip.dropOff == nil {
+            return .yellow
+        } else if trip.pickUp == nil, (trip.dropOff != nil) {
+            return .yellow
+        } else if (trip.pickUp != nil) , (trip.dropOff != nil) {
+            return .green
+        }
+        return .red
+    }
+    
     @IBOutlet weak var segmentedButton: UISegmentedControl!
     
     override func viewDidLoad() {
@@ -74,9 +87,19 @@ class RootViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Trips", for: indexPath) as! TripCell
         
         //        cell.eventNameLabel.text = trips[indexPath.row].event.description
+        switch legsChecked {
+            
+        case .red:
+            cell.legStatusView.layer.backgroundColor = UIColor.red.cgColor
+        case .yellow:
+            cell.legStatusView.layer.backgroundColor = UIColor.yellow.cgColor
+        case .green:
+            cell.legStatusView.layer.backgroundColor = UIColor.green.cgColor
+        }
         
         cell.eventNameLabel.text = trips[indexPath.row].alertText
         
