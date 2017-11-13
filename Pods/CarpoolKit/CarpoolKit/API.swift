@@ -475,6 +475,7 @@ public enum API {
     ///This is the `Promise` returning variant of this function.
     ///Use the original `search(forUsersWithName:completion:)` unless you intend to use Promises.
     public static func search(forUsersWithName query: String) -> Promise<[User]> {
+        let query = query.lowercased()
         return firstly {
             Database.fetch(path: "users")
         }.then(on: .global()) { snapshot in
