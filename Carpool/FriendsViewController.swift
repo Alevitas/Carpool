@@ -27,8 +27,8 @@ class FriendsViewController: UITableViewController {
             case .success(let downloadedFriends):
                 self.friends = downloadedFriends
                 self.tableView.reloadData()
-            case .failure(_):
-                print("error")
+            case .failure(let error):
+                print("\nError getting Friends: ", error)
             }
         }
         

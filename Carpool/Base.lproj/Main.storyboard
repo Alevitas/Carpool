@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -139,15 +139,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlw-lI-JGu">
-                                <rect key="frame" x="16" y="233" width="149" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlw-lI-JGu">
+                                <rect key="frame" x="16" y="222" width="149" height="30"/>
                                 <state key="normal" title="DropOff"/>
                                 <connections>
                                     <action selector="onDropOffButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="4OB-2z-C6Z"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="DropOff Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2t-f8-M3X">
-                                <rect key="frame" x="16" y="271" width="112" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DropOff Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2t-f8-M3X">
+                                <rect key="frame" x="16" y="260" width="112" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -176,8 +176,8 @@
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iqM-it-Ck8">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pickup Driver" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-uY-SZL">
-                                <rect key="frame" x="200" y="271" width="159" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup Driver" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-uY-SZL">
+                                <rect key="frame" x="200" y="260" width="159" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4Co-5l-TVl"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="159" id="HTF-7y-mam"/>
@@ -187,8 +187,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHk-rC-0Vp">
-                                <rect key="frame" x="220" y="233" width="139" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHk-rC-0Vp">
+                                <rect key="frame" x="220" y="222" width="159" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="139" id="ipa-vz-Hcs"/>
                                 </constraints>
@@ -198,7 +198,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6hk-Fv-AKH">
-                                <rect key="frame" x="16" y="357" width="343" height="68"/>
+                                <rect key="frame" x="16" y="346" width="343" height="155"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ryX-9s-8lg">
                                         <rect key="frame" x="0.0" y="-17" width="343" height="162"/>
@@ -221,15 +221,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oi-YI-J3D">
-                                <rect key="frame" x="16" y="319" width="97" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oi-YI-J3D">
+                                <rect key="frame" x="16" y="288.5" width="97" height="49.5"/>
                                 <state key="normal" title="Drop Off Time"/>
                                 <connections>
                                     <action selector="onDropOffTimeButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="vTH-HS-8Ku"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Et-jd-Ea9">
-                                <rect key="frame" x="208" y="319" width="150" height="30"/>
+                                <rect key="frame" x="208" y="308" width="150" height="30"/>
                                 <state key="normal" title="Pick Up Time"/>
                                 <connections>
                                     <action selector="onPickUpTimeButtonPressed:" destination="KZF-gg-fW8" eventType="touchUpInside" id="JcI-0Y-6Zl"/>
@@ -268,6 +268,8 @@
                             <constraint firstItem="6hk-Fv-AKH" firstAttribute="top" secondItem="2Et-jd-Ea9" secondAttribute="bottom" constant="8" symbolic="YES" id="h1x-5S-70H"/>
                             <constraint firstItem="6hk-Fv-AKH" firstAttribute="leading" secondItem="LQX-5d-vyH" secondAttribute="leading" id="k3l-AE-IiN"/>
                             <constraint firstAttribute="bottom" secondItem="6hk-Fv-AKH" secondAttribute="bottom" constant="166" id="mDV-VO-Dx8"/>
+                            <constraint firstItem="BHk-rC-0Vp" firstAttribute="top" secondItem="LQX-5d-vyH" secondAttribute="bottom" constant="10" id="q0j-ed-gj7"/>
+                            <constraint firstItem="dlw-lI-JGu" firstAttribute="top" secondItem="LQX-5d-vyH" secondAttribute="bottom" constant="10" id="qx2-gb-iXz"/>
                             <constraint firstItem="xvu-eO-vXg" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="rEg-dJ-wFt"/>
                             <constraint firstItem="xFL-Gm-LBF" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="tlq-MY-cyP"/>
                             <constraint firstItem="6hk-Fv-AKH" firstAttribute="leading" secondItem="Hl2-tE-Jcu" secondAttribute="leading" id="uiJ-Zi-t4U"/>
@@ -590,11 +592,14 @@
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fYS-Ip-X2v">
                                     <rect key="frame" x="8" y="15" width="359" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="359" id="GEV-v2-1VQ"/>
+                                    </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     <connections>
-                                        <action selector="onSearchtextFieldReturn:" destination="9XH-g3-WQv" eventType="editingDidEnd" id="HAK-Cq-axt"/>
+                                        <action selector="onSearchtextFieldReturn:" destination="9XH-g3-WQv" eventType="editingDidEnd" id="BII-4v-uka"/>
                                     </connections>
                                 </textField>
                             </subviews>

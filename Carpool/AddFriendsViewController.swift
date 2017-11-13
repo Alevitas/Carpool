@@ -25,12 +25,12 @@ class AddFriendsViewController: UITableViewController {
         API.search(forUsersWithName: sender.text!) { (result) in
             switch result{
                 
-            case .success(let downloadedFriends):
+            case .success(let downloadedFriends as [User]):
                 self.friends = downloadedFriends
                 self.tableView.reloadData()
                 print(self.friends)
-            case .failure(_):
-                print("error")
+            case .failure(let error):
+                print("\nError getting Users:", error)
             }
         }
     }
