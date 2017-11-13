@@ -20,9 +20,13 @@ class HelpViewController: UIViewController {
         
         
     }
-    @IBOutlet weak var newTripButton: UIButton!
+    @IBAction func carpoolScreenButtonPressed(_ sender: Any) {
+    }
+    @IBAction func createNewButtonPressed(_ sender: Any) {
+    }
+    @IBAction func modifyExistingPressed(_ sender: Any) {
+    }
+    @IBAction func addFriendButtonPressed(_ sender: Any) {
+    }
     
-    @IBOutlet weak var modifyExistingPressed: UIButton!
-    @IBOutlet weak var addFriendbutton: UIButton!
-    @IBOutlet weak var carpoolScreenPressed: UIButton!
 }

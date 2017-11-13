@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rTy-Kw-SUX" id="U6Q-px-YUB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5n-ey-Ekj">
@@ -141,7 +141,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hk-Fv-AKH">
-                                <rect key="frame" x="16" y="309" width="343" height="192"/>
+                                <rect key="frame" x="16" y="309" width="343" height="99.5"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ryX-9s-8lg">
                                         <rect key="frame" x="0.0" y="-17" width="343" height="162"/>
@@ -553,7 +553,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Gi-aQ-6PQ" id="Vyl-Rr-pEp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNv-SG-4BU">
@@ -685,32 +685,40 @@
                                 <rect key="frame" x="106" y="429" width="163" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="How to create new trips"/>
+                                <connections>
+                                    <action selector="createNewButtonPressed:" destination="KRx-vX-Nh3" eventType="touchUpInside" id="sx4-o7-Gtd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ne3-Yy-NOD">
                                 <rect key="frame" x="93" y="467" width="191" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="How to modify existing trips"/>
+                                <connections>
+                                    <action selector="modifyExistingPressed:" destination="KRx-vX-Nh3" eventType="touchUpInside" id="DhH-Ns-IUe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyK-0F-75K">
                                 <rect key="frame" x="122" y="505" width="130" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="How to add friends"/>
+                                <connections>
+                                    <action selector="addFriendButtonPressed:" destination="KRx-vX-Nh3" eventType="touchUpInside" id="cz2-6c-ehE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbS-YY-JPr">
                                 <rect key="frame" x="93" y="543" width="189" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Carpool screen Instructions"/>
+                                <connections>
+                                    <action selector="carpoolScreenButtonPressed:" destination="KRx-vX-Nh3" eventType="touchUpInside" id="Ctl-6k-oE5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="prh-sn-9Gl"/>
                     <connections>
-                        <outlet property="addFriendbutton" destination="XyK-0F-75K" id="Fth-fp-cJ1"/>
-                        <outlet property="carpoolScreenPressed" destination="GbS-YY-JPr" id="uAQ-7a-tuh"/>
                         <outlet property="infoTextView" destination="EM9-Ew-lYU" id="CqS-cV-IBD"/>
-                        <outlet property="modifyExistingPressed" destination="ne3-Yy-NOD" id="knm-Z4-2P6"/>
-                        <outlet property="newTripButton" destination="EKe-Rv-8v8" id="dOR-fx-Lbv"/>
                         <outlet property="sectionLabel" destination="Gkr-J4-wwr" id="KaR-6i-JvX"/>
                     </connections>
                 </viewController>
