@@ -13,6 +13,7 @@ class TripCell: UITableViewCell {
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventDetailsView: UIView!
     @IBOutlet weak var legStatusView: UIView!
+    @IBOutlet weak var eventTimeLabel: UILabel!
     
     override func layoutSubviews() {
         super.layoutSubviews()

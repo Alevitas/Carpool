@@ -80,6 +80,7 @@
                                 <connections>
                                     <outlet property="eventDetailsView" destination="r5n-ey-Ekj" id="Y3Z-um-d70"/>
                                     <outlet property="eventNameLabel" destination="78G-E9-ojU" id="bRn-Lp-7gH"/>
+                                    <outlet property="eventTimeLabel" destination="uq8-xi-AYg" id="HrQ-4c-wEP"/>
                                     <outlet property="legStatusView" destination="XL2-12-BS4" id="QJE-RH-QFw"/>
                                 </connections>
                             </tableViewCell>
@@ -140,7 +141,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hk-Fv-AKH">
-                                <rect key="frame" x="16" y="309" width="343" height="99.5"/>
+                                <rect key="frame" x="16" y="309" width="343" height="192"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ryX-9s-8lg">
                                         <rect key="frame" x="0.0" y="-17" width="343" height="162"/>

@@ -17,6 +17,14 @@ enum DropOffPickUp: String {
     case pickUp
 }
 
+enum LegsClaimed: String {
+    case red
+    case yellow
+    case green
+}
+
+
+
 extension CLLocation: MKAnnotation {
     
 }
