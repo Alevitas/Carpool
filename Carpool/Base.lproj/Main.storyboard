@@ -633,11 +633,90 @@
                         <segue destination="ZC4-dr-cLx" kind="relationship" relationship="viewControllers" id="QfV-fP-0dw"/>
                         <segue destination="gip-jm-Ikr" kind="relationship" relationship="viewControllers" id="wRH-Hr-YfT"/>
                         <segue destination="Du5-V2-7Ks" kind="relationship" relationship="viewControllers" id="8Sl-7L-r3j"/>
+                        <segue destination="fbv-K7-D0e" kind="relationship" relationship="viewControllers" id="XDZ-WZ-1xC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqm-IV-ATa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="142" y="142"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="H8I-jg-3uc">
+            <objects>
+                <viewController id="KRx-vX-Nh3" customClass="HelpViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jiD-Zk-MIf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yjs-oP-5AG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E9c-Wy-6T3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instructions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c75-My-Bya">
+                                <rect key="frame" x="113" y="94" width="148" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Thanks for choosing our Carpool App. This section is all about it's functionality and how to read the information presented. " textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfI-AB-13f">
+                                <rect key="frame" x="16" y="132" width="343" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carpool Screen:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkr-J4-wwr">
+                                <rect key="frame" x="16" y="212" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM9-Ew-lYU">
+                                <rect key="frame" x="16" y="241" width="343" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">On this screen you are presented all of the trips along with their main details. The color of the left bubble shows whether or not both drop off and pickup are claimed. If red, both are unclaimed; green, both are claimed; yellow if either one is claimed and the other is unclaimed. Selecting a row will open up the event details screen. Pressing on the plus sign on the top right opens the create new event screen.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKe-Rv-8v8">
+                                <rect key="frame" x="106" y="429" width="163" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="How to create new trips"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ne3-Yy-NOD">
+                                <rect key="frame" x="93" y="467" width="191" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="How to modify existing trips"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyK-0F-75K">
+                                <rect key="frame" x="122" y="505" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="How to add friends"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbS-YY-JPr">
+                                <rect key="frame" x="93" y="543" width="189" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Carpool screen Instructions"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Help" id="prh-sn-9Gl"/>
+                    <connections>
+                        <outlet property="addFriendbutton" destination="XyK-0F-75K" id="Fth-fp-cJ1"/>
+                        <outlet property="carpoolScreenPressed" destination="GbS-YY-JPr" id="uAQ-7a-tuh"/>
+                        <outlet property="infoTextView" destination="EM9-Ew-lYU" id="CqS-cV-IBD"/>
+                        <outlet property="modifyExistingPressed" destination="ne3-Yy-NOD" id="knm-Z4-2P6"/>
+                        <outlet property="newTripButton" destination="EKe-Rv-8v8" id="dOR-fx-Lbv"/>
+                        <outlet property="sectionLabel" destination="Gkr-J4-wwr" id="KaR-6i-JvX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7R-kI-hjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314.39999999999998" y="1724.8875562218891"/>
         </scene>
         <!--Settings-->
         <scene sceneID="0Ef-2d-ya9">
@@ -720,7 +799,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJY-Ld-9EW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="1540"/>
+            <point key="canvasLocation" x="142" y="922"/>
         </scene>
         <!--Trips-->
         <scene sceneID="ctV-vv-Eec">
@@ -777,6 +856,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="to4-Bb-TQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-314" y="-681"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="ZLH-VE-X60">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fbv-K7-D0e" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Help" id="rug-f1-NHn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PqN-2u-dvJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KRx-vX-Nh3" kind="relationship" relationship="rootViewController" id="aY0-7q-DLL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Fe-29-qfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1002" y="1725"/>
         </scene>
     </scenes>
     <resources>
