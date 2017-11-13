@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -542,14 +542,37 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNv-SG-4BU">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNv-SG-4BU">
                                             <rect key="frame" x="8" y="8" width="359" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends' names" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cee-Mq-i4y">
+                                                    <rect key="frame" x="8" y="12" width="343" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Cee-Mq-i4y" secondAttribute="bottom" constant="11" id="8sl-vt-pns"/>
+                                                <constraint firstItem="Cee-Mq-i4y" firstAttribute="top" secondItem="BNv-SG-4BU" secondAttribute="top" constant="12" id="Ghv-8b-Iny"/>
+                                                <constraint firstAttribute="trailing" secondItem="Cee-Mq-i4y" secondAttribute="trailing" constant="8" id="gOc-xI-egi"/>
+                                                <constraint firstItem="Cee-Mq-i4y" firstAttribute="leading" secondItem="BNv-SG-4BU" secondAttribute="leading" constant="8" id="kyv-dJ-wye"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" red="0.58423007189999998" green="1" blue="0.9397938576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="BNv-SG-4BU" secondAttribute="trailing" constant="8" id="2z8-lJ-bkO"/>
+                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="leading" secondItem="Vyl-Rr-pEp" secondAttribute="leading" constant="8" id="8hx-Xz-KaO"/>
+                                        <constraint firstAttribute="bottom" secondItem="BNv-SG-4BU" secondAttribute="bottom" constant="7.5" id="qdm-uw-kZp"/>
+                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="top" secondItem="Vyl-Rr-pEp" secondAttribute="top" constant="8" id="w0d-xr-gMP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="friendNameLabel" destination="Cee-Mq-i4y" id="0PJ-wN-Euu"/>
+                                    <outlet property="friendView" destination="BNv-SG-4BU" id="XX5-BY-b94"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

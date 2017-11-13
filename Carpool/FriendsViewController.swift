@@ -17,9 +17,12 @@ class FriendsViewController: UITableViewController {
     @IBOutlet weak var friendSearch: UITextField!
     
     var friends: [User] = []
+    var segmentedSection: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        segmentedSection = true
         
         API.observeFriends(sender: self) { (result) in
             switch result {
@@ -36,6 +39,7 @@ class FriendsViewController: UITableViewController {
     }
     @IBAction func segmentedButtonChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
+            segmentedSection = true
             searchBarView.isHidden = true
             API.observeFriends(sender: self) { (result) in
                 switch result {
@@ -48,6 +52,7 @@ class FriendsViewController: UITableViewController {
                 }
             }
         } else {
+            segmentedSection = false
             searchBarView.isHidden = false
             friends = []
             tableView.reloadData()
@@ -73,10 +78,26 @@ class FriendsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friend", for: indexPath) as! FriendCell
         
-        
+        cell.friendNameLabel.text = friends[indexPath.row].name
         
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if segmentedSection == true {
+            
+        } else {
+         API.add(friend: friends[indexPath.row])
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if segmentedSection == true {
+            API.remove(friend: friends[indexPath.row])
+            friends.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
     }
     
 }
