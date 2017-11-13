@@ -820,16 +820,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FPr-eU-C37">
-                                <rect key="frame" x="16" y="114" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <action selector="usernameTextFieldEnter:" destination="gip-jm-Ikr" eventType="editingDidEndOnExit" id="dzk-2B-wJq"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Children:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksR-Oi-HtC">
                                 <rect key="frame" x="16" y="152" width="69" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -863,6 +853,13 @@
                                     <action selector="logoutButonPressed:" destination="gip-jm-Ikr" eventType="touchUpInside" id="Tph-mE-sR7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgE-S8-fhK">
+                                <rect key="frame" x="16" y="114" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -870,12 +867,12 @@
                     <connections>
                         <outlet property="childrenAddedLabel" destination="zB4-Cc-qJP" id="eas-wn-BZ5"/>
                         <outlet property="logoutButton" destination="bRg-oX-N7D" id="WLx-2a-DxY"/>
-                        <outlet property="usernameTextField" destination="FPr-eU-C37" id="6bR-gL-fUI"/>
+                        <outlet property="usernameLabel" destination="OgE-S8-fhK" id="6iv-AD-kTL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJY-Ld-9EW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="922"/>
+            <point key="canvasLocation" x="141.59999999999999" y="921.58920539730138"/>
         </scene>
         <!--Trips-->
         <scene sceneID="ctV-vv-Eec">
