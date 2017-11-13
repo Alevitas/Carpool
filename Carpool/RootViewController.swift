@@ -17,13 +17,13 @@ class RootViewController: UITableViewController {
     var currentUser: String?
     
     var dropOffLegClaimed: Bool {
-        guard (trip.pickUp?.driver) != nil else { return false }
+        guard trip.dropOff != nil else { return false }
 
         return true
     }
     
     var pickUpLegClaimed: Bool {
-        guard (trip.pickUp?.driver) != nil else { return false }
+        guard trip.pickUp != nil else { return false }
 
         return true
     }
@@ -48,7 +48,7 @@ class RootViewController: UITableViewController {
         
         
         currentUser = Auth.auth().currentUser?.displayName
-        API.observeTheTripsOfMyFriends(sender: self) { (result) in
+        API.observeTrips(sender: self) { (result) in
             switch result {
                 
             case .success(let tripsDownloaded):
@@ -103,6 +103,7 @@ class RootViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Trips", for: indexPath) as! TripCell
         
         //        cell.eventNameLabel.text = trips[indexPath.row].event.description
+        trip = trips[indexPath.row]
         switch legsChecked {
             
         case .red:
