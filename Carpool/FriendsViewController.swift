@@ -17,7 +17,7 @@ class FriendsViewController: UITableViewController {
     @IBOutlet weak var friendSearch: UITextField!
     
     var friends: [User] = []
-    var segmentedSection: Bool?
+    var segmentedSection: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
