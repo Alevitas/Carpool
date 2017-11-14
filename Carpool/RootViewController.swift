@@ -40,7 +40,7 @@ class RootViewController: UITableViewController {
         super.viewDidLoad()
         
         for day in 0...6 {
-            tripsForDays = tripCalendar?.trips(forDaysFromToday: day)
+            let tripsForDays = tripCalendar?.trips(forDaysFromToday: day)
             for trip in tripForDays{
                 trips.append(trip)
             }
