@@ -13,7 +13,8 @@ import EventKit
 
 
 class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-
+    
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var descriptionTextFieldOutlet: UITextField!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
@@ -23,7 +24,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     let geocoder = CLGeocoder()
     let locationManager = CLLocationManager()
     var aLocation: CLPlacemark?
-    var datePicked = Date()
+    var startTimePicked = Date()
+    var endTimePicked = Date()
     var region: CLRegion?
     var query: String?
     
@@ -44,7 +46,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     @IBAction func onCancelButtonPressed(_ sender: Any) {
-         performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+        performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
     }
     @IBAction func onDoneButtonPressed(_ sender: UIBarButtonItem) {
         
@@ -57,21 +59,32 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     func onCalendarSelected(action: UIAlertAction) {
         
-      
-        generateEvent(title: "Carpool Event", startDate: datePicked, endDate: datePicked, description: descriptionTextFieldOutlet.text!)
+        
+        generateEvent(title: "Carpool Event", startDate: startTimePicked, endDate: endTimePicked, description: descriptionTextFieldOutlet.text!)
         
         if let description = descriptionTextFieldOutlet.text {
             if query == "" {
-                API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                API.createTrip(eventDescription: description, eventTime: startTimePicked, eventLocation: (aLocation?.location ?? nil)!) { (result) in
                     
-                    
-                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                    switch result {
+                        
+                    case .success(let trip):
+                        API.set(endTime: self.endTimePicked, for: trip.event)
+                        self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                    case .failure(_):
+                        print("error making trip")
+                    }
                 }
             } else {
-                API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
-                    
-                    
-                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: startTimePicked, eventLocation: (aLocation?.location ?? nil)!) { (result) in
+                    switch result {
+                        
+                    case .success(let trip):
+                        API.set(endTime: self.endTimePicked, for: trip.event)
+                        self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                    case .failure(_):
+                        print("error making trip")
+                    }
                 }
             }
         }
@@ -83,16 +96,29 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         if let description = descriptionTextFieldOutlet.text {
             if query == "" {
-                API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                API.createTrip(eventDescription: description, eventTime: startTimePicked, eventLocation: (aLocation?.location ?? nil)!) { (result) in
                     
+                    switch result {
+                        
+                    case .success(let trip):
+                        API.set(endTime: self.endTimePicked, for: trip.event)
+                        self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                    case .failure(_):
+                        print("error making trip")
+                    }
                     
-                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
                 }
             } else {
-                API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: startTimePicked, eventLocation: (aLocation?.location ?? nil)!) { (result) in
                     
-                    
-                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                    switch result {
+                        
+                    case .success(let trip):
+                        API.set(endTime: self.endTimePicked, for: trip.event)
+                        self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                    case .failure(_):
+                        print("error making trip")
+                    }
                 }
             }
         }
@@ -126,7 +152,9 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     @IBAction func onDatePickerChanged(_ sender: UIDatePicker) {
-        datePicked = sender.date
+        
+        
+        
     }
     
     
@@ -262,6 +290,15 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             return
         }
         print("Saved Event")
+    }
+    
+    @IBAction func SegmentedControlSwitched(_ sender: Any) {
+        if segmentControl.selectedSegmentIndex == 0 {
+            startTimePicked = datePickerOutlet.date
+        } else {
+            endTimePicked = datePickerOutlet.date
+        }
+        
     }
     
 }

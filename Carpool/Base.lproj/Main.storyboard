@@ -328,14 +328,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiu-yj-cqb">
-                                <rect key="frame" x="16" y="140" width="41" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set time for:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiu-yj-cqb">
+                                <rect key="frame" x="16" y="140" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5TB-vU-pwM">
-                                <rect key="frame" x="36" y="163" width="302" height="216"/>
+                                <rect key="frame" x="36" y="164" width="302" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="531698055.557293">
                                     <!--2017-11-06 21:54:15 +0000-->
                                 </date>
@@ -350,7 +350,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter street address..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Akb-6F-t0k">
-                                <rect key="frame" x="19" y="415" width="337" height="30"/>
+                                <rect key="frame" x="19" y="416" width="337" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -359,7 +359,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location in maps (optional):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrF-Ca-5Ud">
-                                <rect key="frame" x="19" y="387" width="212" height="20.5"/>
+                                <rect key="frame" x="19" y="388" width="212" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -371,7 +371,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IKs-MZ-Spy">
-                                <rect key="frame" x="19" y="453" width="337" height="165"/>
+                                <rect key="frame" x="19" y="454" width="337" height="164"/>
                                 <connections>
                                     <outlet property="delegate" destination="R3k-os-Awd" id="WXE-M2-ICD"/>
                                 </connections>
@@ -383,6 +383,17 @@
                                     <action selector="onOpenInMapsPressed:" destination="R3k-os-Awd" eventType="touchUpInside" id="VlG-F1-BLw"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6aG-um-LTC">
+                                <rect key="frame" x="139" y="140" width="217" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Drop off"/>
+                                    <segment title="Pick up"/>
+                                </segments>
+                                <connections>
+                                    <action selector="SegmentedControlSwitched:" destination="R3k-os-Awd" eventType="valueChanged" id="5FB-g1-ACv"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -429,6 +440,7 @@
                         <outlet property="datePickerOutlet" destination="5TB-vU-pwM" id="Heg-2f-ebI"/>
                         <outlet property="descriptionTextFieldOutlet" destination="n5d-HT-Vtk" id="V8W-3I-0bm"/>
                         <outlet property="mapView" destination="IKs-MZ-Spy" id="ZHN-2o-PTY"/>
+                        <outlet property="segmentControl" destination="6aG-um-LTC" id="Hpg-Kt-VvP"/>
                         <outlet property="shownInMapsButton" destination="Hgj-2S-Cht" id="sfX-ru-ZcD"/>
                         <segue destination="gef-00-er5" kind="unwind" identifier="UnwindFromAddNew" unwindAction="unwindFromAddNewWithSegue:" id="AEG-yQ-6yG"/>
                     </connections>
