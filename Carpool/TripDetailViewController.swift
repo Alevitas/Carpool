@@ -11,7 +11,7 @@ import MapKit
 import CarpoolKit
 import CoreLocation
 
-class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class TripDetailViewController: UITableViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var openInMapsButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -43,22 +43,24 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         
         guard let trip = trip else { return }
         
-        if trip.hasLocation {
-            openInMapsButton.isHidden = false
-        } else {
-            openInMapsButton.isHidden = true
-        }
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
+//        if trip.hasLocation {
+//            openInMapsButton.isHidden = false
+//        } else {
+//            openInMapsButton.isHidden = true
+//        }
         
         print("Event received is: \(trip.event)")
         locationManager.delegate = self
 
-        descriptionLabel.text = trip.event.description
-        childrenNameTextField.text = makeListOfChildren(childrenList: trip.event.owner.children)
+//        descriptionLabel.text = trip.event.description
+        descriptionLabel.text = trip.alertText
+        
+//        childrenNameTextField.text = makeListOfChildren(childrenList: trip.event.owner.children)
 
         self.title = trip.event.time.prettyDay
         dropOffTimeButton.setTitle(trip.event.time.hourDesc, for: .normal)
         pickUpTimeButton.setTitle(trip.event.endTime?.hourDesc, for: .normal)
-        datePickerView.isHidden = true
         
         dropOffButton.setRoundEdge()
         pickUpButton.setRoundEdge()
@@ -74,7 +76,7 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         } else {
             dropOffDriverLabel.text = trip.dropOff?.driver.name
         }
-        alertTextLabel.text = trip.alertText
+        //alertTextLabel.text = trip.alertText
     }
     
     @IBAction func onSelectTimeButtonPressed(_ sender: UIButton) {
@@ -198,4 +200,13 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         }
     }
     
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 4
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        switch section {
+//            case 0
+//        }
+//    }
 }
