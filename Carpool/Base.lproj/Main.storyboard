@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -441,7 +441,7 @@
         <!--Login View Controller-->
         <scene sceneID="YMz-ua-v9f">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gc6-Fo-Mpo" customClass="LoginViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gc6-Fo-Mpo" customClass="LoginViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vBe-td-QrG"/>
                         <viewControllerLayoutGuide type="bottom" id="Yvc-Bf-bja"/>
@@ -461,7 +461,7 @@
                                     <segment title="Signup"/>
                                 </segments>
                                 <connections>
-                                    <action selector="onLoginSignupPressed:" destination="Gc6-Fo-Mpo" eventType="valueChanged" id="Czo-49-yE9"/>
+                                    <action selector="onLoginSignupPressed:" destination="Gc6-Fo-Mpo" eventType="valueChanged" id="GjD-lj-FuA"/>
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-X2-0Ei">
@@ -486,7 +486,7 @@
                                 <rect key="frame" x="8" y="206" width="359" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="onLoginButtonPressed:" destination="Gc6-Fo-Mpo" eventType="touchUpInside" id="vyW-xM-M7s"/>
+                                    <action selector="onLoginButtonPressed:" destination="Gc6-Fo-Mpo" eventType="touchUpInside" id="IBv-rL-1Bo"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hYG-Yz-wlG">
