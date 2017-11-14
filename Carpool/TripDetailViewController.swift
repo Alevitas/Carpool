@@ -19,7 +19,6 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     @IBOutlet weak var dropOffButton: UIButton!
     @IBOutlet weak var dropOffTimeButton: UIButton!
     @IBOutlet weak var pickUpTimeButton: UIButton!
-    @IBOutlet weak var datePickerView: UIView!
     
     @IBOutlet weak var childrenNameLabel: UILabel!
     @IBOutlet weak var childrenNameTextField: UITextField!
@@ -58,7 +57,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
 
         descriptionLabel.text = trip.alertText
         
-        childrenNameLabel.text = makeListOfChildren(childrenList: trip.event.owner.children)
+        childrenNameLabel.text = trip.event.owner.stringOfChildNames
 
         self.title = trip.event.time.prettyDay
         dropOffTimeButton.setTitle(trip.event.time.hourDesc, for: .normal)
@@ -103,7 +102,6 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         case .pickUp:
             pickUpTimeButton.setTitle(dropOffDatePicker.date.hourDesc, for: .normal)
         }
-        datePickerView.isHidden = true
     }
     
     @IBAction func onDropOffTimeButtonPressed(_ sender: UIButton) {
@@ -185,15 +183,6 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         }
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)
-    }
-    
-    func makeListOfChildren(childrenList: [Child]) -> String {
-        var childNames: [String] = []
-        
-        for child in childrenList {
-            childNames.append(child.name)
-        }
-        return childNames.joined(separator: ", ")
     }
     
     func onClaimPickUp(action: UIAlertAction) {

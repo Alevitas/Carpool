@@ -94,6 +94,15 @@ extension Event {
     }
 }
 
+extension User {
+    var stringOfChildNames: String {
+        let foo = self.children.reduce("") { (result, child) -> String in
+            result + ", " + child.name
+        }
+        return foo
+    }
+}
+
 extension UILabel {
     
     // extension user defined Method

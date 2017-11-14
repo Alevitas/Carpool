@@ -36,20 +36,10 @@ class SettingsViewController: UIViewController {
         
         logoutButton.setRoundEdge()
         if let user = currentUser, let currentChildren = user._children {
-            childrenAddedLabel.text = makeListOfChildren(childrenList: currentChildren )
+            childrenAddedLabel.text = user.stringOfChildNames
         } else {
             print("error")
         }
-    }
-    
-    
-    func makeListOfChildren(childrenList: [Child]) -> String {
-        var childNames: [String] = []
-        
-        for child in childrenList {
-            childNames.append(child.name)
-        }
-        return childNames.joined(separator: ", ")
     }
     
     
