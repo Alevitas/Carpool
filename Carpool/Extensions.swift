@@ -86,6 +86,12 @@ extension Trip {
     }
 }
 
+extension Event {
+    var myEvent: Bool {
+        return self.owner == currentUser
+    }
+}
+
 extension UILabel {
     
     // extension user defined Method
