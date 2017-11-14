@@ -9,6 +9,7 @@
 import UIKit
 import CarpoolKit
 import MapKit
+import EventKit
 
 
 class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
@@ -46,6 +47,47 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
          performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
     }
     @IBAction func onDoneButtonPressed(_ sender: UIBarButtonItem) {
+        
+        let saveAlert = UIAlertController(title: "Confirm adding trip", message: nil, preferredStyle: .actionSheet)
+        saveAlert.addAction(UIAlertAction(title: "Save to Carpool?", style: .default, handler: onCarpoolSelected))
+        saveAlert.addAction(UIAlertAction(title: "Save to Carpool and Calendar?", style: .default, handler: onLocationSelection))
+        saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(saveAlert, animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    func onCalendarSelected(action: UIAlertAction) {
+        
+        func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+            let eventStore = EKEventStore()
+            
+            eventStore.requestAccess(to: .event, completion: { (granted, error) in
+                if (granted) && (error == nil) {
+                    let event = EKEvent(eventStore: eventStore)
+                    event.title = title
+                    event.startDate = startDate
+                    event.endDate = endDate
+                    event.notes = description
+                    event.calendar = eventStore.defaultCalendarForNewEvents
+                    do {
+                        try eventStore.save(event, span: .thisEvent)
+                    } catch let e as NSError {
+                        completion?(false, e)
+                        return
+                    }
+                    completion?(true, nil)
+                } else {
+                    completion?(false, error as NSError?)
+                }
+            })
+        }
+        
+    }
+    
+    func onCarpoolSelected(action: UIAlertAction) {
+        
         if let description = descriptionTextFieldOutlet.text {
             if query == "" {
                 API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
@@ -62,6 +104,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             }
         }
     }
+    
+    
     @IBAction func doneBtnfromKeyboardClicked (sender: Any) {
         print("Done Button Clicked.")
         //Hide Keyboard by endEditing or Anything you want.
@@ -136,24 +180,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     
-  
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if let SearchResultVC = segue.destination as? SearchResultsTableViewController{
-    //            SearchResultVC.region = region
-    //            SearchResultVC.query = query
-    //        }
-    //    }
-    
-//    @IBAction func unwindFromSearchResults(segue: UIStoryboardSegue) {
-//        let searchResultsVC = segue.source as! SearchResultsTableViewController
-//        aLocation = searchResultsVC.place
-//        if let aLocation = aLocation {
-//            mapView.addAnnotation((aLocation.location)!)
-//        }
-//        let coordinateRegion = MKCoordinateRegionMakeWithDistance((aLocation?.location?.coordinate)!, 4000, 4000)
-//        mapView.setRegion(coordinateRegion, animated: true)
-//    }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)

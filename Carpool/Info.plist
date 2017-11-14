@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We need permission in order to link events to your calendar.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Please allow us to use you vlocation for this apps functionality</string>
 	<key>CFBundleDevelopmentRegion</key>
