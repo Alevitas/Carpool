@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1097,7 +1097,7 @@
             </objects>
             <point key="canvasLocation" x="2985" y="142"/>
         </scene>
-        <!--Comments View Controller-->
+        <!--Comments-->
         <scene sceneID="nm1-zZ-CvD">
             <objects>
                 <tableViewController id="xom-np-Y5L" customClass="CommentsViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
@@ -1114,16 +1114,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pn2-D6-gJR">
-                                            <rect key="frame" x="16" y="11" width="343" height="25.5"/>
+                                            <rect key="frame" x="8" y="8" width="359" height="31"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS3-hJ-AVQ">
-                                                    <rect key="frame" x="8" y="5" width="207" height="21"/>
+                                                    <rect key="frame" x="8" y="5" width="223" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date          -" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t81-mx-MTq">
-                                                    <rect key="frame" x="249" y="5" width="86" height="21"/>
+                                                    <rect key="frame" x="265" y="5" width="86" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1139,10 +1139,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVR-NZ-SlH">
-                                            <rect key="frame" x="16" y="42.5" width="343" height="46"/>
+                                            <rect key="frame" x="8" y="45" width="359" height="46"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJb-Mo-zgM">
-                                                    <rect key="frame" x="8" y="8" width="327" height="30"/>
+                                                    <rect key="frame" x="8" y="8" width="343" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1183,10 +1183,75 @@
                             <outlet property="delegate" destination="xom-np-Y5L" id="Mtk-Bc-Omu"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Comments" id="MpG-wd-vkr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oiA-E6-DT9">
+                            <connections>
+                                <segue destination="IAa-GP-Clj" kind="show" id="n6f-3k-CzF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7aM-iK-lkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3745" y="140"/>
+        </scene>
+        <!--Add Comments View Controller-->
+        <scene sceneID="jBB-KU-hQf">
+            <objects>
+                <viewController id="IAa-GP-Clj" customClass="AddCommentsViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nun-83-mxJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="p8t-YU-jQs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BAt-F5-p8J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backGroundimage2" translatesAutoresizingMaskIntoConstraints="NO" id="K6u-96-5j4">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlz-RP-d8f">
+                                <rect key="frame" x="103" y="93" width="168" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gwa-DY-KMS">
+                                <rect key="frame" x="16" y="146" width="343" height="175"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czQ-O6-N3h">
+                                <rect key="frame" x="163" y="373" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="onSubmitPressed:" destination="IAa-GP-Clj" eventType="touchUpInside" id="TAd-Wy-zz2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wlz-RP-d8f" firstAttribute="top" secondItem="nun-83-mxJ" secondAttribute="bottom" constant="29" id="1Uw-6G-HVC"/>
+                            <constraint firstItem="Gwa-DY-KMS" firstAttribute="trailing" secondItem="BAt-F5-p8J" secondAttribute="trailingMargin" id="2rL-dE-ZPz"/>
+                            <constraint firstItem="Gwa-DY-KMS" firstAttribute="leading" secondItem="BAt-F5-p8J" secondAttribute="leadingMargin" id="3Vk-YB-OeD"/>
+                            <constraint firstItem="czQ-O6-N3h" firstAttribute="top" secondItem="Gwa-DY-KMS" secondAttribute="bottom" constant="52" id="9BM-vF-KjM"/>
+                            <constraint firstItem="p8t-YU-jQs" firstAttribute="top" secondItem="czQ-O6-N3h" secondAttribute="bottom" constant="215" id="DVi-wr-sVb"/>
+                            <constraint firstItem="Wlz-RP-d8f" firstAttribute="leading" secondItem="BAt-F5-p8J" secondAttribute="leadingMargin" constant="87" id="R8e-tE-6Je"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wlz-RP-d8f" secondAttribute="trailing" constant="88" id="TyK-F0-xQe"/>
+                            <constraint firstItem="Gwa-DY-KMS" firstAttribute="top" secondItem="Wlz-RP-d8f" secondAttribute="bottom" constant="23" id="VwR-9h-Ejn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="czQ-O6-N3h" secondAttribute="trailing" constant="147" id="h5J-NC-VD5"/>
+                            <constraint firstItem="czQ-O6-N3h" firstAttribute="leading" secondItem="BAt-F5-p8J" secondAttribute="leadingMargin" constant="147" id="ry8-xP-2ZB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentsTextView" destination="Gwa-DY-KMS" id="YzG-OL-juc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z97-5F-5yN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4477.6000000000004" y="139.880059970015"/>
         </scene>
         <!--Settings-->
         <scene sceneID="OaT-7e-v5d">
