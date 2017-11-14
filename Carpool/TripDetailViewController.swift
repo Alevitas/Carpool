@@ -23,7 +23,9 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     
     @IBOutlet weak var childrenNameLabel: UILabel!
     @IBOutlet weak var childrenNameTextField: UITextField!
-    @IBOutlet weak var legDatePicker: UIDatePicker!
+    
+    @IBOutlet weak var dropOffDatePicker: UIDatePicker!
+    @IBOutlet weak var pickUpDatePicker: UIDatePicker!
     
     @IBOutlet weak var alertTextLabel: UILabel!
 
@@ -54,10 +56,9 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         print("Event received is: \(trip.event)")
         locationManager.delegate = self
 
-//        descriptionLabel.text = trip.event.description
         descriptionLabel.text = trip.alertText
         
-//        childrenNameTextField.text = makeListOfChildren(childrenList: trip.event.owner.children)
+        childrenNameLabel.text = makeListOfChildren(childrenList: trip.event.owner.children)
 
         self.title = trip.event.time.prettyDay
         dropOffTimeButton.setTitle(trip.event.time.hourDesc, for: .normal)
@@ -83,9 +84,9 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     @IBAction func onSelectTimeButtonPressed(_ sender: UIButton) {
         switch dropOffPickUp {
         case .dropOff:
-            dropOffTimeButton.setTitle(legDatePicker.date.hourDesc, for: .normal)
+            dropOffTimeButton.setTitle(dropOffDatePicker.date.hourDesc, for: .normal)
         case .pickUp:
-            pickUpTimeButton.setTitle(legDatePicker.date.hourDesc, for: .normal)
+            pickUpTimeButton.setTitle(dropOffDatePicker.date.hourDesc, for: .normal)
         }
         datePickerView.isHidden = true
     }
@@ -95,7 +96,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         UIView.animate(withDuration: 0.3, animations: {
             self.datePickerView.isHidden = !self.datePickerView.isHidden
         })
-        legDatePicker.date = trip.event.time
+        dropOffDatePicker.date = trip.event.time
     }
     
     @IBAction func onPickUpTimeButtonPressed(_ sender: UIButton) {
@@ -103,16 +104,19 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         UIView.animate(withDuration: 0.3, animations: {
             self.datePickerView.isHidden = !self.datePickerView.isHidden
         })
-        legDatePicker.date = trip.event.endTime!
+        dropOffDatePicker.date = trip.event.endTime!
     }
     
-    @IBAction func onLegDatePickerChanged(_ sender: UIDatePicker) {
+    @IBAction func onDropOffLegDatePickerChanged(_ sender: UIDatePicker) {
         switch dropOffPickUp {
         case .dropOff:
-            dropOffTimeButton.setTitle(legDatePicker.date.hourDesc, for: .normal)
+            dropOffTimeButton.setTitle(dropOffDatePicker.date.hourDesc, for: .normal)
         case .pickUp:
-            pickUpTimeButton.setTitle(legDatePicker.date.hourDesc, for: .normal)
+            pickUpTimeButton.setTitle(dropOffDatePicker.date.hourDesc, for: .normal)
         }
+    }
+    
+    @IBAction func onPickUpLegDatePickerChanged(_ sender: UIDatePicker) {
     }
     
     @IBAction func onChildrenNameChanged(_ sender: UITextField) {
@@ -200,4 +204,9 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
             self.dropOffDriverLabel.text = "Driver unclaimed."
         }
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
+    
 }
