@@ -77,7 +77,8 @@ class RootViewController: UITableViewController {
                 switch result {
                     
                 case .success(let tripCalendarDownloaded):
-                    self.tripCalendar = tripCalendarDownloaded
+                    
+                    self.trips = tripCalendarDownloaded.trips
                     self.tableView.reloadData()
                 case .failure(let error):
                     print(error)
@@ -103,10 +104,10 @@ class RootViewController: UITableViewController {
         case .green:
             cell.legStatusView.layer.backgroundColor = UIColor.green.cgColor
         }
-        if let tripCalendar = tripCalendar {
-        cell.eventNameLabel.text = tripCalendar.trips[indexPath.row].alertText
-        cell.eventTimeLabel.text = tripCalendar.trips[indexPath.row].event.time.shortMonthDay
-        }
+        
+        cell.eventNameLabel.text = trips[indexPath.row].alertText
+        cell.eventTimeLabel.text = trips[indexPath.row].event.time.shortMonthDay
+        
         return cell
     }
     
