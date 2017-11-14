@@ -26,7 +26,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     @IBOutlet weak var legDatePicker: UIDatePicker!
     
     @IBOutlet weak var alertTextLabel: UILabel!
-
+    
     @IBOutlet weak var pickUpDriverLabel: UILabel!
     @IBOutlet weak var dropOffDriverLabel: UILabel!
     
@@ -45,20 +45,20 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         guard let trip = trip else { return }
         
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
-//        if trip.hasLocation {
-//            openInMapsButton.isHidden = false
-//        } else {
-//            openInMapsButton.isHidden = true
-//        }
+        //        if trip.hasLocation {
+        //            openInMapsButton.isHidden = false
+        //        } else {
+        //            openInMapsButton.isHidden = true
+        //        }
         
         print("Event received is: \(trip.event)")
         locationManager.delegate = self
-
-//        descriptionLabel.text = trip.event.description
+        
+        //        descriptionLabel.text = trip.event.description
         descriptionLabel.text = trip.alertText
         
-//        childrenNameTextField.text = makeListOfChildren(childrenList: trip.event.owner.children)
-
+        //        childrenNameTextField.text = makeListOfChildren(childrenList: trip.event.owner.children)
+        
         self.title = trip.event.time.prettyDay
         dropOffTimeButton.setTitle(trip.event.time.hourDesc, for: .normal)
         pickUpTimeButton.setTitle(trip.event.endTime?.hourDesc, for: .normal)
@@ -193,7 +193,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
             print("Error claiming DropOff: \(String(describing: error))")
         }
     }
-
+    
     func onUnclaimDropOff(action: UIAlertAction) {
         dropOffButton.backgroundColor = UIColor.red
         API.unclaimDropOff(trip: trip) { (error) in

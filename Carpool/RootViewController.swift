@@ -81,7 +81,7 @@ class RootViewController: UITableViewController {
                     print(error)
                 }
             })
-           
+            
         }
     }
     
@@ -103,7 +103,7 @@ class RootViewController: UITableViewController {
         }
         cell.eventNameLabel.text = tripCalendar?.trips(forDaysFromToday: 7)[indexPath.row].alertText
         cell.eventTimeLabel.text = tripCalendar?.trips(forDaysFromToday: 7)[indexPath.row].event.time.shortMonthDay
-
+        
         return cell
     }
     

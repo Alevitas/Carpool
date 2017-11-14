@@ -11,7 +11,7 @@ import UIKit
 import CarpoolKit
 
 class FriendsViewController: UITableViewController {
-   
+    
     
     var friends: [User] = []
     
@@ -38,7 +38,7 @@ class FriendsViewController: UITableViewController {
         tableView.reloadData()
         
     }
-  
+    
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = .clear
@@ -57,16 +57,16 @@ class FriendsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        
         
         
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-   
-            API.remove(friend: friends[indexPath.row])
-            friends.remove(at: indexPath.row)
-            tableView.reloadData()
+        
+        API.remove(friend: friends[indexPath.row])
+        friends.remove(at: indexPath.row)
+        tableView.reloadData()
         
     }
     

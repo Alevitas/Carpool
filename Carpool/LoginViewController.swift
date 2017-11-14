@@ -47,15 +47,15 @@ class LoginViewController: UIViewController {
             let password = passwordTextField.text,
             let confirmPassword = confirmPasswordTextField.text,
             let fullName = fullNameTextField.text {
-                if loginSignupSegControl.selectedSegmentIndex == 0 {
-                    API.signIn(email: email, password: password, completion: { (result) in
-                        // user logged in
-                    })
-                } else if password == confirmPassword {
-                    API.signUp(email: email, password: password, fullName: fullName, completion: { (result) in
-                
-                    })
-                }
+            if loginSignupSegControl.selectedSegmentIndex == 0 {
+                API.signIn(email: email, password: password, completion: { (result) in
+                    // user logged in
+                })
+            } else if password == confirmPassword {
+                API.signUp(email: email, password: password, fullName: fullName, completion: { (result) in
+                    
+                })
+            }
         }
     }
 }

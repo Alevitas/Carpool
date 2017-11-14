@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -513,8 +513,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="ZC4-dr-cLx" kind="relationship" relationship="viewControllers" id="QfV-fP-0dw"/>
-                        <segue destination="gip-jm-Ikr" kind="relationship" relationship="viewControllers" id="wRH-Hr-YfT"/>
                         <segue destination="Du5-V2-7Ks" kind="relationship" relationship="viewControllers" id="8Sl-7L-r3j"/>
+                        <segue destination="dmi-3k-4kv" kind="relationship" relationship="viewControllers" id="wRH-Hr-YfT"/>
                         <segue destination="fbv-K7-D0e" kind="relationship" relationship="viewControllers" id="XDZ-WZ-1xC"/>
                     </connections>
                 </tabBarController>
@@ -696,13 +696,6 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaW-gc-BV4">
-                                <rect key="frame" x="134" y="28" width="107" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8Z-SW-hib">
                                 <rect key="frame" x="16" y="85" width="84" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -734,15 +727,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRg-oX-N7D">
-                                <rect key="frame" x="277" y="27" width="69" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Log out"/>
-                                <connections>
-                                    <action selector="logoutButonPressed:" destination="gip-jm-Ikr" eventType="touchUpInside" id="Tph-mE-sR7"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgE-S8-fhK">
                                 <rect key="frame" x="16" y="114" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -762,16 +746,21 @@
                             <constraint firstAttribute="trailing" secondItem="8mk-vL-RfJ" secondAttribute="trailing" id="peH-WZ-xku"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="noun_889293_cc copy" id="yTd-nc-whg"/>
+                    <navigationItem key="navigationItem" title="Settings" id="8hZ-S2-8eq">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="qlC-5X-5uC">
+                            <connections>
+                                <action selector="logOutButton:" destination="gip-jm-Ikr" id="pVF-22-x7C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="childrenAddedLabel" destination="zB4-Cc-qJP" id="eas-wn-BZ5"/>
-                        <outlet property="logoutButton" destination="bRg-oX-N7D" id="WLx-2a-DxY"/>
                         <outlet property="usernameLabel" destination="OgE-S8-fhK" id="6iv-AD-kTL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJY-Ld-9EW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="921.58920539730138"/>
+            <point key="canvasLocation" x="2151.1999999999998" y="1724.8875562218891"/>
         </scene>
         <!--Trips-->
         <scene sceneID="ctV-vv-Eec">
@@ -1068,6 +1057,25 @@
                 <exit id="P0i-xG-SwM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2728.8000000000002" y="141.67916041979012"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="OaT-7e-v5d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dmi-3k-4kv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="noun_889293_cc copy" id="yTd-nc-whg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5yU-Rr-QMl">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gip-jm-Ikr" kind="relationship" relationship="rootViewController" id="Rut-WM-EjH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FWf-7v-29d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359" y="1725"/>
         </scene>
     </scenes>
     <resources>
