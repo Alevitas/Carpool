@@ -65,6 +65,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         
         dropOffButton.setRoundEdge()
         pickUpButton.setRoundEdge()
+        descriptionLabel.setRoundEdge()
         
         if trip.myDropOffLeg {
             dropOffButton.setTitle("Unclaim", for: .normal)
