@@ -130,6 +130,16 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         pickUpTimeButton.setTitle(pickUpDatePicker.date.hourDesc, for: .normal)
     }
     
+    @IBAction func onAddChildrenPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func onRecurringSwitchChanged(_ sender: UISwitch) {
+    }
+    
+    
+    @IBAction func onViewCommentsPressed(_ sender: UIButton) {
+    }
+    
     @IBAction func onChildrenNameChanged(_ sender: UITextField) {
         if let childName = sender.text, childName != "" {
             API.addChild(name: childName, completion: { ( result ) in
@@ -214,6 +224,9 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         API.unclaimDropOff(trip: trip) { (error) in
             self.dropOffDriverLabel.text = "Driver unclaimed."
         }
+    }
+    
+    @IBAction func unwindFromCommentVC(segue: UIStoryboardSegue) {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
