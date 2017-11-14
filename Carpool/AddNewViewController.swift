@@ -57,29 +57,9 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     func onCalendarSelected(action: UIAlertAction) {
         
-        func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
-            let eventStore = EKEventStore()
-            
-            eventStore.requestAccess(to: .event, completion: { (granted, error) in
-                if (granted) && (error == nil) {
-                    let event = EKEvent(eventStore: eventStore)
-                    event.title = "Event from Carpool App"
-                    event.startDate = self.datePicked
-                    event.endDate = nil
-                    event.notes = self.descriptionTextFieldOutlet.text
-                    event.calendar = eventStore.defaultCalendarForNewEvents
-                    do {
-                        try eventStore.save(event, span: .thisEvent)
-                    } catch let e as NSError {
-                        completion?(false, e)
-                        return
-                    }
-                    completion?(true, nil)
-                } else {
-                    completion?(false, error as NSError?)
-                }
-            })
-        }
+      
+        generateEvent(title: "Carpool Event", startDate: datePicked, endDate: datePicked, description: descriptionTextFieldOutlet.text!)
+        
         if let description = descriptionTextFieldOutlet.text {
             if query == "" {
                 API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
@@ -226,8 +206,65 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     
+    
+    
+    let appleEventStore = EKEventStore()
+    var calendars: [EKCalendar]?
+    func generateEvent(title: String, startDate: Date, endDate: Date, description: String) {
+        let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
+        
+        switch (status)
+        {
+        case EKAuthorizationStatus.notDetermined:
+            // This happens on first-run
+            requestAccessToCalendar(title: title, startDate: startDate, endDate: endDate, description: description)
+        case EKAuthorizationStatus.authorized:
+            // User has access
+            print("User has access to calendar")
+            self.addAppleEvents(title: title, startDate: startDate, endDate: endDate, description: description)
+        case EKAuthorizationStatus.restricted, EKAuthorizationStatus.denied:
+            // We need to help them give us permission
+            noPermission()
+        }
+    }
+    func noPermission()
+    {
+        print("User has to change settings...goto settings to view access")
+    }
+    func requestAccessToCalendar(title: String, startDate: Date, endDate: Date, description: String) {
+        appleEventStore.requestAccess(to: .event, completion: { (granted, error) in
+            if (granted) && (error == nil) {
+                DispatchQueue.main.async {
+                    print("User has access to calendar")
+                    self.addAppleEvents(title: title, startDate: startDate, endDate: endDate, description: description)
+                }
+            } else {
+                DispatchQueue.main.async{
+                    self.noPermission()
+                }
+            }
+        })
+    }
+    func addAppleEvents(title: String, startDate: Date, endDate: Date, description: String)
+    {
+        let event:EKEvent = EKEvent(eventStore: appleEventStore)
+        event.title = title
+        event.startDate = startDate
+        event.endDate = endDate
+        event.notes = description
+        event.calendar = appleEventStore.defaultCalendarForNewEvents
+        
+        do {
+            try appleEventStore.save(event, span: .thisEvent)
+            print("events added with dates:")
+        } catch let e as NSError {
+            print(e.description)
+            return
+        }
+        print("Saved Event")
+    }
+    
 }
-
 
 
 
