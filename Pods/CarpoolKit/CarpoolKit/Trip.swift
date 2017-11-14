@@ -88,9 +88,9 @@ public extension API {
     /// One week's worth of trips
     public struct TripCalendar {
         public struct DailySchedule {
-            let trips: [Trip]
-            let prettyName: String
-            let date: Date
+            public let trips: [Trip]
+            public let prettyName: String
+            public let date: Date
         }
 
         /**
