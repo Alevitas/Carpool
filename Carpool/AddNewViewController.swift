@@ -53,9 +53,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         saveAlert.addAction(UIAlertAction(title: "Save to Carpool and Calendar?", style: .default, handler: onCalendarSelected))
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)
-        
-        
-        
     }
     
     func onCalendarSelected(action: UIAlertAction) {
