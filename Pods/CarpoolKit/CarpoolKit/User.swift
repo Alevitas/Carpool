@@ -138,7 +138,7 @@ public extension API {
         firstly {
             fetchCurrentUser()
         }.then { user -> Void in
-            let reaper = Lifetime()
+            let reaper = Reaper()
             reaper.ref = Database.database().reference().child("users").child(user.key).child("friends")
             reaper.observer = reaper.ref.observe(.value) { snapshot in
                 when(fulfilled: snapshot.children.map {

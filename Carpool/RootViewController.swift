@@ -39,14 +39,7 @@ class RootViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for day in 0...6 {
-            let tripsForDays = tripCalendar?.trips(forDaysFromToday: day)
-            if let tripsForDays = tripsForDays {
-                for trip in tripsForDays{
-                    trips.append(trip)
-                }
-            }
-        }
+       
         
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
         API.observeTheTripsOfMyFriends(sender: self) { (result) in
@@ -110,9 +103,10 @@ class RootViewController: UITableViewController {
         case .green:
             cell.legStatusView.layer.backgroundColor = UIColor.green.cgColor
         }
-        cell.eventNameLabel.text = trips[indexPath.row].alertText
-        cell.eventTimeLabel.text = trips[indexPath.row].event.time.shortMonthDay
-        
+        if let tripCalendar = tripCalendar {
+        cell.eventNameLabel.text = tripCalendar.trips[indexPath.row].alertText
+        cell.eventTimeLabel.text = tripCalendar.trips[indexPath.row].event.time.shortMonthDay
+        }
         return cell
     }
     
