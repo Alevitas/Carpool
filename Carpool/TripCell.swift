@@ -9,7 +9,7 @@
 import UIKit
 
 class TripCell: UITableViewCell {
-
+    
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var eventDetailsView: UIView!
     @IBOutlet weak var legStatusView: UIView!
@@ -21,12 +21,12 @@ class TripCell: UITableViewCell {
         eventDetailsView.layer.cornerRadius = 10
         eventDetailsView.layer.borderWidth = 0.5
         eventDetailsView.layer.borderColor = UIColor.black.cgColor
-    
+        
         
         legStatusView.layer.cornerRadius = 10
         legStatusView.layer.borderWidth = 0.5
         legStatusView.layer.borderColor = UIColor.black.cgColor
-     
+        
     }
     
     

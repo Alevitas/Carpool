@@ -14,6 +14,8 @@ class RootViewController: UITableViewController {
     
     var trips: [Trip] = []
     var trip: Trip!
+    var tripCalendar: API.TripCalendar?
+    
     
     var legsChecked: LegsClaimed {
         if let trip = trip {
@@ -69,17 +71,17 @@ class RootViewController: UITableViewController {
                 }
             }
         } else {
-            API.observeMyTrips(sender: self, observer: { (result) in
+            API.observeMyTripCalendar(sender: self, observer: { (result) in
                 switch result {
                     
-                case .success(let tripsDownloaded):
-                    self.trips = tripsDownloaded
+                case .success(let tripCalendarDownloaded):
+                    self.tripCalendar = tripCalendarDownloaded
                     self.tableView.reloadData()
-                    
                 case .failure(let error):
                     print(error)
                 }
             })
+            
         }
     }
     
@@ -99,10 +101,9 @@ class RootViewController: UITableViewController {
         case .green:
             cell.legStatusView.layer.backgroundColor = UIColor.green.cgColor
         }
+        cell.eventNameLabel.text = tripCalendar?.trips(forDaysFromToday: 7)[indexPath.row].alertText
+        cell.eventTimeLabel.text = tripCalendar?.trips(forDaysFromToday: 7)[indexPath.row].event.time.shortMonthDay
         
-        cell.eventNameLabel.text = trips[indexPath.row].alertText
-        cell.eventTimeLabel.text = trips[indexPath.row].event.time.shortMonthDay
-
         return cell
     }
     
