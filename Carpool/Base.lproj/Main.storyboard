@@ -572,7 +572,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.58423007189999998" green="1" blue="0.9397938576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.58423007189999998" green="1" blue="0.9397938576" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="BNv-SG-4BU" secondAttribute="trailing" constant="8" id="2z8-lJ-bkO"/>
                                         <constraint firstItem="BNv-SG-4BU" firstAttribute="leading" secondItem="Vyl-Rr-pEp" secondAttribute="leading" constant="8" id="8hx-Xz-KaO"/>
@@ -629,7 +629,7 @@
                                     </connections>
                                 </textField>
                             </subviews>
-                            <color key="backgroundColor" red="0.45519447326660156" green="0.97599083185195923" blue="0.97772854566574097" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.45519447326660156" green="0.97599083185195923" blue="0.97772854566574097" alpha="0.3064533390410959" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="fYS-Ip-X2v" secondAttribute="bottom" constant="15" id="Bpw-7J-nin"/>
                                 <constraint firstItem="fYS-Ip-X2v" firstAttribute="leading" secondItem="IUs-dB-sJ8" secondAttribute="leading" constant="8" id="clC-hk-Y7a"/>
@@ -660,7 +660,7 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.37583996208973014" green="1" blue="0.9752346262969307" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.37583996208973014" green="1" blue="0.9752346262969307" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addFriendView" destination="kQd-Zl-5A3" id="l11-Ct-MDk"/>
