@@ -27,6 +27,10 @@ public struct Trip: Codable, Keyed {
 }
 
 public extension API {
+    /// call this if you need to stop previous observers firing
+    public static func unobserveAllTrips() {
+        Database.database().reference().child("trips").removeAllObservers()
+    }
 
     /// returns all trips, continuously
     public static func observeTrips(sender: UIViewController, completion: @escaping (Result<[Trip]>) -> Void) {
@@ -100,7 +104,7 @@ public extension API {
         public func dailySchedule(forWeekdayOffsetFromToday dayOffset: Int) -> DailySchedule {
             let low = today + TimeInterval(dayOffset * 60 * 60 * 24)
             let high = low + TimeInterval(60 * 60 * 24)
-            let trips = self.trips.filter{ $0.event.time >= low && $0.event.time <= high }
+            let trips = self.trips.filter{ $0.event.time >= low && $0.event.time <= high }.sorted()
 
             let date = today + TimeInterval(dayOffset * 60 * 60 * 24)
 
