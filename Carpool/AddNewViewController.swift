@@ -50,7 +50,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         let saveAlert = UIAlertController(title: "Confirm adding trip", message: nil, preferredStyle: .actionSheet)
         saveAlert.addAction(UIAlertAction(title: "Save to Carpool?", style: .default, handler: onCarpoolSelected))
-        saveAlert.addAction(UIAlertAction(title: "Save to Carpool and Calendar?", style: .default, handler: onLocationSelection))
+        saveAlert.addAction(UIAlertAction(title: "Save to Carpool and Calendar?", style: .default, handler: onCalendarSelected))
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)
         
@@ -66,10 +66,10 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             eventStore.requestAccess(to: .event, completion: { (granted, error) in
                 if (granted) && (error == nil) {
                     let event = EKEvent(eventStore: eventStore)
-                    event.title = title
-                    event.startDate = startDate
-                    event.endDate = endDate
-                    event.notes = description
+                    event.title = "Event from Carpool App"
+                    event.startDate = self.datePicked
+                    event.endDate = nil
+                    event.notes = self.descriptionTextFieldOutlet.text
                     event.calendar = eventStore.defaultCalendarForNewEvents
                     do {
                         try eventStore.save(event, span: .thisEvent)
@@ -83,6 +83,22 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                 }
             })
         }
+        if let description = descriptionTextFieldOutlet.text {
+            if query == "" {
+                API.createTrip(eventDescription: description, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                    
+                    
+                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                }
+            } else {
+                API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: datePicked, eventLocation: (aLocation?.location ?? nil)!) { (trip) in
+                    
+                    
+                    self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+                }
+            }
+        }
+        
         
     }
     
