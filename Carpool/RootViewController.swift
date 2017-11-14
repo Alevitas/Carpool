@@ -75,6 +75,8 @@ class RootViewController: UITableViewController {
                 }
             }
         } else {
+            
+            
             API.observeMyTripCalendar(sender: self, observer: { (result) in
                 switch result {
                     
@@ -105,6 +107,12 @@ class RootViewController: UITableViewController {
             cell.legStatusView.layer.backgroundColor = UIColor.yellow.cgColor
         case .green:
             cell.legStatusView.layer.backgroundColor = UIColor.green.cgColor
+        }
+        
+        if trips[indexPath.row].repeats == true {
+            cell.eventDetailsView.layer.borderColor = UIColor.blue.cgColor
+        } else {
+            cell.eventDetailsView.layer.borderColor = UIColor.black.cgColor
         }
         
         cell.eventNameLabel.text = trips[indexPath.row].alertText

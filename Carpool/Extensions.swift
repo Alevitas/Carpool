@@ -22,6 +22,8 @@ enum LegsClaimed: String {
     case green
 }
 
+
+
 extension CLLocation: MKAnnotation {
     
 }
