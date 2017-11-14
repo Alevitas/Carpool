@@ -10,7 +10,6 @@ import UIKit
 import MapKit
 import CarpoolKit
 import CoreLocation
-import MapKit
 
 enum DropOffPickUp: String {
     case dropOff
@@ -22,8 +21,6 @@ enum LegsClaimed: String {
     case yellow
     case green
 }
-
-
 
 extension CLLocation: MKAnnotation {
     
@@ -50,7 +47,7 @@ extension Date {
         dateFormatter.dateFormat = "EEEE, MMM d YYYY, h:mm a"
         return dateFormatter.string(from: self)
     }
-    var shortMonDay: String {
+    var shortMonthDay: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d"
         return dateFormatter.string(from: self)
