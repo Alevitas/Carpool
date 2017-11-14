@@ -13,6 +13,8 @@
 		371C0DA01FB0E74D00F52156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 371C0D9F1FB0E74D00F52156 /* Assets.xcassets */; };
 		371C0DA31FB0E74D00F52156 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371C0DA11FB0E74D00F52156 /* LaunchScreen.storyboard */; };
 		371C0DAB1FB0EF3400F52156 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C0DAA1FB0EF3400F52156 /* TripDetailViewController.swift */; };
+		371ECF701FBB877900801606 /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371ECF6F1FBB877900801606 /* CommentsCell.swift */; };
+		371ECF721FBB89EA00801606 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371ECF711FBB89EA00801606 /* CommentsViewController.swift */; };
 		372898F81FBA1A9D00CBDAF8 /* AddFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372898F71FBA1A9D00CBDAF8 /* AddFriendsViewController.swift */; };
 		372A8F031FBA43DD002A5EB4 /* AddFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372A8F021FBA43DD002A5EB4 /* AddFriendCell.swift */; };
 		372E98351FB0FFF500136B59 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E98341FB0FFF500136B59 /* TripCell.swift */; };
@@ -40,6 +42,8 @@
 		371C0DA21FB0E74D00F52156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		371C0DA41FB0E74D00F52156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		371C0DAA1FB0EF3400F52156 /* TripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
+		371ECF6F1FBB877900801606 /* CommentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
+		371ECF711FBB89EA00801606 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		372898F71FBA1A9D00CBDAF8 /* AddFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsViewController.swift; sourceTree = "<group>"; };
 		372A8F021FBA43DD002A5EB4 /* AddFriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendCell.swift; sourceTree = "<group>"; };
 		372E98341FB0FFF500136B59 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 				4E4B40011FB3B311009FF5F0 /* Savannah.gpx */,
 				4E6C2F921FB1FED000DD32D1 /* Extensions.swift */,
 				371C0D9C1FB0E74D00F52156 /* Main.storyboard */,
+				371ECF6F1FBB877900801606 /* CommentsCell.swift */,
+				371ECF711FBB89EA00801606 /* CommentsViewController.swift */,
 				372898F71FBA1A9D00CBDAF8 /* AddFriendsViewController.swift */,
 				372A8F021FBA43DD002A5EB4 /* AddFriendCell.swift */,
 				379A998E1FB9FC5A008AE7D7 /* HelpViewController.swift */,
@@ -277,6 +283,8 @@
 				372E98391FB10F5400136B59 /* AddNewViewController.swift in Sources */,
 				4E6C2F931FB1FED000DD32D1 /* Extensions.swift in Sources */,
 				372E98351FB0FFF500136B59 /* TripCell.swift in Sources */,
+				371ECF721FBB89EA00801606 /* CommentsViewController.swift in Sources */,
+				371ECF701FBB877900801606 /* CommentsCell.swift in Sources */,
 				379A998F1FB9FC5A008AE7D7 /* HelpViewController.swift in Sources */,
 				372898F81FBA1A9D00CBDAF8 /* AddFriendsViewController.swift in Sources */,
 				376F2B231FB4F84B00C233FA /* SettingsViewController.swift in Sources */,
