@@ -11,7 +11,7 @@ import MapKit
 import CarpoolKit
 import CoreLocation
 
-class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class TripDetailViewController: UITableViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var openInMapsButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
