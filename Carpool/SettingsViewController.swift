@@ -66,8 +66,9 @@ class SettingsViewController: UIViewController {
         }
     }
     @IBAction func logoutButonPressed(_ sender: Any) {
-    }
-    
+        let loginVC = storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
+        present(loginVC, animated: true)
+    }    
     
 }
 
