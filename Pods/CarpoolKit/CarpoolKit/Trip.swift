@@ -58,7 +58,9 @@ public extension API {
         observeTrips(sender: sender) { result in
             switch result {
             case .success(let trips):
-                fetchCurrentUser().then { user in
+                firstly {
+                    fetchCurrentUser()
+                }.then { user in
                     observer(.success(trips.filter{ $0.event.owner == user }))
                 }.catch {
                     observer(.failure($0))
@@ -66,6 +68,41 @@ public extension API {
             case .failure(let error):
                 observer(.failure(error))
             }
+        }
+    }
+
+    public static func observeMyTripCalendar(sender: UIViewController, observer: @escaping (Result<TripCalendar>) -> Void) {
+        API.observeMyTrips(sender: sender) { result in
+            switch result {
+            case .success(let trips):
+                observer(.success(TripCalendar(trips: trips)))
+            case .failure(let error):
+                observer(.failure(error))
+            }
+        }
+    }
+
+    public struct TripCalendar {
+
+        //FIXME Date math with integers is asking for bugs
+
+        fileprivate let trips: [Trip]
+        private let today = Calendar.current.startOfDay(for: Date())
+
+        public func date(forDaysFromToday ii: Int) -> Date {
+            return today + TimeInterval(ii * 60 * 60 * 24)
+        }
+
+        public func prettyDayName(forDaysFromToday ii: Int) -> String {
+            let df = DateFormatter()
+            df.dateFormat = "EEEE, MMM d"
+            return df.string(from: date(forDaysFromToday: ii))
+        }
+
+        public func trips(forDaysFromToday ii: Int) -> [Trip] {
+            let low = today + TimeInterval(ii * 60 * 60 * 24)
+            let high = low + TimeInterval(60 * 60 * 24)
+            return trips.filter{ $0.event.time >= low && $0.event.time <= high }
         }
     }
 
@@ -160,6 +197,10 @@ public extension API {
             let event = Event(key: eventRef.key, description: desc, owner: user, time: time, endTime: nil, location: geohash)
             return Trip(key: tripRef.key, event: event, dropOff: Leg(driver: user), pickUp: nil, _children: [])
         }
+    }
+
+    public static func mark(trip: Trip, repeating: Bool) {
+        Database.database().reference().child("trips").child(trip.key).child("repeats").setValue(repeating)
     }
 
     /// claims the initial leg by the current user, so pickUp leg is UNCLAIMED
