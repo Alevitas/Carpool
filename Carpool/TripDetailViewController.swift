@@ -45,7 +45,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         
         guard let trip = trip else { return }
         
-        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
+        //      tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
         //        if trip.hasLocation {
         //            openInMapsButton.isHidden = false
         //        } else {
