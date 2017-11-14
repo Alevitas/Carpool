@@ -1222,13 +1222,16 @@
                             <outlet property="delegate" destination="xom-np-Y5L" id="Mtk-Bc-Omu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Comments" id="MpG-wd-vkr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oiA-E6-DT9">
+                    <navigationItem key="navigationItem" title="Comments" id="yye-EX-i6g">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HWY-VV-0Ji">
                             <connections>
-                                <segue destination="IAa-GP-Clj" kind="show" id="n6f-3k-CzF"/>
+                                <segue destination="IAa-GP-Clj" kind="show" id="p7Y-4s-qjN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="LzT-j5-KBZ" kind="unwind" unwindAction="unwindFromCommentVCWithSegue:" id="E4D-V9-z47"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7aM-iK-lkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LzT-j5-KBZ" userLabel="Exit" sceneMemberID="exit"/>
