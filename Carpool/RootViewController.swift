@@ -12,6 +12,8 @@ import FirebaseCommunity
 
 class RootViewController: UITableViewController {
     
+    
+    
     var trips: [Trip] = []
     var trip: Trip!
     var tripCalendar: API.TripCalendar?
