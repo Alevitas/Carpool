@@ -11,7 +11,6 @@ import CarpoolKit
 import MapKit
 import EventKit
 
-
 class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
@@ -19,7 +18,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBOutlet weak var descriptionTextFieldOutlet: UITextField!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
     @IBOutlet weak var shownInMapsButton: UIButton!
-    
     
     let geocoder = CLGeocoder()
     let locationManager = CLLocationManager()
@@ -29,20 +27,17 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     var region: CLRegion?
     var query: String?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         datePickerOutlet.minimumDate = Date()
         print(datePickerOutlet.date)
         locationManager.delegate = self
-        
         let ViewForDoneButtonOnKeyboard = UIToolbar()
         ViewForDoneButtonOnKeyboard.sizeToFit()
         let btnDoneOnKeyboard = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneBtnfromKeyboardClicked))
         ViewForDoneButtonOnKeyboard.items = [btnDoneOnKeyboard]
         descriptionTextFieldOutlet.inputAccessoryView = ViewForDoneButtonOnKeyboard
-        
     }
     
     @IBAction func onCancelButtonPressed(_ sender: Any) {
@@ -58,7 +53,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func onCalendarSelected(action: UIAlertAction) {
-        
         
         generateEvent(title: "Carpool Event", startDate: startTimePicked, endDate: endTimePicked, description: descriptionTextFieldOutlet.text!)
         
@@ -88,8 +82,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                 }
             }
         }
-        
-        
     }
     
     func onCarpoolSelected(action: UIAlertAction) {
@@ -106,7 +98,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     case .failure(_):
                         print("error making trip")
                     }
-                    
                 }
             } else {
                 API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: startTimePicked, eventLocation: (aLocation?.location ?? nil)!) { (result) in
@@ -123,7 +114,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             }
         }
     }
-    
     
     @IBAction func doneBtnfromKeyboardClicked (sender: Any) {
         print("Done Button Clicked.")
@@ -147,20 +137,12 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         } else {
             shownInMapsButton.isHidden = false
         }
-        
-        
     }
     
     @IBAction func onDatePickerChanged(_ sender: UIDatePicker) {
-        
-        
-        
+       
     }
-    
-    
-    
-    
-    
+  
     @IBAction func onTextFieldReturn(_ sender: UITextField) {
         query = sender.text
         if let queryA = sender.text {
@@ -171,7 +153,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                         guard let placemark = placemark else { return }
                         self.aLocation = placemark.first
                     })
-                    
                 }
             }
         }
@@ -180,7 +161,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         saveAlert.addAction(UIAlertAction(title: "Confirm location", style: .default, handler: onLocationSelection))
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)
-        
     }
     
     func onLocationSelection(action: UIAlertAction) {
@@ -189,7 +169,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         }
         let coordinateRegion = MKCoordinateRegionMakeWithDistance((aLocation?.location?.coordinate)!, 4000, 4000)
         mapView.setRegion(coordinateRegion, animated: true)
-        
     }
     
     @IBAction func onOpenInMapsPressed(_ sender: UIButton) {
@@ -198,7 +177,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             let mapItem = MKMapItem(placemark: mkPlacemark)
             mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
         }
-        
     }
     
     
@@ -231,11 +209,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 10000, 10000)
         mapView.setRegion(coordinateRegion, animated: true)
-        
     }
-    
-    
-    
+   
     let appleEventStore = EKEventStore()
     var calendars: [EKCalendar]?
     func generateEvent(title: String, startDate: Date, endDate: Date, description: String) {

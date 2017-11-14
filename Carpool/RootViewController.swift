@@ -12,12 +12,9 @@ import FirebaseCommunity
 
 class RootViewController: UITableViewController {
     
-    
-    
     var trips: [Trip] = []
     var trip: Trip!
     var tripCalendar: API.TripCalendar?
-    
     
     var legsChecked: LegsClaimed {
         if let trip = trip {
@@ -40,8 +37,6 @@ class RootViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
         
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
         API.observeTheTripsOfMyFriends(sender: self) { (result) in
