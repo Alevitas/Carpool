@@ -12,13 +12,19 @@ import CarpoolKit
 
 class AddFriendsViewController: UITableViewController {
     @IBOutlet weak var searchTextField: UITextField!
+    
     var friends: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
         
         
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
     }
     
     @IBAction func onSearchFieldReturn(_ sender: UITextField) {

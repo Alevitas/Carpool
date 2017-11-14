@@ -20,7 +20,7 @@ class FriendsViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
         API.observeFriends(sender: self) { (result) in
             switch result {
                 
@@ -39,6 +39,10 @@ class FriendsViewController: UITableViewController {
         
     }
   
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friends.count
     }
