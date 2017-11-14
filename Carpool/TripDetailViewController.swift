@@ -21,6 +21,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     @IBOutlet weak var pickUpTimeButton: UIButton!
     @IBOutlet weak var datePickerView: UIView!
     
+    @IBOutlet weak var childrenNameLabel: UILabel!
     @IBOutlet weak var childrenNameTextField: UITextField!
     @IBOutlet weak var legDatePicker: UIDatePicker!
     
@@ -199,14 +200,4 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
             self.dropOffDriverLabel.text = "Driver unclaimed."
         }
     }
-    
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 4
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        switch section {
-//            case 0
-//        }
-//    }
 }

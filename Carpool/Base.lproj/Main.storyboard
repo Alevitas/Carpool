@@ -117,167 +117,6 @@
             </objects>
             <point key="canvasLocation" x="1968.8" y="139.880059970015"/>
         </scene>
-        <!--Trip Details-->
-        <scene sceneID="iBC-0g-GyI">
-            <objects>
-                <viewController id="KZF-gg-fW8" customClass="TripDetailViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9a0-ur-B1i"/>
-                        <viewControllerLayoutGuide type="bottom" id="uqO-sJ-vNY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3yI-gs-iya">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backGroundimage2" translatesAutoresizingMaskIntoConstraints="NO" id="ybd-sh-FnA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQX-5d-vyH">
-                                <rect key="frame" x="16" y="128" width="343" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="7e3-fn-Z8D"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlw-lI-JGu">
-                                <rect key="frame" x="16" y="178" width="149" height="30"/>
-                                <state key="normal" title="DropOff"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DropOff Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2t-f8-M3X">
-                                <rect key="frame" x="16" y="216" width="112" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Children" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvu-eO-vXg">
-                                <rect key="frame" x="16" y="28" width="343" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="dNe-nF-7gu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFL-Gm-LBF">
-                                <rect key="frame" x="16" y="76" width="343" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="pJp-MR-8cr"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iqM-it-Ck8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pickup Driver" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-uY-SZL">
-                                <rect key="frame" x="200" y="260" width="159" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="4Co-5l-TVl"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="159" id="HTF-7y-mam"/>
-                                    <constraint firstAttribute="width" constant="159" id="m6W-TH-wUM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHk-rC-0Vp">
-                                <rect key="frame" x="220" y="222" width="159" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="139" id="ipa-vz-Hcs"/>
-                                </constraints>
-                                <state key="normal" title="Pickup"/>
-                            </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6hk-Fv-AKH">
-                                <rect key="frame" x="16" y="306" width="343" height="195"/>
-                                <subviews>
-                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ryX-9s-8lg">
-                                        <rect key="frame" x="0.0" y="16" width="343" height="118"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="532024970.00286603">
-                                            <!--2017-11-10 16:42:50 +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLH-un-q3j">
-                                        <rect key="frame" x="131" y="162" width="81" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Select Time"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oi-YI-J3D">
-                                <rect key="frame" x="16" y="244.5" width="97" height="53.5"/>
-                                <state key="normal" title="Drop Off Time"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hl2-tE-Jcu">
-                                <rect key="frame" x="16" y="547" width="343" height="88"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Et-jd-Ea9">
-                                <rect key="frame" x="268" y="268" width="91" height="30"/>
-                                <state key="normal" title="Pick Up Time"/>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="6hk-Fv-AKH" firstAttribute="top" secondItem="9oi-YI-J3D" secondAttribute="bottom" constant="8" symbolic="YES" id="3Lk-qf-hcN"/>
-                            <constraint firstItem="LQX-5d-vyH" firstAttribute="top" secondItem="xFL-Gm-LBF" secondAttribute="bottom" constant="8" id="4MX-U4-Kgo"/>
-                            <constraint firstAttribute="trailing" secondItem="ybd-sh-FnA" secondAttribute="trailing" id="5wm-bc-a0Y"/>
-                            <constraint firstItem="Hl2-tE-Jcu" firstAttribute="top" secondItem="6hk-Fv-AKH" secondAttribute="bottom" constant="8" symbolic="YES" id="6yW-sp-Ixh"/>
-                            <constraint firstItem="BHk-rC-0Vp" firstAttribute="leading" secondItem="dlw-lI-JGu" secondAttribute="trailing" constant="55" id="CkB-gc-9NI"/>
-                            <constraint firstItem="LQX-5d-vyH" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="DBL-Yc-y7X"/>
-                            <constraint firstItem="xFL-Gm-LBF" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="FJE-1P-haa"/>
-                            <constraint firstItem="LQX-5d-vyH" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="FmJ-81-FLH"/>
-                            <constraint firstItem="ybd-sh-FnA" firstAttribute="top" secondItem="3yI-gs-iya" secondAttribute="top" id="Gk9-Hy-sgq"/>
-                            <constraint firstItem="6hk-Fv-AKH" firstAttribute="leading" secondItem="9oi-YI-J3D" secondAttribute="leading" id="Grr-E5-5GX"/>
-                            <constraint firstAttribute="bottom" secondItem="ybd-sh-FnA" secondAttribute="bottom" id="KZR-u9-Byr"/>
-                            <constraint firstItem="6hk-Fv-AKH" firstAttribute="centerX" secondItem="iqM-it-Ck8" secondAttribute="centerX" id="MdX-HK-IKY"/>
-                            <constraint firstItem="xvu-eO-vXg" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="N7B-ZT-R22"/>
-                            <constraint firstItem="9oi-YI-J3D" firstAttribute="top" secondItem="A2t-f8-M3X" secondAttribute="bottom" constant="8" id="Nqu-Ns-Wz5"/>
-                            <constraint firstItem="2Et-jd-Ea9" firstAttribute="top" secondItem="3Wv-uY-SZL" secondAttribute="bottom" constant="8" id="Ofg-Rr-p5n"/>
-                            <constraint firstItem="BHk-rC-0Vp" firstAttribute="baseline" secondItem="dlw-lI-JGu" secondAttribute="baseline" id="OqP-Od-alc"/>
-                            <constraint firstItem="iqM-it-Ck8" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leading" id="QRF-dS-DT3"/>
-                            <constraint firstItem="3Wv-uY-SZL" firstAttribute="top" secondItem="BHk-rC-0Vp" secondAttribute="bottom" constant="8" id="Rc3-bG-Nax"/>
-                            <constraint firstItem="xFL-Gm-LBF" firstAttribute="top" secondItem="xvu-eO-vXg" secondAttribute="bottom" constant="8" id="RlV-Vh-kyq"/>
-                            <constraint firstItem="ybd-sh-FnA" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leading" id="YLu-Lh-CJN"/>
-                            <constraint firstItem="xvu-eO-vXg" firstAttribute="top" secondItem="9a0-ur-B1i" secondAttribute="bottom" constant="8" id="beE-MX-TH3"/>
-                            <constraint firstItem="BHk-rC-0Vp" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="cTM-wz-ewp"/>
-                            <constraint firstItem="3Wv-uY-SZL" firstAttribute="trailing" secondItem="3yI-gs-iya" secondAttribute="trailingMargin" id="eHd-Gk-yIr"/>
-                            <constraint firstItem="6hk-Fv-AKH" firstAttribute="top" secondItem="2Et-jd-Ea9" secondAttribute="bottom" constant="8" symbolic="YES" id="h1x-5S-70H"/>
-                            <constraint firstItem="6hk-Fv-AKH" firstAttribute="leading" secondItem="LQX-5d-vyH" secondAttribute="leading" id="k3l-AE-IiN"/>
-                            <constraint firstAttribute="bottom" secondItem="6hk-Fv-AKH" secondAttribute="bottom" constant="166" id="mDV-VO-Dx8"/>
-                            <constraint firstItem="BHk-rC-0Vp" firstAttribute="top" secondItem="LQX-5d-vyH" secondAttribute="bottom" constant="10" id="q0j-ed-gj7"/>
-                            <constraint firstItem="dlw-lI-JGu" firstAttribute="top" secondItem="LQX-5d-vyH" secondAttribute="bottom" constant="10" id="qx2-gb-iXz"/>
-                            <constraint firstItem="xvu-eO-vXg" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="rEg-dJ-wFt"/>
-                            <constraint firstItem="xFL-Gm-LBF" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="tlq-MY-cyP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2Et-jd-Ea9" secondAttribute="trailing" id="uAh-TK-kQZ"/>
-                            <constraint firstItem="6hk-Fv-AKH" firstAttribute="leading" secondItem="Hl2-tE-Jcu" secondAttribute="leading" id="uiJ-Zi-t4U"/>
-                            <constraint firstItem="6hk-Fv-AKH" firstAttribute="leading" secondItem="dlw-lI-JGu" secondAttribute="leading" id="vU9-DF-L7M"/>
-                            <constraint firstItem="A2t-f8-M3X" firstAttribute="top" secondItem="dlw-lI-JGu" secondAttribute="bottom" constant="8" id="xIW-bD-Y7x"/>
-                            <constraint firstItem="A2t-f8-M3X" firstAttribute="leading" secondItem="3yI-gs-iya" secondAttribute="leadingMargin" id="xcv-7t-Hh6"/>
-                            <constraint firstItem="iqM-it-Ck8" firstAttribute="top" secondItem="3yI-gs-iya" secondAttribute="top" id="xiL-AX-ajc"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Trip Details" leftItemsSupplementBackButton="YES" id="2W7-bY-fha">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="Lv7-Kq-VnR"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="als-6y-mTV">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HlG-gN-4cX">
-                                <rect key="frame" x="264" y="7" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Open in Maps"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="byp-YT-ZER" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3470" y="142"/>
-        </scene>
         <!--Create new trip-->
         <scene sceneID="EWO-MA-iY5">
             <objects>
@@ -1013,7 +852,7 @@
         <scene sceneID="ML1-7Y-Ifd">
             <objects>
                 <tableViewController id="YKk-bG-fHS" customClass="TripDetailViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xXu-HE-9FO">
+                    <tableView key="view" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xXu-HE-9FO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1073,7 +912,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jV9-Zf-Bdw">
-                                                    <rect key="frame" x="313" y="6" width="46" height="30"/>
+                                                    <rect key="frame" x="246" y="6" width="113" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Claim Unclaim"/>
                                                 </button>
@@ -1138,7 +977,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDt-hV-1xh">
-                                                    <rect key="frame" x="313" y="3" width="46" height="30"/>
+                                                    <rect key="frame" x="240" y="3" width="119" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Claim Unclaim"/>
                                                 </button>
@@ -1186,73 +1025,22 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Pick Up" id="Ito-4v-qiZ">
+                            <tableViewSection headerTitle="Children" id="Ito-4v-qiZ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickUpDriverCell" id="m1A-qc-mDF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChildrenNameCell" id="m1A-qc-mDF">
                                         <rect key="frame" x="0.0" y="492" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1A-qc-mDF" id="S5E-Wg-zje">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick Up Unclaimed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m07-K2-Mxg">
-                                                    <rect key="frame" x="16" y="11" width="145" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Children" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m07-K2-Mxg">
+                                                    <rect key="frame" x="16" y="11" width="343" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickUpTimeCell" id="ATi-yd-Dh2">
-                                        <rect key="frame" x="0.0" y="536" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ATi-yd-Dh2" id="MAP-wb-Sas">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uue-Ut-B15">
-                                                    <rect key="frame" x="16" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickUpTimeDatePicker" id="jgj-PT-2JD">
-                                        <rect key="frame" x="0.0" y="580" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jgj-PT-2JD" id="tdG-rG-v5w">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="nuA-tY-Rz5">
-                                                    <rect key="frame" x="0.0" y="-60" width="375" height="162"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                    <date key="date" timeIntervalSinceReferenceDate="532368383.71753597">
-                                                        <!--2017-11-14 16:06:23 +0000-->
-                                                    </date>
-                                                </datePicker>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickUpTimeDatePicker" id="s4k-aA-wpz">
-                                        <rect key="frame" x="0.0" y="624" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s4k-aA-wpz" id="bEo-gi-LJz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Z8L-3R-2zy">
-                                                    <rect key="frame" x="0.0" y="-60" width="375" height="162"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                    <date key="date" timeIntervalSinceReferenceDate="532368383.71753597">
-                                                        <!--2017-11-14 16:06:23 +0000-->
-                                                    </date>
-                                                </datePicker>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1265,6 +1053,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="childrenNameLabel" destination="m07-K2-Mxg" id="j4w-pt-S9w"/>
                         <outlet property="descriptionLabel" destination="oog-vq-G3H" id="Xig-Re-Tc3"/>
                         <outlet property="dropOffButton" destination="jV9-Zf-Bdw" id="IQ7-1x-tUN"/>
                         <outlet property="dropOffDriverLabel" destination="FIv-tt-h1D" id="jC1-fA-GgJ"/>
