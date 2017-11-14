@@ -14,25 +14,20 @@ class RootViewController: UITableViewController {
     
     var trips: [Trip] = []
     var trip: Trip!
-    var currentUser: String?
-    
-    var dropOffLegClaimed: Bool {
-        return trip.dropOff != nil
-    }
-    
-    var pickUpLegClaimed: Bool {
-        return trip.pickUp != nil
-    }
     
     var legsChecked: LegsClaimed {
-        if !pickUpLegClaimed, !dropOffLegClaimed {
-            return .red
-        } else if pickUpLegClaimed , !dropOffLegClaimed {
-            return .yellow
-        } else if !pickUpLegClaimed, dropOffLegClaimed {
-            return .yellow
-        } else if pickUpLegClaimed , dropOffLegClaimed {
-            return .green
+        if let trip = trip {
+            if !trip.pickUpLegClaimed, !trip.dropOffLegClaimed {
+                return .red
+            } else if trip.pickUpLegClaimed , !trip.dropOffLegClaimed {
+                return .yellow
+            } else if !trip.pickUpLegClaimed, trip.dropOffLegClaimed {
+                return .yellow
+            } else if trip.pickUpLegClaimed , trip.dropOffLegClaimed {
+                return .green
+            }
+        } else {
+            print("Error checking legs of trip.")
         }
         return .red
     }
@@ -43,8 +38,7 @@ class RootViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
-        currentUser = Auth.auth().currentUser?.displayName
-       API.observeTheTripsOfMyFriends(sender: self) { (result) in
+        API.observeTheTripsOfMyFriends(sender: self) { (result) in
             switch result {
                 
             case .success(let tripsDownloaded):
@@ -55,8 +49,8 @@ class RootViewController: UITableViewController {
                 print(error)
             }
         }
-        
     }
+    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = .clear
     }
@@ -87,7 +81,6 @@ class RootViewController: UITableViewController {
                 }
             })
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,15 +88,10 @@ class RootViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Trips", for: indexPath) as! TripCell
         
-        //        cell.eventNameLabel.text = trips[indexPath.row].event.description
         trip = trips[indexPath.row]
         switch legsChecked {
-            
         case .red:
             cell.legStatusView.layer.backgroundColor = UIColor.red.cgColor
         case .yellow:
@@ -118,19 +106,15 @@ class RootViewController: UITableViewController {
         return cell
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let eventDetailVC = segue.destination as? TripDetailViewController
         
         eventDetailVC?.trip = trip
-        
-        
     }
     
     @IBAction func unwindFromEventDetail(segue: UIStoryboardSegue) {
         
     }
-    
     
     @IBAction func unwindFromAddNew(segue: UIStoryboardSegue) {
         

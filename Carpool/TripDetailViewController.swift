@@ -35,35 +35,15 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     var children: [Child] = []
     var dropOffPickUp: DropOffPickUp = .dropOff
     
-    var dropOffLegClaimed: Bool {
-        return trip.dropOff != nil
-    }
-    
-    var pickUpLegClaimed: Bool {
-        return trip.pickUp != nil
-    }
-    
     let locationManager = CLLocationManager()
     var aLocation: CLPlacemark?
-    
-    var hasLocation: Bool {
-        return trip.event.clLocation != nil
-    }
-    
-    var myDropOffLeg: Bool {
-        return trip.dropOff?.driver == currentUser
-    }
-    
-    var myPickUpLeg: Bool {
-        return trip.pickUp?.driver == currentUser
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let trip = trip else { return }
         
-        if hasLocation {
+        if trip.hasLocation {
             openInMapsButton.isHidden = false
         } else {
             openInMapsButton.isHidden = true
@@ -83,13 +63,13 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
         dropOffButton.setRoundEdge()
         pickUpButton.setRoundEdge()
         
-        if !pickUpLegClaimed {
+        if !trip.pickUpLegClaimed {
             pickUpButton.backgroundColor = UIColor.red
         } else {
             pickUpDriverLabel.text = trip.pickUp?.driver.name
         }
         
-        if !dropOffLegClaimed {
+        if !trip.dropOffLegClaimed {
             dropOffButton.backgroundColor = UIColor.red
         } else {
             dropOffDriverLabel.text = trip.dropOff?.driver.name
@@ -157,10 +137,10 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     
     @IBAction func onPickUpButtonPressed(_ sender: Any) {
         let saveAlert = UIAlertController(title: "Do you want to claim this leg?", message: nil, preferredStyle: .actionSheet)
-        if !myPickUpLeg {
+        if !trip.myPickUpLeg {
             saveAlert.addAction(UIAlertAction(title: "Claim PickUp Leg", style: .default, handler: onClaimPickUp))
         }
-        if myPickUpLeg {
+        if trip.myPickUpLeg {
             saveAlert.addAction(UIAlertAction(title: "Unclaim PickUp Leg", style: .default, handler: onUnclaimPickup))
         }
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -169,10 +149,10 @@ class TripDetailViewController: UIViewController, CLLocationManagerDelegate, MKM
     
     @IBAction func onDropOffButtonPressed(_ sender: Any) {
         let saveAlert = UIAlertController(title: "Do you want to claim this leg?", message: nil, preferredStyle: .actionSheet)
-        if !myDropOffLeg {
+        if !trip.myDropOffLeg {
             saveAlert.addAction(UIAlertAction(title: "Claim DropOff Leg", style: .default, handler: onClaimDropOff))
         }
-        if myDropOffLeg {
+        if trip.myDropOffLeg {
             saveAlert.addAction(UIAlertAction(title: "Unclaim DropOff Leg", style: .default, handler: onUnclaimDropOff))
         }
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

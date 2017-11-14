@@ -72,6 +72,21 @@ extension Trip {
         let msg = "\(self.event.description) on \(self.event.time.prettyDay) at \(self.event.time.hourDesc)"
         return msg
     }
+    var dropOffLegClaimed: Bool {
+        return self.dropOff != nil
+    }
+    var pickUpLegClaimed: Bool {
+        return self.pickUp != nil
+    }
+    var myDropOffLeg: Bool {
+        return self.dropOff?.driver == currentUser
+    }
+    var myPickUpLeg: Bool {
+        return self.pickUp?.driver == currentUser
+    }
+    var hasLocation: Bool {
+        return self.event.clLocation != nil
+    }
 }
 
 extension UILabel {
