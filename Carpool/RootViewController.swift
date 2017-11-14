@@ -41,7 +41,7 @@ class RootViewController: UITableViewController {
         
         for day in 0...6 {
             let tripsForDays = tripCalendar?.trips(forDaysFromToday: day)
-            for trip in tripForDays{
+            for trip in tripsForDays{
                 trips.append(trip)
             }
         }
