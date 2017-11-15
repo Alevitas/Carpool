@@ -105,6 +105,7 @@ class RootViewController: UITableViewController {
         
         if trips[indexPath.row].repeats == true {
             cell.eventDetailsView.layer.borderColor = UIColor.blue.cgColor
+            cell.eventDetailsView.layer.borderWidth = 1.0
         } else {
             cell.eventDetailsView.layer.borderColor = UIColor.black.cgColor
         }

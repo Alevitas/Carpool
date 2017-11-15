@@ -133,11 +133,9 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             locationManager.requestWhenInUseAuthorization()
         }
         
-        if aLocation == nil {
+        
             shownInMapsButton.isHidden = true
-        } else {
-            shownInMapsButton.isHidden = false
-        }
+        
     }
     
     @IBAction func onDatePickerChanged(_ sender: UIDatePicker) {
@@ -159,6 +157,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                         saveAlert.addAction(UIAlertAction(title: "Confirm location", style: .default, handler: self.onLocationSelection))
                         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                         self.present(saveAlert, animated: true, completion: nil)
+                        self.shownInMapsButton.isHidden = false
                     })
                 }
             }

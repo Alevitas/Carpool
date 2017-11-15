@@ -743,6 +743,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yL-8H-PNh">
+                                <rect key="frame" x="96" y="318" width="183" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Invite Friends through Text"/>
+                                <connections>
+                                    <action selector="inviteThroughTextButton:" destination="gip-jm-Ikr" eventType="touchUpInside" id="7Y0-7p-J3x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="8mk-vL-RfJ" firstAttribute="top" secondItem="0b3-51-Sm8" secondAttribute="top" id="DkJ-lF-EOm"/>
@@ -771,6 +779,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJY-Ld-9EW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2151.1999999999998" y="1724.8875562218891"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JXR-b6-WP6">
+            <objects>
+                <viewController id="JgN-ID-2yl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qdu-OY-UMf"/>
+                        <viewControllerLayoutGuide type="bottom" id="cSa-C6-zpR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9JJ-ip-gNd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hzm-HA-3DQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2940" y="1725"/>
         </scene>
         <!--Trips-->
         <scene sceneID="ctV-vv-Eec">
@@ -1409,23 +1435,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FWf-7v-29d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1359" y="1725"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="EBx-KD-iCc">
-            <objects>
-                <viewController id="qtG-ba-QXE" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QQ3-0y-Fvv"/>
-                        <viewControllerLayoutGuide type="bottom" id="N9J-Sr-Ezk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kqU-HK-Khv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aU5-US-wLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

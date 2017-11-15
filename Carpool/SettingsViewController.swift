@@ -8,8 +8,9 @@
 
 import UIKit
 import CarpoolKit
+import MessageUI
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
 
     @IBOutlet weak var logoutButton: UIBarButtonItem!
@@ -19,11 +20,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
     var children: [Child] = []
+    let messageController = MFMessageComposeViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        messageController.messageComposeDelegate  = (self as? MFMessageComposeViewControllerDelegate)
         usernameLabel.text = "\(String(describing: currentUser?.name ?? "Username"))"
         
         API.fetchCurrentUser { (result) in
@@ -35,7 +37,6 @@ class SettingsViewController: UIViewController {
                 print("Error retreiving current user")
             }
         }
-        
         
         if let user = currentUser {
             childrenAddedLabel.text = user.stringOfChildNames
@@ -61,7 +62,23 @@ class SettingsViewController: UIViewController {
         let loginVC = storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
         present(loginVC, animated: true)
     }
+    @IBAction func inviteThroughTextButton(_ sender: UIButton) {
+        if MFMessageComposeViewController.canSendText() == true {
+            let recipients:[String] = ["1500"]
+            
+           
+            messageController.recipients = recipients
+            messageController.body = "Come join me in the Carpool App"
+            self.present(messageController, animated: true, completion: nil)
+        } else {
+            //handle text messaging not available
+        }
+        
+    }
     
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
+    }
     
 }
 

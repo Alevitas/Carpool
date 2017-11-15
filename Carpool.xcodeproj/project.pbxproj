@@ -24,6 +24,7 @@
 		379A998F1FB9FC5A008AE7D7 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A998E1FB9FC5A008AE7D7 /* HelpViewController.swift */; };
 		37A150131FB36FD000268B4D /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A150121FB36FD000268B4D /* SearchResultsTableViewController.swift */; };
 		37A3372A1FB650B8002757F5 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A337291FB650B8002757F5 /* FriendsViewController.swift */; };
+		37CC99A71FBCAEF80098A02F /* MSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CC99A61FBCAEF80098A02F /* MSViewController.swift */; };
 		37D78A401FB65C84002A29D4 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D78A3F1FB65C84002A29D4 /* FriendCell.swift */; };
 		4E16CF0EF6CB8B3D80A39362 /* Pods_Carpool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45429F92ED4BE0F7454A741 /* Pods_Carpool.framework */; };
 		4E3908E61FBC0E3E008055FF /* AddChildrenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3908E51FBC0E3E008055FF /* AddChildrenViewController.swift */; };
@@ -55,6 +56,7 @@
 		379A998E1FB9FC5A008AE7D7 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		37A150121FB36FD000268B4D /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		37A337291FB650B8002757F5 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		37CC99A61FBCAEF80098A02F /* MSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSViewController.swift; sourceTree = "<group>"; };
 		37D78A3F1FB65C84002A29D4 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		4E3908E51FBC0E3E008055FF /* AddChildrenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildrenViewController.swift; sourceTree = "<group>"; };
 		4E4B40011FB3B311009FF5F0 /* Savannah.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Savannah.gpx; path = ../../../../Downloads/Savannah.gpx; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				4E4B40011FB3B311009FF5F0 /* Savannah.gpx */,
 				4E6C2F921FB1FED000DD32D1 /* Extensions.swift */,
 				371C0D9C1FB0E74D00F52156 /* Main.storyboard */,
+				37CC99A61FBCAEF80098A02F /* MSViewController.swift */,
 				371ECF731FBB994600801606 /* AddCommentsViewController.swift */,
 				371ECF6F1FBB877900801606 /* CommentsCell.swift */,
 				371ECF711FBB89EA00801606 /* CommentsViewController.swift */,
@@ -290,6 +293,7 @@
 				4E6C2F931FB1FED000DD32D1 /* Extensions.swift in Sources */,
 				372E98351FB0FFF500136B59 /* TripCell.swift in Sources */,
 				371ECF721FBB89EA00801606 /* CommentsViewController.swift in Sources */,
+				37CC99A71FBCAEF80098A02F /* MSViewController.swift in Sources */,
 				371ECF701FBB877900801606 /* CommentsCell.swift in Sources */,
 				379A998F1FB9FC5A008AE7D7 /* HelpViewController.swift in Sources */,
 				372898F81FBA1A9D00CBDAF8 /* AddFriendsViewController.swift in Sources */,
