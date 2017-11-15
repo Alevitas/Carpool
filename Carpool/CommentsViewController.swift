@@ -39,7 +39,11 @@ class CommentsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let addCommentsVC = segue.destination as! AddCommentsViewController
         
-        addComments.trip = trip
+        addCommentsVC.trip = trip
+        
+    }
+    
+    @IBAction func unwindFromAddComments(segue: UIStoryboardSegue) {
         
     }
     
