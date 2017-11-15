@@ -141,7 +141,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         UIView.animate(withDuration: 0.3, animations: {
             self.pickUpDatePicker.isHidden = !self.pickUpDatePicker.isHidden
         })
-        pickUpDatePicker.date = trip.event.endTime!
+        pickUpDatePicker.date = trip.event.time
     }
     
     @IBAction func onDropOffLegDatePickerChanged(_ sender: UIDatePicker) {
@@ -150,6 +150,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     
     @IBAction func onPickUpLegDatePickerChanged(_ sender: UIDatePicker) {
         pickUpTimeButton.setTitle(pickUpDatePicker.date.hourDesc, for: .normal)
+        API.set(endTime: pickUpDatePicker.date, for: trip.event)
     }
     
     @IBAction func onAddChildrenPressed(_ sender: UIButton) {
