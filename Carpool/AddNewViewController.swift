@@ -144,8 +144,10 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         switch dropOffPickUp {
         case .dropOff:
             segmentControl.setTitle(datePickerOutlet.date.hourDesc, forSegmentAt: 0)
+            startTimePicked = datePickerOutlet.date
         case .pickUp:
             segmentControl.setTitle(datePickerOutlet.date.hourDesc, forSegmentAt: 1)
+            endTimePicked = datePickerOutlet.date
         }
     }
   
@@ -280,10 +282,10 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBAction func SegmentedControlSwitched(_ sender: Any) {
         if segmentControl.selectedSegmentIndex == 0 {
             dropOffPickUp = .dropOff
-            startTimePicked = datePickerOutlet.date
+            datePickerOutlet.date = startTimePicked
         } else {
             dropOffPickUp = .pickUp
-            endTimePicked = datePickerOutlet.date
+            datePickerOutlet.date = endTimePicked
         }
         
     }
