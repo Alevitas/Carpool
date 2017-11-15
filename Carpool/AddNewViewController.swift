@@ -250,6 +250,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     {
         print("User has to change settings...goto settings to view access")
     }
+    
     func requestAccessToCalendar(title: String, startDate: Date, endDate: Date, description: String) {
         appleEventStore.requestAccess(to: .event, completion: { (granted, error) in
             if (granted) && (error == nil) {
