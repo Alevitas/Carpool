@@ -17,8 +17,8 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var usernameLabel: UILabel!
-    var children: [Child] = []
     
+    var children: [Child] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +36,13 @@ class SettingsViewController: UIViewController {
             }
         }
         
-//        logoutButton.setRoundEdge()
+        
         if let user = currentUser {
             childrenAddedLabel.text = user.stringOfChildNames
         } else {
             print("error")
         }
     }
-    
     
     @IBAction func addChildrenTextFieldEnter(_ sender: UITextField) {
         if let child = sender.text {
