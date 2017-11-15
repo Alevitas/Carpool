@@ -20,6 +20,17 @@ class CommentsViewController: UITableViewController {
         
          tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
          tableView.reloadData()
+        guard let trip = trip else { return }
+        API.observe(trip: trip, sender: self) { (result) in
+            switch result {
+                
+            case .success(let trip):
+                self.trip = trip
+                self.tableView.reloadData()
+            case .failure(_):
+                print("error happened here")
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
