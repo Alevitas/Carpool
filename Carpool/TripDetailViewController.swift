@@ -19,6 +19,8 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     @IBOutlet weak var dropOffButton: UIButton!
     @IBOutlet weak var dropOffTimeButton: UIButton!
     @IBOutlet weak var pickUpTimeButton: UIButton!
+    @IBOutlet weak var commentsLabel: UILabel!
+    @IBOutlet weak var viewCommentsButton: UIButton!
     
     @IBOutlet weak var childrenNameLabel: UILabel!
     @IBOutlet weak var childrenNameTextField: UITextField!
@@ -69,6 +71,16 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         dropOffButton.setRoundEdge()
         pickUpButton.setRoundEdge()
         descriptionLabel.setRoundEdge()
+        
+        viewCommentsButton.setTitle("View", for: .normal)
+        if trip.comments.count == 0 {
+            commentsLabel.text = "No Comments for this trip"
+            viewCommentsButton.setTitle("View/Add", for: .normal)
+        } else if trip.comments.count == 1 {
+            commentsLabel.text = "\(trip.comments.count) Comment for this trip"
+        } else {
+            commentsLabel.text = "\(trip.comments.count) Comments for this trip"
+        }
         
         if trip.myDropOffLeg {
             dropOffButton.setTitle("Unclaim", for: .normal)
@@ -227,9 +239,11 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     }
     
     @IBAction func unwindFromCommentVC(segue: UIStoryboardSegue) {
+        tableView.reloadData()
     }
     
     @IBAction func unwindFromAddChildrenVC(segue: UIStoryboardSegue) {
+        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

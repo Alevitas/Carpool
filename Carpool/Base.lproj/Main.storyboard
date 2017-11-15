@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -922,15 +922,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-2L-0JG">
-                                                    <rect key="frame" x="16" y="11" width="84" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-2L-0JG">
+                                                    <rect key="frame" x="16" y="11" width="265" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2S-5p-8ST">
-                                                    <rect key="frame" x="313" y="6" width="46" height="30"/>
+                                                    <rect key="frame" x="275" y="6" width="84" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="View"/>
                                                     <connections>
@@ -1120,6 +1120,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="childrenNameLabel" destination="m07-K2-Mxg" id="j4w-pt-S9w"/>
+                        <outlet property="commentsLabel" destination="sWE-2L-0JG" id="QXA-ax-WYB"/>
                         <outlet property="descriptionLabel" destination="oog-vq-G3H" id="Xig-Re-Tc3"/>
                         <outlet property="dropOffButton" destination="jV9-Zf-Bdw" id="IQ7-1x-tUN"/>
                         <outlet property="dropOffDatePicker" destination="ZjV-X4-EbC" id="Wgs-3h-vZP"/>
@@ -1129,6 +1130,7 @@
                         <outlet property="pickUpDatePicker" destination="aVn-jt-ZKD" id="fA4-Cp-rhS"/>
                         <outlet property="pickUpDriverLabel" destination="Nvu-a4-ENW" id="7yV-gH-ddt"/>
                         <outlet property="pickUpTimeButton" destination="leK-0O-5H0" id="uEg-6F-QYd"/>
+                        <outlet property="viewCommentsButton" destination="X2S-5p-8ST" id="YD3-qP-8hc"/>
                         <segue destination="P0i-xG-SwM" kind="unwind" unwindAction="unwindFromEventDetailWithSegue:" id="xae-Ve-6KD"/>
                         <segue destination="xom-np-Y5L" kind="show" identifier="Comments" id="HJG-YO-sia"/>
                         <segue destination="Mtq-XM-Eup" kind="show" identifier="AddChildren" id="TkL-AT-W2h"/>
@@ -1234,16 +1236,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pn2-D6-gJR">
-                                            <rect key="frame" x="8" y="8" width="359" height="31"/>
+                                            <rect key="frame" x="16" y="11" width="343" height="25.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS3-hJ-AVQ">
-                                                    <rect key="frame" x="8" y="5" width="223" height="21"/>
+                                                    <rect key="frame" x="8" y="5" width="207" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date          -" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t81-mx-MTq">
-                                                    <rect key="frame" x="265" y="5" width="86" height="21"/>
+                                                    <rect key="frame" x="249" y="5" width="86" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1259,10 +1261,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVR-NZ-SlH">
-                                            <rect key="frame" x="8" y="45" width="359" height="46"/>
+                                            <rect key="frame" x="16" y="42.5" width="343" height="46"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJb-Mo-zgM">
-                                                    <rect key="frame" x="8" y="8" width="343" height="30"/>
+                                                    <rect key="frame" x="8" y="8" width="327" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
