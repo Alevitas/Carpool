@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcO-zh-T5J">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -381,7 +381,7 @@
                                             <rect key="frame" x="79" y="8" width="288" height="44"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Friends' names" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cee-Mq-i4y">
-                                                    <rect key="frame" x="8" y="12" width="116" height="21"/>
+                                                    <rect key="frame" x="8" y="12" width="272" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -391,10 +391,10 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l35-Ch-ZLI">
-                                            <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                            <rect key="frame" x="8" y="8" width="56" height="44"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_1058538_cc" translatesAutoresizingMaskIntoConstraints="NO" id="2iX-2Z-wM0">
-                                                    <rect key="frame" x="8" y="8" width="28" height="28"/>
+                                                    <rect key="frame" x="14" y="8" width="28" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -411,7 +411,7 @@
                                         <constraint firstItem="BNv-SG-4BU" firstAttribute="trailing" secondItem="Vyl-Rr-pEp" secondAttribute="trailingMargin" id="eiZ-Ox-JJu"/>
                                         <constraint firstItem="BNv-SG-4BU" firstAttribute="top" secondItem="Vyl-Rr-pEp" secondAttribute="topMargin" id="mX2-Az-YsA"/>
                                         <constraint firstItem="l35-Ch-ZLI" firstAttribute="bottom" secondItem="Vyl-Rr-pEp" secondAttribute="bottomMargin" id="xmd-M6-9M8"/>
-                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="leading" secondItem="l35-Ch-ZLI" secondAttribute="trailing" constant="27" id="zmT-9C-5gA"/>
+                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="leading" secondItem="l35-Ch-ZLI" secondAttribute="trailing" constant="15" id="zmT-9C-5gA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1290,16 +1290,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pn2-D6-gJR">
-                                            <rect key="frame" x="16" y="11" width="343" height="25.5"/>
+                                            <rect key="frame" x="8" y="8" width="359" height="31.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS3-hJ-AVQ">
-                                                    <rect key="frame" x="8" y="5" width="207" height="21"/>
+                                                    <rect key="frame" x="8" y="5" width="223" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date          -" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t81-mx-MTq">
-                                                    <rect key="frame" x="249" y="5" width="86" height="21"/>
+                                                    <rect key="frame" x="265" y="5" width="86" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1315,10 +1315,10 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVR-NZ-SlH">
-                                            <rect key="frame" x="16" y="42.5" width="343" height="46"/>
+                                            <rect key="frame" x="8" y="45.5" width="359" height="46"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJb-Mo-zgM">
-                                                    <rect key="frame" x="8" y="8" width="327" height="30"/>
+                                                    <rect key="frame" x="8" y="8" width="343" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
