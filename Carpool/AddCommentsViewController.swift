@@ -8,8 +8,11 @@
 
 import Foundation
 import UIKit
+import CarpoolKit
 
 class AddCommentsViewController: UIViewController {
+    
+    var trip: Trip?
     
     @IBOutlet weak var commentsTextView: UITextView!
     override func viewDidLoad() {
@@ -20,6 +23,9 @@ class AddCommentsViewController: UIViewController {
     }
     
     @IBAction func onSubmitPressed(_ sender: UIButton) {
+        
+        API.add(comment: commentsTextView, to: trip)
+        
     }
     
 }

@@ -36,7 +36,7 @@ class SettingsViewController: UIViewController {
             }
         }
         
-        logoutButton.setRoundEdge()
+        
         if let user = currentUser {
             childrenAddedLabel.text = user.stringOfChildNames
         } else {
