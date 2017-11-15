@@ -19,6 +19,7 @@ class AddChildrenViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("children received is: \(children)")
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
         tableView.reloadData()
     }
@@ -50,6 +51,7 @@ class AddChildrenViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChildNameCell", for: indexPath) as! ChildNameCell
         cell.childNameLabel.text = children[indexPath.row].name
+        print("Trying to display \(children[indexPath.row])")
 
         return cell
     }
