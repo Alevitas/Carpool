@@ -15,10 +15,11 @@ class AddCommentsViewController: UIViewController {
     var trip: Trip?
     
     @IBOutlet weak var commentsTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        commentsTextView.layer.cornerRadius = 10
         
     }
     
