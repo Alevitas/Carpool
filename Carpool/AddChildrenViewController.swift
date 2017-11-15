@@ -35,7 +35,7 @@ class AddChildrenViewController: UITableViewController {
             API.addChild(name: childName, completion: { (result) in
                 switch result {
                 case .success(let child):
-                    self.children.append(child)
+                    self.myChildren.append(child.name)
                     self.tableView.reloadData()
                 case .failure(let error):
                     print("Error adding child: ", error)
@@ -70,7 +70,7 @@ class ChildNameCell: UITableViewCell {
     
 //    override func layoutSubviews() {
 //        super.layoutSubviews()
-//        
+//
 //        if let cNameView = childNameView {
 //            cNameView.layer.cornerRadius = 10
 //            cNameView.layer.borderWidth = 0.5
