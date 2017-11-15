@@ -13,7 +13,6 @@ import CoreLocation
 
 class TripDetailViewController: UITableViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    @IBOutlet weak var openInMapsButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var pickUpButton: UIButton!
     @IBOutlet weak var dropOffButton: UIButton!
@@ -21,14 +20,12 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     @IBOutlet weak var pickUpTimeButton: UIButton!
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var viewCommentsButton: UIButton!
+    @IBOutlet weak var recurringSwitch: UISwitch!
     
     @IBOutlet weak var childrenNameLabel: UILabel!
-    @IBOutlet weak var childrenNameTextField: UITextField!
     
     @IBOutlet weak var dropOffDatePicker: UIDatePicker!
     @IBOutlet weak var pickUpDatePicker: UIDatePicker!
-    
-    @IBOutlet weak var alertTextLabel: UILabel!
     
     @IBOutlet weak var pickUpDriverLabel: UILabel!
     @IBOutlet weak var dropOffDriverLabel: UILabel!
@@ -50,13 +47,6 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         
         guard let trip = trip else { return }
         
-        //      tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
-        //        if trip.hasLocation {
-        //            openInMapsButton.isHidden = false
-        //        } else {
-        //            openInMapsButton.isHidden = true
-        //        }
-        
         print("Event received is: \(trip.event)")
         locationManager.delegate = self
 
@@ -71,6 +61,8 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         dropOffButton.setRoundEdge()
         pickUpButton.setRoundEdge()
         descriptionLabel.setRoundEdge()
+        
+        recurringSwitch.isOn = trip.repeats
         
         viewCommentsButton.setTitle("View", for: .normal)
         if trip.comments.count == 0 {
@@ -108,8 +100,6 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
             pickUpButton.backgroundColor = UIColor.green
             pickUpDriverLabel.text = trip.pickUp?.driver.name
         }
-        
-        //alertTextLabel.text = trip.alertText
     }
     
     @IBAction func onSelectTimeButtonPressed(_ sender: UIButton) {

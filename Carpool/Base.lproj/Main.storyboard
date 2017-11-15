@@ -929,7 +929,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2S-5p-8ST">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2S-5p-8ST">
                                                     <rect key="frame" x="275" y="6" width="84" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="View"/>
@@ -1130,6 +1130,7 @@
                         <outlet property="pickUpDatePicker" destination="aVn-jt-ZKD" id="fA4-Cp-rhS"/>
                         <outlet property="pickUpDriverLabel" destination="Nvu-a4-ENW" id="7yV-gH-ddt"/>
                         <outlet property="pickUpTimeButton" destination="leK-0O-5H0" id="uEg-6F-QYd"/>
+                        <outlet property="recurringSwitch" destination="c9T-do-aJ9" id="hWU-tn-T3y"/>
                         <outlet property="viewCommentsButton" destination="X2S-5p-8ST" id="YD3-qP-8hc"/>
                         <segue destination="P0i-xG-SwM" kind="unwind" unwindAction="unwindFromEventDetailWithSegue:" id="xae-Ve-6KD"/>
                         <segue destination="xom-np-Y5L" kind="show" identifier="Comments" id="HJG-YO-sia"/>
