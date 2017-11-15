@@ -153,7 +153,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                         self.aLocation = placemark.first
                         guard let aLocation = self.aLocation else { return }
                         self.address = String(describing: aLocation.name)
-                        let saveAlert = UIAlertController(title: "Is \( self.address ?? "the address") correct?", message: nil, preferredStyle: .actionSheet)
+                        let saveAlert = UIAlertController(title: "Is \( (self.address ?? "the address")) correct?", message: nil, preferredStyle: .actionSheet)
                         saveAlert.addAction(UIAlertAction(title: "Confirm location", style: .default, handler: self.onLocationSelection))
                         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                         self.present(saveAlert, animated: true, completion: nil)
@@ -162,8 +162,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                 }
             }
         }
-        
-      
     }
     
     func onLocationSelection(action: UIAlertAction) {
@@ -251,6 +249,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             }
         })
     }
+    
     func addAppleEvents(title: String, startDate: Date, endDate: Date, description: String)
     {
         let event:EKEvent = EKEvent(eventStore: appleEventStore)
