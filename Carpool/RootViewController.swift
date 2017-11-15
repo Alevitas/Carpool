@@ -39,17 +39,17 @@ class RootViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
-        API.observeTheTripsOfMyFriends(sender: self) { (result) in
+        API.observeMyTripCalendar(sender: self, observer: { (result) in
             switch result {
                 
-            case .success(let tripsDownloaded):
-                self.trips = tripsDownloaded
+            case .success(let tripCalendarDownloaded):
+                
+                self.trips = tripCalendarDownloaded.trips
                 self.tableView.reloadData()
-                print(self.trips)
             case .failure(let error):
                 print(error)
             }
-        }
+        })
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
