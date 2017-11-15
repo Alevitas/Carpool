@@ -19,9 +19,7 @@ class FriendCell: UITableViewCell {
         super.layoutSubviews()
         
         
-        friendIconView.layer.cornerRadius = friendIconView.frame.size.width/2
-        friendIconView.clipsToBounds = true
-        
+        friendIconView.layer.cornerRadius = 10
         friendIconView.layer.borderColor = UIColor.black.cgColor
         friendIconView.layer.borderWidth = 0.5
         

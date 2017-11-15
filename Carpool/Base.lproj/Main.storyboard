@@ -377,8 +377,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNv-SG-4BU">
-                                            <rect key="frame" x="67" y="8" width="300" height="44"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNv-SG-4BU">
+                                            <rect key="frame" x="87" y="8" width="280" height="44"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Friends' names" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cee-Mq-i4y">
                                                     <rect key="frame" x="8" y="12" width="272" height="21"/>
@@ -394,7 +394,7 @@
                                             <rect key="frame" x="8" y="8" width="44" height="44"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_1058538_cc" translatesAutoresizingMaskIntoConstraints="NO" id="2iX-2Z-wM0">
-                                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                    <rect key="frame" x="8" y="8" width="28" height="28"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
