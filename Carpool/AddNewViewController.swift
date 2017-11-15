@@ -26,6 +26,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     var endTimePicked = Date()
     var region: CLRegion?
     var query: String?
+    var address: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,12 +153,13 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     self.geocoder.reverseGeocodeLocation(placemark.location!, completionHandler: { (placemark, error) in
                         guard let placemark = placemark else { return }
                         self.aLocation = placemark.first
+                        self.address = String(describing: self.aLocation?.name)
                     })
                 }
             }
         }
         
-        let saveAlert = UIAlertController(title: "Is \(String(describing: aLocation?.name ?? "the address")) correct?", message: nil, preferredStyle: .actionSheet)
+        let saveAlert = UIAlertController(title: "Is \( address ?? "the address") correct?", message: nil, preferredStyle: .actionSheet)
         saveAlert.addAction(UIAlertAction(title: "Confirm location", style: .default, handler: onLocationSelection))
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)

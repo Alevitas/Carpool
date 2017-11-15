@@ -83,7 +83,6 @@ class RootViewController: UITableViewController {
                     print(error)
                 }
             })
-            
         }
     }
     
