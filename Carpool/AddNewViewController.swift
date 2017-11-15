@@ -153,16 +153,18 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     self.geocoder.reverseGeocodeLocation(placemark.location!, completionHandler: { (placemark, error) in
                         guard let placemark = placemark else { return }
                         self.aLocation = placemark.first
-                        self.address = String(describing: self.aLocation?.name)
+                        guard let aLocation = self.aLocation else { return }
+                        self.address = String(describing: aLocation.name)
+                        let saveAlert = UIAlertController(title: "Is \( self.address ?? "the address") correct?", message: nil, preferredStyle: .actionSheet)
+                        saveAlert.addAction(UIAlertAction(title: "Confirm location", style: .default, handler: self.onLocationSelection))
+                        saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                        self.present(saveAlert, animated: true, completion: nil)
                     })
                 }
             }
         }
         
-        let saveAlert = UIAlertController(title: "Is \( address ?? "the address") correct?", message: nil, preferredStyle: .actionSheet)
-        saveAlert.addAction(UIAlertAction(title: "Confirm location", style: .default, handler: onLocationSelection))
-        saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        present(saveAlert, animated: true, completion: nil)
+      
     }
     
     func onLocationSelection(action: UIAlertAction) {
