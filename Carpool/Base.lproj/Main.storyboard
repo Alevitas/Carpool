@@ -1207,8 +1207,8 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="childNameTextField" destination="w37-9D-MwI" id="dby-4A-TrY"/>
-                        <outlet property="childNameView" destination="Ocp-JL-ow7" id="YI3-eg-4Gh"/>
+                        <outlet property="childNameTextField" destination="w37-9D-MwI" id="MsK-BP-PRP"/>
+                        <outlet property="childNameView" destination="Ocp-JL-ow7" id="Ajg-fa-DMn"/>
                         <segue destination="aCG-br-TYQ" kind="unwind" unwindAction="unwindFromAddChildrenVCWithSegue:" id="y3g-9G-wM5"/>
                     </connections>
                 </tableViewController>
