@@ -27,12 +27,14 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     var region: CLRegion?
     var query: String?
     var address: String?
+    var dropOffPickUp: DropOffPickUp = .dropOff
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         datePickerOutlet.minimumDate = Date()
         print(datePickerOutlet.date)
+        
         locationManager.delegate = self
         let ViewForDoneButtonOnKeyboard = UIToolbar()
         ViewForDoneButtonOnKeyboard.sizeToFit()
@@ -139,7 +141,12 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     @IBAction func onDatePickerChanged(_ sender: UIDatePicker) {
-       
+        switch dropOffPickUp {
+        case .dropOff:
+            segmentControl.setTitle(datePickerOutlet.date.hourDesc, forSegmentAt: 0)
+        case .pickUp:
+            segmentControl.setTitle(datePickerOutlet.date.hourDesc, forSegmentAt: 1)
+        }
     }
   
     @IBAction func onTextFieldReturn(_ sender: UITextField) {
@@ -272,8 +279,10 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     @IBAction func SegmentedControlSwitched(_ sender: Any) {
         if segmentControl.selectedSegmentIndex == 0 {
+            dropOffPickUp = .dropOff
             startTimePicked = datePickerOutlet.date
         } else {
+            dropOffPickUp = .pickUp
             endTimePicked = datePickerOutlet.date
         }
         
