@@ -697,7 +697,7 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8Z-SW-hib">
-                                <rect key="frame" x="16" y="85" width="84" height="21"/>
+                                <rect key="frame" x="16" y="85" width="325" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -755,7 +755,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="childrenAddedLabel" destination="zB4-Cc-qJP" id="eas-wn-BZ5"/>
-                        <outlet property="usernameLabel" destination="OgE-S8-fhK" id="6iv-AD-kTL"/>
+                        <outlet property="logoutButton" destination="qlC-5X-5uC" id="98u-2i-DRw"/>
+                        <outlet property="usernameLabel" destination="h8Z-SW-hib" id="PSx-IU-HkC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJY-Ld-9EW" userLabel="First Responder" sceneMemberID="firstResponder"/>
