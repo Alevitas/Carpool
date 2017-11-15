@@ -36,6 +36,10 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     var children: [Child] = []
     var dropOffPickUp: DropOffPickUp = .dropOff
     
+    var hasChildren: Bool {
+        return trip.event.owner.children.count > 0
+    }
+    
     let dropOffDatePickerRow = IndexPath(row: 2, section: 1)
     let pickUpDatePickerRow = IndexPath(row: 2, section: 2)
 
@@ -52,11 +56,20 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
 
         descriptionLabel.text = trip.alertText
         
-        childrenNameLabel.text = trip.event.owner.stringOfChildNames
+        if hasChildren {
+            childrenNameLabel.text = trip.event.owner.stringOfChildNames
+        } else {
+            childrenNameLabel.text = "No children"
+        }
 
         self.title = trip.event.time.prettyDay
         dropOffTimeButton.setTitle(trip.event.time.hourDesc, for: .normal)
-        pickUpTimeButton.setTitle(trip.event.endTime?.hourDesc, for: .normal)
+        
+        if let pickUpTime = trip.event.endTime {
+            pickUpTimeButton.setTitle(pickUpTime.hourDesc, for: .normal)
+        } else {
+            pickUpTimeButton.setTitle("Set Time", for: .normal)
+        }
         
         dropOffButton.setRoundEdge()
         pickUpButton.setRoundEdge()
