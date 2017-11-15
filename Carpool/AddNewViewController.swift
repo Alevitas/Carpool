@@ -153,7 +153,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                         self.aLocation = placemark.first
                         guard let aLocation = self.aLocation else { return }
                         self.address = String(describing: aLocation.name)
-                        let saveAlert = UIAlertController(title: "Is \( (self.address ?? "the address")) correct?", message: nil, preferredStyle: .actionSheet)
+                        guard let address = self.address else { return }
+                        let saveAlert = UIAlertController(title: "Is \(address) correct?", message: nil, preferredStyle: .actionSheet)
                         saveAlert.addAction(UIAlertAction(title: "Confirm location", style: .default, handler: self.onLocationSelection))
                         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                         self.present(saveAlert, animated: true, completion: nil)
