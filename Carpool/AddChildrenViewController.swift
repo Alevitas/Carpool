@@ -46,10 +46,26 @@ class AddChildrenViewController: UITableViewController {
         return children.count
     }
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ChildNameCell", for: indexPath) as! ChildNameCell
-//        cell.childNameLabel.text = children[indexPath.row].name
-//        
-//        return cell
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChildNameCell", for: indexPath) as! ChildNameCell
+        cell.childNameLabel.text = children[indexPath.row].name
+        
+        return cell
+    }
 }
+
+class ChildNameCell: UITableViewCell {
+    
+    @IBOutlet weak var childNameView: UIView!
+    @IBOutlet weak var childNameLabel: UILabel!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        childNameView.layer.cornerRadius = 10
+        childNameView.layer.borderWidth = 0.5
+        childNameView.layer.borderColor = UIColor.black.cgColor
+    }
+    
+}
+

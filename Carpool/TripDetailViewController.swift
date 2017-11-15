@@ -238,6 +238,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         }
         if let commentsVC = segue.destination as? CommentsViewController {
             commentsVC.comments = trip.comments
+            commentsVC.trip = trip
         }
     }
     
