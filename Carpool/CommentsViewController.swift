@@ -19,7 +19,7 @@ class CommentsViewController: UITableViewController {
         super.viewDidLoad()
         
          tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
-        
+         tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,7 +44,7 @@ class CommentsViewController: UITableViewController {
     }
     
     @IBAction func unwindFromAddComments(segue: UIStoryboardSegue) {
-        
+        tableView.reloadData()
     }
     
 }
