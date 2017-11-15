@@ -13,8 +13,7 @@ class FriendCell: UITableViewCell {
     
     @IBOutlet weak var friendView: UIView!
     @IBOutlet weak var friendNameLabel: UILabel!
-    @IBOutlet weak var iconView: UIView!
-    @IBOutlet weak var iconImageView: UIImageView!
+ 
     
     
     
@@ -22,13 +21,7 @@ class FriendCell: UITableViewCell {
         super.layoutSubviews()
         
         
-        iconView.layer.cornerRadius = 10
-        iconView.layer.borderColor = UIColor.black.cgColor
-        iconView.layer.borderWidth = 0.5
-        
-        iconImageView.layer.cornerRadius = 10
-        iconImageView.layer.borderWidth = 0.5
-        iconImageView.layer.borderColor = UIColor.black.cgColor
+       
         
         friendView.layer.cornerRadius = 10
         friendView.layer.borderWidth = 0.5
