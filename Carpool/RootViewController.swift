@@ -109,7 +109,7 @@ class RootViewController: UITableViewController {
             cell.eventDetailsView.layer.borderColor = UIColor.black.cgColor
         }
         
-        cell.eventNameLabel.text = trips[indexPath.row].alertText + "\n number of comments: \(trips[indexPath.row].comments.count ?? "0")"
+        cell.eventNameLabel.text = trips[indexPath.row].alertText + "\n number of comments: \(trips[indexPath.row].comments.count.description)"
         cell.eventMonthLabel.text = trips[indexPath.row].event.time.shortMonthDay
         cell.eventTimeLabel.text = trips[indexPath.row].event.time.shortDayName
         
