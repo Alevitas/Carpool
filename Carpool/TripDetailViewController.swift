@@ -222,6 +222,12 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     @IBAction func unwindFromAddChildrenVC(segue: UIStoryboardSegue) {
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addChildrenVC = segue.destination as? AddChildrenViewController
+        
+        addChildrenVC?.children = trip.children
+    }
+    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = .clear
     }

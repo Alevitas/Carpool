@@ -837,10 +837,10 @@
             </objects>
             <point key="canvasLocation" x="-1002" y="1725"/>
         </scene>
-        <!--Trip Detail View Controller-->
+        <!--Trip Details-->
         <scene sceneID="ML1-7Y-Ifd">
             <objects>
-                <tableViewController id="YKk-bG-fHS" customClass="TripDetailViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Trip Details" id="YKk-bG-fHS" customClass="TripDetailViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="43" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xXu-HE-9FO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1161,10 +1161,10 @@
                             <color key="backgroundColor" red="0.58423007189999998" green="1" blue="0.9397938576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Qlz-ZG-mWs">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Qlz-ZG-mWs" customClass="ChildNameCell">
                                 <rect key="frame" x="0.0" y="88" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qlz-ZG-mWs" id="5Od-Jg-qaP">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qlz-ZG-mWs" id="5Od-Jg-qaP" customClass="ChildNameCell" customModule="Carpool" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -1183,7 +1183,13 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
+                                    <connections>
+                                        <outlet property="childNameView" destination="Qfi-Nj-NSU" id="hRF-MM-kE5"/>
+                                    </connections>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="childNameLabel" destination="UuK-RU-YV5" id="a9a-fX-UWE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
