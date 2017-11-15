@@ -390,39 +390,35 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l35-Ch-ZLI">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yG-9b-dz3">
                                             <rect key="frame" x="8" y="8" width="44" height="44"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_1058538_cc" translatesAutoresizingMaskIntoConstraints="NO" id="2iX-2Z-wM0">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noun_1058538_cc" translatesAutoresizingMaskIntoConstraints="NO" id="dmZ-uB-K2x">
                                                     <rect key="frame" x="8" y="8" width="28" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="2iX-2Z-wM0" firstAttribute="top" secondItem="l35-Ch-ZLI" secondAttribute="top" constant="8" id="EKN-bK-OZ8"/>
-                                                <constraint firstItem="2iX-2Z-wM0" firstAttribute="leading" secondItem="l35-Ch-ZLI" secondAttribute="leading" constant="8" id="WN7-w7-tFc"/>
-                                                <constraint firstAttribute="bottom" secondItem="2iX-2Z-wM0" secondAttribute="bottom" constant="8" id="ZTa-am-TB5"/>
-                                                <constraint firstAttribute="trailing" secondItem="2iX-2Z-wM0" secondAttribute="trailing" constant="8" id="j4U-ec-3bx"/>
-                                            </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.4237819075" green="1" blue="0.96288935600000003" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.4237819075" green="1" blue="0.96288935600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="bottom" secondItem="Vyl-Rr-pEp" secondAttribute="bottomMargin" id="36i-Lk-DiX"/>
-                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="leading" secondItem="Vyl-Rr-pEp" secondAttribute="leading" constant="87" id="6WT-6n-jWb"/>
-                                        <constraint firstItem="l35-Ch-ZLI" firstAttribute="leading" secondItem="Vyl-Rr-pEp" secondAttribute="leadingMargin" id="KCr-vf-ak1"/>
-                                        <constraint firstItem="l35-Ch-ZLI" firstAttribute="leading" secondItem="Vyl-Rr-pEp" secondAttribute="leadingMargin" id="OvS-FL-4yF"/>
-                                        <constraint firstItem="l35-Ch-ZLI" firstAttribute="top" secondItem="Vyl-Rr-pEp" secondAttribute="topMargin" id="WsY-cW-ebA"/>
-                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="trailing" secondItem="Vyl-Rr-pEp" secondAttribute="trailingMargin" id="eiZ-Ox-JJu"/>
-                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="top" secondItem="Vyl-Rr-pEp" secondAttribute="topMargin" id="mX2-Az-YsA"/>
-                                        <constraint firstItem="l35-Ch-ZLI" firstAttribute="bottom" secondItem="Vyl-Rr-pEp" secondAttribute="bottomMargin" id="xmd-M6-9M8"/>
-                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="leading" secondItem="l35-Ch-ZLI" secondAttribute="trailing" constant="35" id="zmT-9C-5gA"/>
+                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="trailing" secondItem="Vyl-Rr-pEp" secondAttribute="trailingMargin" id="BMX-F8-rGz"/>
+                                        <constraint firstItem="6yG-9b-dz3" firstAttribute="bottom" secondItem="Vyl-Rr-pEp" secondAttribute="bottomMargin" id="Ba6-Rx-EnW"/>
+                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="top" secondItem="Vyl-Rr-pEp" secondAttribute="topMargin" id="I7M-7b-piN"/>
+                                        <constraint firstItem="6yG-9b-dz3" firstAttribute="leading" secondItem="Vyl-Rr-pEp" secondAttribute="leadingMargin" id="Ktp-iE-N8H"/>
+                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="leading" secondItem="6yG-9b-dz3" secondAttribute="trailing" constant="35" id="TKn-0n-WfT"/>
+                                        <constraint firstItem="6yG-9b-dz3" firstAttribute="top" secondItem="Vyl-Rr-pEp" secondAttribute="topMargin" id="X4B-MX-gKN"/>
+                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="bottom" secondItem="Vyl-Rr-pEp" secondAttribute="bottomMargin" id="cat-iA-NLx"/>
+                                        <constraint firstItem="BNv-SG-4BU" firstAttribute="leading" secondItem="Vyl-Rr-pEp" secondAttribute="leading" constant="87" id="juD-Uf-Vwo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="friendIconView" destination="l35-Ch-ZLI" id="Ooo-Xd-Z9M"/>
                                     <outlet property="friendNameLabel" destination="Cee-Mq-i4y" id="0PJ-wN-Euu"/>
                                     <outlet property="friendView" destination="BNv-SG-4BU" id="XX5-BY-b94"/>
+                                    <outlet property="iconImageView" destination="dmZ-uB-K2x" id="AtG-Mo-ArB"/>
+                                    <outlet property="iconView" destination="6yG-9b-dz3" id="Phm-15-oc9"/>
+                                    <outlet property="imageView" destination="dmZ-uB-K2x" id="0Lv-pW-aYD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

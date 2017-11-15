@@ -11,17 +11,24 @@ import UIKit
 
 class FriendCell: UITableViewCell {
     
-    @IBOutlet weak var friendIconView: UIView!
     @IBOutlet weak var friendView: UIView!
     @IBOutlet weak var friendNameLabel: UILabel!
+    @IBOutlet weak var iconView: UIView!
+    @IBOutlet weak var iconImageView: UIImageView!
+    
+    
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         
-        friendIconView.layer.cornerRadius = 10
-        friendIconView.layer.borderColor = UIColor.black.cgColor
-        friendIconView.layer.borderWidth = 0.5
+        iconView.layer.cornerRadius = 10
+        iconView.layer.borderColor = UIColor.black.cgColor
+        iconView.layer.borderWidth = 0.5
+        
+        iconImageView.layer.cornerRadius = 10
+        iconImageView.layer.borderWidth = 0.5
+        iconImageView.layer.borderColor = UIColor.black.cgColor
         
         friendView.layer.cornerRadius = 10
         friendView.layer.borderWidth = 0.5
