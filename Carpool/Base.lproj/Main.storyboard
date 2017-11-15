@@ -996,7 +996,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DropOffTimeDatePicker" id="ePM-GM-kTN">
                                         <rect key="frame" x="0.0" y="343" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ePM-GM-kTN" id="3BS-5C-EGC">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ePM-GM-kTN" id="3BS-5C-EGC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -1070,7 +1070,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickUpTimeDatePicker" id="hBY-YX-iql">
                                         <rect key="frame" x="0.0" y="500" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hBY-YX-iql" id="1g2-aV-Zm0">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hBY-YX-iql" id="1g2-aV-Zm0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -1130,12 +1130,75 @@
                         <outlet property="pickUpTimeButton" destination="leK-0O-5H0" id="uEg-6F-QYd"/>
                         <segue destination="P0i-xG-SwM" kind="unwind" unwindAction="unwindFromEventDetailWithSegue:" id="xae-Ve-6KD"/>
                         <segue destination="xom-np-Y5L" kind="show" identifier="Comments" id="HJG-YO-sia"/>
+                        <segue destination="Mtq-XM-Eup" kind="show" identifier="AddChildren" id="TkL-AT-W2h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kg9-Ye-qfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="P0i-xG-SwM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2984.8000000000002" y="141.22938530734635"/>
+        </scene>
+        <!--Add Children View Controller-->
+        <scene sceneID="mOD-Mk-BBl">
+            <objects>
+                <tableViewController id="Mtq-XM-Eup" customClass="AddChildrenViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hba-lm-qrA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Ocp-JL-ow7">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w37-9D-MwI">
+                                    <rect key="frame" x="8" y="15" width="359" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" red="0.58423007189999998" green="1" blue="0.9397938576" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Qlz-ZG-mWs">
+                                <rect key="frame" x="0.0" y="88" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qlz-ZG-mWs" id="5Od-Jg-qaP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qfi-Nj-NSU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuK-RU-YV5">
+                                                    <rect key="frame" x="8" y="25" width="359" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mtq-XM-Eup" id="yWA-Vd-6OL"/>
+                            <outlet property="delegate" destination="Mtq-XM-Eup" id="EB0-Tz-LOR"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="aCG-br-TYQ" kind="unwind" unwindAction="unwindFromAddChildrenVCWithSegue:" id="y3g-9G-wM5"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGn-Ko-XSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aCG-br-TYQ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3775" y="-565"/>
         </scene>
         <!--Comments-->
         <scene sceneID="nm1-zZ-CvD">
@@ -1237,7 +1300,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7aM-iK-lkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LzT-j5-KBZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3745" y="140"/>
+            <point key="canvasLocation" x="3774" y="140"/>
         </scene>
         <!--Add Comments View Controller-->
         <scene sceneID="jBB-KU-hQf">
@@ -1295,7 +1358,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z97-5F-5yN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4477.6000000000004" y="139.880059970015"/>
+            <point key="canvasLocation" x="4540" y="140"/>
         </scene>
         <!--Settings-->
         <scene sceneID="OaT-7e-v5d">
