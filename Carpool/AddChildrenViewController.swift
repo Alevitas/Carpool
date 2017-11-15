@@ -12,7 +12,7 @@ import CarpoolKit
 class AddChildrenViewController: UITableViewController {
     
     @IBOutlet weak var childNameTextField: UITextField!
-    @IBOutlet weak var childNameView: UIView!
+    @IBOutlet weak var childNameTextFieldView: UIView!
     
     var children: [Child] = []
     var myChildren: [String] = []
@@ -64,19 +64,17 @@ class AddChildrenViewController: UITableViewController {
 }
 
 class ChildNameCell: UITableViewCell {
-    
-    @IBOutlet weak var childNameView: UIView!
+
+    @IBOutlet weak var childNameCellView: UIView!
     @IBOutlet weak var childNameLabel: UILabel!
     
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//
-//        if let cNameView = childNameView {
-//            cNameView.layer.cornerRadius = 10
-//            cNameView.layer.borderWidth = 0.5
-//            cNameView.layer.borderColor = UIColor.black.cgColor
-//        }
-//    }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        childNameCellView.layer.cornerRadius = 10
+        childNameCellView.layer.borderWidth = 0.5
+        childNameCellView.layer.borderColor = UIColor.black.cgColor
+    }
     
 }
 
