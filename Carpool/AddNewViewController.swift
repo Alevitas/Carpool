@@ -141,6 +141,17 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         
     }
     
+    @IBAction func SegmentedControlSwitched(_ sender: Any) {
+        if segmentControl.selectedSegmentIndex == 0 {
+            dropOffPickUp = .dropOff
+            datePickerOutlet.date = startTimePicked
+        } else {
+            dropOffPickUp = .pickUp
+            datePickerOutlet.date = endTimePicked
+        }
+        
+    }
+    
     @IBAction func onDatePickerChanged(_ sender: UIDatePicker) {
         switch dropOffPickUp {
         case .dropOff:
@@ -282,17 +293,6 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             return
         }
         print("Saved Event")
-    }
-    
-    @IBAction func SegmentedControlSwitched(_ sender: Any) {
-        if segmentControl.selectedSegmentIndex == 0 {
-            dropOffPickUp = .dropOff
-            datePickerOutlet.date = startTimePicked
-        } else {
-            dropOffPickUp = .pickUp
-            datePickerOutlet.date = endTimePicked
-        }
-        
     }
     
 }
