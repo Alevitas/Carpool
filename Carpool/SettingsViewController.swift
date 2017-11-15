@@ -65,19 +65,17 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
     
     @IBAction func inviteThroughTextButton(_ sender: UIButton) {
         if MFMessageComposeViewController.canSendText() == true {
-            let recipients:[String] = ["1500"]
+            let recipients:[String] = ["1"]
             messageController.recipients = recipients
             messageController.body = "Come join me in the Carpool App"
             self.present(messageController, animated: true, completion: nil)
         } else {
             //handle text messaging not available
         }
-        
     }
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
 }
 
