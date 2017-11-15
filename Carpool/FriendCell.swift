@@ -14,23 +14,12 @@ class FriendCell: UITableViewCell {
     @IBOutlet weak var friendView: UIView!
     @IBOutlet weak var friendNameLabel: UILabel!
  
-    
-    
-    
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        
-       
         
         friendView.layer.cornerRadius = 10
         friendView.layer.borderWidth = 0.5
         friendView.layer.borderColor = UIColor.black.cgColor
-        
-        
-        
+       
     }
-    
-    
-    
 }
