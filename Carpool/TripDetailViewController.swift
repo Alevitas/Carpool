@@ -37,6 +37,9 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     var children: [Child] = []
     var dropOffPickUp: DropOffPickUp = .dropOff
     
+    let dropOffDatePickerRow = IndexPath(row: 2, section: 1)
+    let pickUpDatePickerRow = IndexPath(row: 2, section: 2)
+
     let locationManager = CLLocationManager()
     var aLocation: CLPlacemark?
     
@@ -93,6 +96,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
             pickUpButton.backgroundColor = UIColor.green
             pickUpDriverLabel.text = trip.pickUp?.driver.name
         }
+        
         //alertTextLabel.text = trip.alertText
     }
     
@@ -107,6 +111,10 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     
     @IBAction func onDropOffTimeButtonPressed(_ sender: UIButton) {
         dropOffPickUp = .dropOff
+//        let dropOffCell = tableView.cellForRow(at: dropOffDatePickerRow)
+//        dropOffCell?.isHidden = false
+//        tableView.rowHeight = 220
+//        tableView.reloadRows(at: [dropOffDatePickerRow], with: .top)
         UIView.animate(withDuration: 0.3, animations: {
             self.dropOffDatePicker.isHidden = !self.dropOffDatePicker.isHidden
         })
@@ -236,5 +244,42 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = .clear
     }
+    
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "DropOffTimeDatePicker", for: indexPath as IndexPath) as! DropOffTimePickerCell
+//        
+//        if indexPath.section == 1, indexPath.row == 2 {
+//            cell.isHidden = true
+//        } else if indexPath.section == 2, indexPath.row == 2 {
+//            cell.isHidden = true
+//        }
+//        
+//        return cell
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        var rowHeight: CGFloat = 0.0
+//        
+//        if indexPath.section == 0, indexPath.row == 0 {
+//            rowHeight = 100
+//        }
+//        if indexPath.section == 1, indexPath.row == 2 {
+//            rowHeight = 0
+//        } else if indexPath.section == 2, indexPath.row == 2 {
+//            rowHeight = 0
+//        } else {
+//            rowHeight = 55
+//        }
+//        
+//        return rowHeight
+//    }
+    
+}
+
+class DropOffTimePickerCell: UITableViewCell {
+    
+}
+
+class PickUpTimeDatePickerCell: UITableViewCell {
     
 }

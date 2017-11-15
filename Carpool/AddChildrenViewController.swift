@@ -46,10 +46,10 @@ class AddChildrenViewController: UITableViewController {
         return children.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChildNameCell", for: indexPath) as! ChildNameCell
-        cell.childNameLabel.text = children[indexPath.row].name
-        
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "ChildNameCell", for: indexPath) as! ChildNameCell
+//        cell.childNameLabel.text = children[indexPath.row].name
+//        
+//        return cell
+//    }
 }
