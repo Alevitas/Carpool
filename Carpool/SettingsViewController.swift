@@ -11,8 +11,10 @@ import CarpoolKit
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet weak var logoutButton: UIButton!
+
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var childrenAddedLabel: UILabel!
+
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var usernameLabel: UILabel!
     
