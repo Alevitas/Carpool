@@ -24,6 +24,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     var aLocation: CLPlacemark?
     var startTimePicked = Date()
     var endTimePicked = Date()
+    var hasPickedEndTime: Bool = false
     var region: CLRegion?
     var query: String?
     var address: String?
@@ -145,9 +146,13 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         case .dropOff:
             segmentControl.setTitle(datePickerOutlet.date.hourDesc, forSegmentAt: 0)
             startTimePicked = datePickerOutlet.date
+            if !hasPickedEndTime {
+                endTimePicked = startTimePicked
+            }
         case .pickUp:
             segmentControl.setTitle(datePickerOutlet.date.hourDesc, forSegmentAt: 1)
             endTimePicked = datePickerOutlet.date
+            hasPickedEndTime = true
         }
     }
   
