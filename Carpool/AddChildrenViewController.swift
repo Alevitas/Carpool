@@ -11,8 +11,8 @@ import CarpoolKit
 
 class AddChildrenViewController: UITableViewController {
     
-    @IBOutlet weak var childNameView: UIView!
     @IBOutlet weak var childNameTextField: UITextField!
+    @IBOutlet weak var childNameView: UIView!
     
     var children: [Child] = []
     
@@ -20,6 +20,7 @@ class AddChildrenViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
+        tableView.reloadData()
     }
 
     @IBAction func onAddButtonPressed(_ sender: Any) {
@@ -49,7 +50,7 @@ class AddChildrenViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChildNameCell", for: indexPath) as! ChildNameCell
         cell.childNameLabel.text = children[indexPath.row].name
-        
+
         return cell
     }
 }
