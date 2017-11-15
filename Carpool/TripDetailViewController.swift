@@ -56,12 +56,6 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
 
         descriptionLabel.text = trip.alertText
         
-        if hasChildren {
-            childrenNameLabel.text = trip.event.owner.stringOfChildNames
-        } else {
-            childrenNameLabel.text = "No children"
-        }
-
         self.title = trip.event.time.prettyDay
         dropOffTimeButton.setTitle(trip.event.time.hourDesc, for: .normal)
         
@@ -76,7 +70,8 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         descriptionLabel.setRoundEdge()
         
         recurringSwitch.isOn = trip.repeats
-        
+        childrenNameLabel.text = "\(trip.event.owner.children.count) Children"
+
         viewCommentsButton.setTitle("View", for: .normal)
         if trip.comments.count == 0 {
             commentsLabel.text = "No Comments for this trip"
