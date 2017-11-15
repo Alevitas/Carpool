@@ -91,11 +91,11 @@
                     <navigationItem key="navigationItem" title="Carpools" id="Gvi-Mq-pc5">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Lo5-TY-Vyz">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Kfa-Pa-mMA">
-                                <rect key="frame" x="16" y="7.5" width="89" height="29"/>
+                                <rect key="frame" x="16" y="7" width="89" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="All"/>
                                     <segment title="Mine"/>
+                                    <segment title="All"/>
                                 </segments>
                                 <connections>
                                     <action selector="onSegmentedControlChange:" destination="eGw-Ai-chR" eventType="valueChanged" id="kFZ-je-0Pt"/>

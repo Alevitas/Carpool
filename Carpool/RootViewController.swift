@@ -57,7 +57,7 @@ class RootViewController: UITableViewController {
     }
     
     @IBAction func onSegmentedControlChange(_ sender: UISegmentedControl) {
-        if segmentedButton.selectedSegmentIndex == 0 {
+        if segmentedButton.selectedSegmentIndex == 1 {
             API.observeTheTripsOfMyFriends(sender: self) { (result) in
                 switch result {
                     
