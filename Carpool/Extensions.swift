@@ -61,7 +61,7 @@ extension Date {
     }
     var dayHour: String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E, h:mm"
+        dateFormatter.dateFormat = "E, h:mm a"
         return dateFormatter.string(from: self)
     }
 }
