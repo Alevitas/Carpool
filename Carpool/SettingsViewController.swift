@@ -62,11 +62,10 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
         let loginVC = storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
         present(loginVC, animated: true)
     }
+    
     @IBAction func inviteThroughTextButton(_ sender: UIButton) {
         if MFMessageComposeViewController.canSendText() == true {
             let recipients:[String] = ["1500"]
-            
-           
             messageController.recipients = recipients
             messageController.body = "Come join me in the Carpool App"
             self.present(messageController, animated: true, completion: nil)
