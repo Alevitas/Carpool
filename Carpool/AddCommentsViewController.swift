@@ -23,9 +23,9 @@ class AddCommentsViewController: UIViewController {
     }
     
     @IBAction func onSubmitPressed(_ sender: UIButton) {
-        
-        API.add(comment: commentsTextView, to: trip)
-        
+        guard let trip = trip else { return }
+        API.add(comment: commentsTextView.text, to: trip)
+        performSegue(withIdentifier: "AddCommentsUnwind", sender: self)
     }
     
 }
