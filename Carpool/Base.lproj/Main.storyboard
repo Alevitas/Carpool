@@ -746,6 +746,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlP-5r-S83">
+                                <rect key="frame" x="16" y="87" width="83.5" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="bi0-AU-TQp" firstAttribute="trailing" secondItem="0b3-51-Sm8" secondAttribute="trailingMargin" id="0md-E8-Rgh"/>
@@ -755,6 +761,7 @@
                             <constraint firstItem="8mk-vL-RfJ" firstAttribute="top" secondItem="0b3-51-Sm8" secondAttribute="top" id="DkJ-lF-EOm"/>
                             <constraint firstItem="h8Z-SW-hib" firstAttribute="top" secondItem="WIf-gw-B8l" secondAttribute="bottom" constant="52" id="Fgo-O9-4Ya"/>
                             <constraint firstItem="SVA-ot-0PN" firstAttribute="top" secondItem="0b3-51-Sm8" secondAttribute="top" id="Ges-Lq-eiE"/>
+                            <constraint firstItem="h8Z-SW-hib" firstAttribute="top" secondItem="LlP-5r-S83" secondAttribute="bottom" constant="2" id="JgD-iJ-yra"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h8Z-SW-hib" secondAttribute="trailing" constant="18" id="Lbb-6I-oUJ"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ksR-Oi-HtC" secondAttribute="trailing" id="QUF-OH-8Yv"/>
                             <constraint firstItem="ksR-Oi-HtC" firstAttribute="top" secondItem="h8Z-SW-hib" secondAttribute="bottom" constant="15" id="QYZ-3t-u7X"/>
@@ -762,7 +769,9 @@
                             <constraint firstItem="bi0-AU-TQp" firstAttribute="leading" secondItem="0b3-51-Sm8" secondAttribute="leadingMargin" id="TU8-ka-2aP"/>
                             <constraint firstItem="zB4-Cc-qJP" firstAttribute="top" secondItem="bi0-AU-TQp" secondAttribute="bottom" constant="17" id="VtY-Lj-EPK"/>
                             <constraint firstItem="bi0-AU-TQp" firstAttribute="top" secondItem="ksR-Oi-HtC" secondAttribute="bottom" constant="8" id="WnU-PL-Is1"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="LlP-5r-S83" secondAttribute="trailing" id="XVM-bx-Y4s"/>
                             <constraint firstItem="6yL-8H-PNh" firstAttribute="top" secondItem="zB4-Cc-qJP" secondAttribute="bottom" constant="69.5" id="cYL-Gr-R3B"/>
+                            <constraint firstItem="LlP-5r-S83" firstAttribute="top" secondItem="WIf-gw-B8l" secondAttribute="bottom" constant="23" id="fPG-FW-Y0r"/>
                             <constraint firstItem="INM-dO-bUv" firstAttribute="top" secondItem="8mk-vL-RfJ" secondAttribute="bottom" id="jcr-zo-29c"/>
                             <constraint firstAttribute="trailing" secondItem="SVA-ot-0PN" secondAttribute="trailing" id="k6s-28-TlZ"/>
                             <constraint firstAttribute="bottom" secondItem="SVA-ot-0PN" secondAttribute="bottom" id="kA5-oD-7fw"/>
@@ -771,6 +780,7 @@
                             <constraint firstAttribute="trailing" secondItem="8mk-vL-RfJ" secondAttribute="trailing" id="peH-WZ-xku"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="6yL-8H-PNh" secondAttribute="trailing" id="rMR-i3-qZS"/>
                             <constraint firstItem="INM-dO-bUv" firstAttribute="top" secondItem="6yL-8H-PNh" secondAttribute="bottom" constant="270" id="sTd-kH-GRO"/>
+                            <constraint firstItem="LlP-5r-S83" firstAttribute="leading" secondItem="0b3-51-Sm8" secondAttribute="leadingMargin" id="tgr-QK-0FQ"/>
                             <constraint firstItem="ksR-Oi-HtC" firstAttribute="leading" secondItem="0b3-51-Sm8" secondAttribute="leadingMargin" id="xfB-lg-q7C"/>
                         </constraints>
                     </view>

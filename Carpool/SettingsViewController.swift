@@ -10,7 +10,7 @@ import UIKit
 import CarpoolKit
 import MessageUI
 
-class SettingsViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class SettingsViewController: UIViewController{
     
 
     @IBOutlet weak var logoutButton: UIBarButtonItem!
@@ -77,5 +77,7 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         controller.dismiss(animated: true, completion: nil)
     }
+    
+    
 }
 
