@@ -130,6 +130,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     }
     
     @IBAction func onAddChildrenPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "AddChildren", sender: self)
     }
     
     @IBAction func onRecurringSwitchChanged(_ sender: UISwitch) {
@@ -137,6 +138,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     
     
     @IBAction func onViewCommentsPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "Comments", sender: self)
     }
     
     @IBAction func onChildrenNameChanged(_ sender: UITextField) {
@@ -223,9 +225,12 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let addChildrenVC = segue.destination as? AddChildrenViewController
-        
-        addChildrenVC?.children = trip.children
+        if let addChildrenVC = segue.destination as? AddChildrenViewController {
+            addChildrenVC.children = trip.children
+        }
+        if let commentsVC = segue.destination as? CommentsViewController {
+            commentsVC.comments = trip.comments
+        }
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
