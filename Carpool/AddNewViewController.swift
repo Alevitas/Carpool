@@ -55,7 +55,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     func onCalendarSelected(action: UIAlertAction) {
         
-        generateEvent(title: "Carpool Event", startDate: startTimePicked, endDate: endTimePicked, description: descriptionTextFieldOutlet.text!)
+        generateEvent(title: descriptionTextFieldOutlet.text!, startDate: startTimePicked, endDate: endTimePicked, description: "Carpool Event")
         
         if let description = descriptionTextFieldOutlet.text {
             if query == "" {
