@@ -59,13 +59,22 @@ class FriendsViewController: UITableViewController, MFMessageComposeViewControll
         
         
         let saveAlert = UIAlertController(title: "Call or Text friend?", message: nil, preferredStyle: .actionSheet)
-        saveAlert.addAction(UIAlertAction(title: "Make a call", style: .default, handler: PhoneCalling.call(friends[indexPath.row].phoneNumber)))
+        saveAlert.addAction(UIAlertAction(title: "Make a call", style: .default, handler: onCallSelected))
         saveAlert.addAction(UIAlertAction(title: "Send a text", style: .default, handler: onTextSelected))
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)
         
        
         
+    }
+    
+    func onCallSelected(action: UIAlertAction) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        
+        guard let numberOfFriend = friends[indexPath.row].phoneNumber else { return }
+        guard let number = URL(string: "telprompt://" + numberOfFriend) else { return }
+        
+        UIApplication.shared.open(number, options: [:], completionHandler: nil)
     }
     
     func onTextSelected(action: UIAlertAction) {
