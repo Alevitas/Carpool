@@ -943,15 +943,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oog-vq-G3H">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="89"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oog-vq-G3H">
+                                                    <rect key="frame" x="24" y="19" width="343" height="78"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="oog-vq-G3H" firstAttribute="leading" secondItem="ZwO-2L-2la" secondAttribute="leadingMargin" constant="8" id="CjI-2R-Y6G"/>
+                                                <constraint firstItem="oog-vq-G3H" firstAttribute="bottom" secondItem="ZwO-2L-2la" secondAttribute="bottomMargin" constant="8" id="gcR-AN-gg4"/>
+                                                <constraint firstItem="oog-vq-G3H" firstAttribute="trailing" secondItem="ZwO-2L-2la" secondAttribute="trailingMargin" constant="8" id="ghv-VF-gVW"/>
+                                                <constraint firstItem="oog-vq-G3H" firstAttribute="top" secondItem="ZwO-2L-2la" secondAttribute="topMargin" constant="8" id="qus-Sb-S1b"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChildrenNameCell" id="wOM-W1-fwn">
@@ -1209,10 +1214,15 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="Xhb-Gu-LSm">
-                        <barButtonItem key="rightBarButtonItem" title="Open in Maps" id="Rqb-X5-RVT">
-                            <connections>
-                                <action selector="onOpenInMapsPressed:" destination="YKk-bG-fHS" id="IcU-81-W9R"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" title="Open In Maps" style="plain" id="VZx-js-gHo">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ITk-kk-9Pg">
+                                <rect key="frame" x="264" y="7" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Open in Maps"/>
+                                <connections>
+                                    <action selector="onOpenInMapsPressed:" destination="YKk-bG-fHS" eventType="touchUpInside" id="yDe-Wq-NjA"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -1225,6 +1235,7 @@
                         <outlet property="dropOffDatePicker" destination="ZjV-X4-EbC" id="Wgs-3h-vZP"/>
                         <outlet property="dropOffDriverLabel" destination="FIv-tt-h1D" id="jC1-fA-GgJ"/>
                         <outlet property="dropOffTimeButton" destination="F5l-Rf-9Df" id="pDn-fZ-heY"/>
+                        <outlet property="openInMapsButton" destination="ITk-kk-9Pg" id="wpp-p8-UQ1"/>
                         <outlet property="pickUpButton" destination="TDt-hV-1xh" id="12j-IL-OnC"/>
                         <outlet property="pickUpDatePicker" destination="aVn-jt-ZKD" id="fA4-Cp-rhS"/>
                         <outlet property="pickUpDriverLabel" destination="Nvu-a4-ENW" id="7yV-gH-ddt"/>
