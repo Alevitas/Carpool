@@ -114,7 +114,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
             openInMapsButton.isHidden = false
             lookUpCurrentLocation { (placemark) in
                 self.aLocation = placemark
-                print("Location is \(self.aLocation)")
+                print("Location is \(String(describing: self.aLocation))")
             }
         } else {
             openInMapsButton.isHidden = true
