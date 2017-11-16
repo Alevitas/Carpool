@@ -74,7 +74,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     }
                 }
             } else {
-                API.createTrip(eventDescription: description + ("\nAddress:") + query!, eventTime: startTimePicked, eventLocation: (aLocation?.location ?? nil)!) { (result) in
+                API.createTrip(eventDescription: description + ("\nAddress:") + "\(String(describing: query ?? nil))", eventTime: startTimePicked, eventLocation: (aLocation?.location ?? nil)!) { (result) in
                     switch result {
                         
                     case .success(let trip):
