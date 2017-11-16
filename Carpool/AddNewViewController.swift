@@ -36,6 +36,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         datePickerOutlet.minimumDate = Date()
         print(datePickerOutlet.date)
         
+        mapView.layer.cornerRadius = 10
+        
         locationManager.delegate = self
         let ViewForDoneButtonOnKeyboard = UIToolbar()
         ViewForDoneButtonOnKeyboard.sizeToFit()

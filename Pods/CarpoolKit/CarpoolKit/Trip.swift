@@ -220,7 +220,7 @@ public extension API {
             eventDict2["trips"] = [tripRef.key: true]
             eventRef.setValue(eventDict2)
 
-            let event = Event(key: eventRef.key, description: desc, owner: user, time: time, endTime: nil, location: geohash)
+            let event = Event(key: eventRef.key, description: desc, owner: user, time: time, endTime: nil, geohash: geohash)
             return Trip(key: tripRef.key, event: event, dropOff: Leg(driver: user), pickUp: nil, _children: [], comments: [], repeats: false)
         }
     }
