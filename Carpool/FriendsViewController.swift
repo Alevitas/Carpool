@@ -9,17 +9,18 @@
 import Foundation
 import UIKit
 import CarpoolKit
+import MessageUI
 
-class FriendsViewController: UITableViewController {
+class FriendsViewController: UITableViewController, MFMessageComposeViewControllerDelegate {
     
     
     var friends: [User] = []
-    
+    let messageController = MFMessageComposeViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        messageController.messageComposeDelegate  = self
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
         API.observeFriends(sender: self) { (result) in
             switch result {
@@ -58,7 +59,14 @@ class FriendsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
+        if MFMessageComposeViewController.canSendText() == true {
+            let recipients:[String] = ["1"]
+            messageController.recipients = recipients
+            messageController.body = "Come join me in the Carpool App"
+            self.present(messageController, animated: true, completion: nil)
+        } else {
+            //handle text messaging not available
+        }
         
     }
     
@@ -75,4 +83,19 @@ class FriendsViewController: UITableViewController {
         addFriendsVC.currentFriends = friends
     }
     
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        
+        switch result {
+            
+        case .cancelled:
+            print("Canceled message")
+        case .sent:
+            print("sent message")
+        case .failed:
+            print("failed to message")
+        }
+        
+        controller.dismiss(animated: true, completion: nil)
+        
+    }
 }

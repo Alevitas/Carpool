@@ -261,19 +261,19 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     
     //    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     //        let cell = tableView.dequeueReusableCell(withIdentifier: "DropOffTimeDatePicker", for: indexPath as IndexPath) as! DropOffTimePickerCell
-    //        
+    //
     //        if indexPath.section == 1, indexPath.row == 2 {
     //            cell.isHidden = true
     //        } else if indexPath.section == 2, indexPath.row == 2 {
     //            cell.isHidden = true
     //        }
-    //        
+    //
     //        return cell
     //    }
-    //    
+    //
     //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     //        var rowHeight: CGFloat = 0.0
-    //        
+    //
     //        if indexPath.section == 0, indexPath.row == 0 {
     //            rowHeight = 100
     //        }
@@ -284,7 +284,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     //        } else {
     //            rowHeight = 55
     //        }
-    //        
+    //
     //        return rowHeight
     //    }
     
