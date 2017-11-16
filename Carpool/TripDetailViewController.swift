@@ -22,6 +22,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     @IBOutlet weak var viewCommentsButton: UIButton!
     @IBOutlet weak var recurringSwitch: UISwitch!
     
+    @IBOutlet weak var openInMapsButton: UIButton!
     @IBOutlet weak var childrenNameLabel: UILabel!
     
     @IBOutlet weak var dropOffDatePicker: UIDatePicker!
@@ -109,9 +110,14 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
             pickUpDriverLabel.text = trip.pickUp?.driver.name
         }
 
-        lookUpCurrentLocation { (placemark) in
-            self.aLocation = placemark
-            print("Location is \(self.aLocation)")
+        if trip.event.clLocation != nil {
+            openInMapsButton.isHidden = false
+            lookUpCurrentLocation { (placemark) in
+                self.aLocation = placemark
+                print("Location is \(self.aLocation)")
+            }
+        } else {
+            openInMapsButton.isHidden = true
         }
     }
     
