@@ -59,7 +59,17 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func onCalendarSelected(action: UIAlertAction) {
         
         generateEvent(title: descriptionTextFieldOutlet.text!, startDate: startTimePicked, endDate: endTimePicked, description: "Carpool Event")
-        guard let query = query, let aLocation = aLocation else { return }
+        guard let query = query, let aLocation = aLocation else { return API.createTrip(eventDescription: description, eventTime: startTimePicked, eventLocation: nil) { (result) in
+            
+            switch result {
+                
+            case .success(let trip):
+                API.set(endTime: self.endTimePicked, for: trip.event)
+                self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+            case .failure(_):
+                print("error making trip")
+            }
+            }}
         if let description = descriptionTextFieldOutlet.text {
             if query == "" {
                 API.createTrip(eventDescription: description, eventTime: startTimePicked, eventLocation: (aLocation.location ?? nil)!) { (result) in
@@ -89,7 +99,17 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func onCarpoolSelected(action: UIAlertAction) {
-        guard let query = query, let aLocation = aLocation else { return }
+        guard let query = query, let aLocation = aLocation else { return  API.createTrip(eventDescription: description, eventTime: startTimePicked, eventLocation: nil) { (result) in
+            
+            switch result {
+                
+            case .success(let trip):
+                API.set(endTime: self.endTimePicked, for: trip.event)
+                self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
+            case .failure(_):
+                print("error making trip")
+            }
+            }}
         if let description = descriptionTextFieldOutlet.text {
             if query == "" {
                 API.createTrip(eventDescription: description, eventTime: startTimePicked, eventLocation: (aLocation.location ?? nil)!) { (result) in

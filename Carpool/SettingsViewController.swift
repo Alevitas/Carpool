@@ -75,17 +75,19 @@ class SettingsViewController: UIViewController{
     }
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        switch result {
-            
-        case .cancelled:
-            controller.dismiss(animated: true, completion: nil)
-        case .sent:
-            controller.dismiss(animated: true, completion: nil)
-        case .failed:
-            controller.dismiss(animated: true, completion: nil)
-        }
         
+        switch result {
+       
+        case .cancelled:
+            print("Canceled message")
+        case .sent:
+             print("sent message")
+        case .failed:
+             print("failed to message")
+        }
+        controller.dismiss(animated: true, completion: nil)
     }
+    
     
     
 }
