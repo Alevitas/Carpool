@@ -64,7 +64,9 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             switch result {
                 
             case .success(let trip):
-                API.set(endTime: self.endTimePicked, for: trip.event)
+                API.set(endTime: self.endTimePicked, for: trip.event, completion: { (error) in
+                    print("Did not set end time")
+                })
                 self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
             case .failure(_):
                 print("error making trip")
@@ -77,7 +79,9 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     switch result {
                         
                     case .success(let trip):
-                        API.set(endTime: self.endTimePicked, for: trip.event)
+                        API.set(endTime: self.endTimePicked, for: trip.event, completion: { (error) in
+                            print("Did not set end time")
+                        })
                         self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
                     case .failure(_):
                         print("error making trip")
@@ -88,7 +92,9 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     switch result {
                         
                     case .success(let trip):
-                        API.set(endTime: self.endTimePicked, for: trip.event)
+                        API.set(endTime: self.endTimePicked, for: trip.event, completion: { (error) in
+                            print("Did not set end time")
+                        })
                         self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
                     case .failure(_):
                         print("error making trip")
@@ -104,7 +110,9 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             switch result {
                 
             case .success(let trip):
-                API.set(endTime: self.endTimePicked, for: trip.event)
+                API.set(endTime: self.endTimePicked, for: trip.event, completion: { (error) in
+                    print("Did not set end time")
+                })
                 self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
             case .failure(_):
                 print("error making trip")
@@ -117,7 +125,9 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     switch result {
                         
                     case .success(let trip):
-                        API.set(endTime: self.endTimePicked, for: trip.event)
+                        API.set(endTime: self.endTimePicked, for: trip.event, completion: { (error) in
+                            print("Did not set end time")
+                        })
                         self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
                     case .failure(_):
                         print("error making trip")
@@ -129,7 +139,9 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     switch result {
                         
                     case .success(let trip):
-                        API.set(endTime: self.endTimePicked, for: trip.event)
+                        API.set(endTime: self.endTimePicked, for: trip.event, completion: { (error) in
+                            print("Did not set end time")
+                        })
                         self.performSegue(withIdentifier: "UnwindFromAddNew", sender: self)
                     case .failure(_):
                         print("error making trip")
@@ -281,6 +293,8 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     {
         print("User has to change settings...goto settings to view access")
     }
+    
+    
     
     func requestAccessToCalendar(title: String, startDate: Date, endDate: Date, description: String) {
         appleEventStore.requestAccess(to: .event, completion: { (granted, error) in
