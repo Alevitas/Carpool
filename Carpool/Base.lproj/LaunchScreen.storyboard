@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="23585243_10154824671776050_339797457_o" translatesAutoresizingMaskIntoConstraints="NO" id="oue-FD-syt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fixed" translatesAutoresizingMaskIntoConstraints="NO" id="oue-FD-syt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="23585243_10154824671776050_339797457_o" width="450" height="800"/>
+        <image name="fixed" width="900" height="1600"/>
     </resources>
 </document>
