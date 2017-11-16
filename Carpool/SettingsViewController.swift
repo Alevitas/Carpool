@@ -12,10 +12,10 @@ import MessageUI
 
 class SettingsViewController: UIViewController, MFMessageComposeViewControllerDelegate{
     
-
+    
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var childrenAddedLabel: UILabel!
-
+    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -77,20 +77,20 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         
         switch result {
-       
+            
         case .cancelled:
             print("Canceled message")
         case .sent:
-             print("sent message")
+            print("sent message")
         case .failed:
-             print("failed to message")
+            print("failed to message")
         }
         
         controller.dismiss(animated: true, completion: nil)
         
     }
     
-
+    
     
 }
 

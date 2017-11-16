@@ -29,7 +29,7 @@ class AddChildrenViewController: UITableViewController {
         }
         print("myChildren are: \(myChildren)\n")
     }
-
+    
     @IBAction func onAddButtonPressed(_ sender: Any) {
         if let childName = childNameTextField.text, childName != "" {
             API.addChild(name: childName, completion: { (result) in
@@ -58,19 +58,19 @@ class AddChildrenViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChildNameCell", for: indexPath) as! ChildNameCell
         cell.childNameLabel.text = myChildren[indexPath.row]
         print("Trying to display \(myChildren[indexPath.row])")
-
+        
         return cell
     }
 }
 
 class ChildNameCell: UITableViewCell {
-
+    
     @IBOutlet weak var childNameCellView: UIView!
     @IBOutlet weak var childNameLabel: UILabel!
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
         childNameCellView.layer.cornerRadius = 10
         childNameCellView.layer.borderWidth = 0.5
         childNameCellView.layer.borderColor = UIColor.black.cgColor

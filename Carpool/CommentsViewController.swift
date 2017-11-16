@@ -18,8 +18,8 @@ class CommentsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
-         tableView.reloadData()
+        tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
+        tableView.reloadData()
         guard let trip = trip else { return }
         API.observe(trip: trip, sender: self) { (result) in
             switch result {

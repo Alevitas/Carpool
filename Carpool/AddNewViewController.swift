@@ -157,7 +157,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         }
         
         
-            shownInMapsButton.isHidden = true
+        shownInMapsButton.isHidden = true
         
     }
     
@@ -186,7 +186,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             hasPickedEndTime = true
         }
     }
-  
+    
     @IBAction func onTextFieldReturn(_ sender: UITextField) {
         query = sender.text
         if let queryA = sender.text {
@@ -257,7 +257,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 10000, 10000)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-   
+    
     let appleEventStore = EKEventStore()
     var calendars: [EKCalendar]?
     func generateEvent(title: String, startDate: Date, endDate: Date, description: String) {

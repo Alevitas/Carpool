@@ -42,7 +42,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     
     let dropOffDatePickerRow = IndexPath(row: 2, section: 1)
     let pickUpDatePickerRow = IndexPath(row: 2, section: 2)
-
+    
     let locationManager = CLLocationManager()
     var aLocation: CLPlacemark?
     
@@ -53,7 +53,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         
         print("Event received is: \(trip.event)")
         locationManager.delegate = self
-
+        
         descriptionLabel.text = trip.alertText
         
         self.title = trip.event.time.prettyDay
@@ -71,7 +71,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         
         recurringSwitch.isOn = trip.repeats
         childrenNameLabel.text = "\(trip.event.owner.children.count) Children"
-
+        
         viewCommentsButton.setTitle("View", for: .normal)
         if trip.comments.count == 0 {
             commentsLabel.text = "No Comments for this trip"
@@ -86,16 +86,16 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
             dropOffButton.setTitle("Unclaim", for: .normal)
         } else {
             dropOffButton.setTitle("Claim", for: .normal)
-
+            
         }
-
+        
         if !trip.dropOffLegClaimed {
             dropOffButton.backgroundColor = UIColor.red
         } else {
             dropOffButton.backgroundColor = UIColor.green
             dropOffDriverLabel.text = trip.dropOff?.driver.name
         }
-
+        
         if trip.myPickUpLeg {
             pickUpButton.setTitle("Unlaim", for: .normal)
         } else {
@@ -121,10 +121,10 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     
     @IBAction func onDropOffTimeButtonPressed(_ sender: UIButton) {
         dropOffPickUp = .dropOff
-//        let dropOffCell = tableView.cellForRow(at: dropOffDatePickerRow)
-//        dropOffCell?.isHidden = false
-//        tableView.rowHeight = 220
-//        tableView.reloadRows(at: [dropOffDatePickerRow], with: .top)
+        //        let dropOffCell = tableView.cellForRow(at: dropOffDatePickerRow)
+        //        dropOffCell?.isHidden = false
+        //        tableView.rowHeight = 220
+        //        tableView.reloadRows(at: [dropOffDatePickerRow], with: .top)
         UIView.animate(withDuration: 0.3, animations: {
             self.dropOffDatePicker.isHidden = !self.dropOffDatePicker.isHidden
         })
@@ -259,34 +259,34 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         cell.backgroundColor = .clear
     }
     
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "DropOffTimeDatePicker", for: indexPath as IndexPath) as! DropOffTimePickerCell
-//        
-//        if indexPath.section == 1, indexPath.row == 2 {
-//            cell.isHidden = true
-//        } else if indexPath.section == 2, indexPath.row == 2 {
-//            cell.isHidden = true
-//        }
-//        
-//        return cell
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        var rowHeight: CGFloat = 0.0
-//        
-//        if indexPath.section == 0, indexPath.row == 0 {
-//            rowHeight = 100
-//        }
-//        if indexPath.section == 1, indexPath.row == 2 {
-//            rowHeight = 0
-//        } else if indexPath.section == 2, indexPath.row == 2 {
-//            rowHeight = 0
-//        } else {
-//            rowHeight = 55
-//        }
-//        
-//        return rowHeight
-//    }
+    //    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    //        let cell = tableView.dequeueReusableCell(withIdentifier: "DropOffTimeDatePicker", for: indexPath as IndexPath) as! DropOffTimePickerCell
+    //        
+    //        if indexPath.section == 1, indexPath.row == 2 {
+    //            cell.isHidden = true
+    //        } else if indexPath.section == 2, indexPath.row == 2 {
+    //            cell.isHidden = true
+    //        }
+    //        
+    //        return cell
+    //    }
+    //    
+    //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        var rowHeight: CGFloat = 0.0
+    //        
+    //        if indexPath.section == 0, indexPath.row == 0 {
+    //            rowHeight = 100
+    //        }
+    //        if indexPath.section == 1, indexPath.row == 2 {
+    //            rowHeight = 0
+    //        } else if indexPath.section == 2, indexPath.row == 2 {
+    //            rowHeight = 0
+    //        } else {
+    //            rowHeight = 55
+    //        }
+    //        
+    //        return rowHeight
+    //    }
     
 }
 

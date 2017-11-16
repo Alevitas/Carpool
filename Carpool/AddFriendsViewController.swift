@@ -59,8 +59,8 @@ class AddFriendsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if !currentFriends.contains(friends[indexPath.row]) {
-        API.add(friend: friends[indexPath.row])
-        performSegue(withIdentifier: "UnwindFromAddFriends", sender: self)
+            API.add(friend: friends[indexPath.row])
+            performSegue(withIdentifier: "UnwindFromAddFriends", sender: self)
         } else {
             self.title = "Already a friend"
             var seconds = 5
