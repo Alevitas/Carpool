@@ -10,7 +10,7 @@ import UIKit
 import CarpoolKit
 import MessageUI
 
-class SettingsViewController: UIViewController{
+class SettingsViewController: UIViewController, MFMessageComposeViewControllerDelegate{
     
 
     @IBOutlet weak var logoutButton: UIBarButtonItem!
@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        messageController.messageComposeDelegate  = (self as? MFMessageComposeViewControllerDelegate)
+        messageController.messageComposeDelegate  = self
         usernameLabel.text = "\(String(describing: currentUser?.name ?? "Username"))"
         
         API.fetchCurrentUser { (result) in
@@ -85,10 +85,12 @@ class SettingsViewController: UIViewController{
         case .failed:
              print("failed to message")
         }
+        
         controller.dismiss(animated: true, completion: nil)
+        
     }
     
-    
+
     
 }
 
