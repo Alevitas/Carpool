@@ -68,7 +68,12 @@ extension Date {
 
 extension Trip {
     var alertText: String {
-        let msg = "\(self.event.description) on \(self.event.time.prettyDay) at \(self.event.time.hourDesc)"
+        var msg = ""
+        if let endTime = self.event.endTime {
+            msg = "\(self.event.description) on \(self.event.time.prettyDay) from \(self.event.time.hourDesc) to \(endTime.hourDesc)"
+        } else {
+            msg = "\(self.event.description) on \(self.event.time.prettyDay) at \(self.event.time.hourDesc)"
+        }
         return msg
     }
     var dropOffLegClaimed: Bool {
