@@ -115,7 +115,7 @@ public extension API {
         public func dailySchedule(forWeekdayOffsetFromToday dayOffset: Int) -> DailySchedule {
             let low = today + TimeInterval(dayOffset * 60 * 60 * 24)
             let high = low + TimeInterval(60 * 60 * 24)
-            let trips = self.trips.filter { $0.shouldShow(from: low, to: high) }.sorted()
+            let trips = self.trips.filter { $0.shouldShow(from: low, to: high) }.sorted().reversed()
 
             let date = today + TimeInterval(dayOffset * 60 * 60 * 24)
 
@@ -123,7 +123,7 @@ public extension API {
             df.dateFormat = "EEEE, MMM d"
             let prettyName = df.string(from: date)
 
-            return DailySchedule(trips: trips, prettyName: prettyName, date: date)
+            return DailySchedule(trips: Array(trips), prettyName: prettyName, date: date)
         }
 
         public let trips: [Trip]
