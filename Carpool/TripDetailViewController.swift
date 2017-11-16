@@ -22,6 +22,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     @IBOutlet weak var viewCommentsButton: UIButton!
     @IBOutlet weak var recurringSwitch: UISwitch!
     
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var childrenNameLabel: UILabel!
     
     @IBOutlet weak var dropOffDatePicker: UIDatePicker!
@@ -108,6 +109,8 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
             pickUpButton.backgroundColor = UIColor.green
             pickUpDriverLabel.text = trip.pickUp?.driver.name
         }
+        
+        locationLabel.text = trip.event.clLocation?.description
     }
     
     @IBAction func onSelectTimeButtonPressed(_ sender: UIButton) {
