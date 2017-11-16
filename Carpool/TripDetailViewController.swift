@@ -148,7 +148,9 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     
     @IBAction func onPickUpLegDatePickerChanged(_ sender: UIDatePicker) {
         pickUpTimeButton.setTitle(pickUpDatePicker.date.hourDesc, for: .normal)
-        API.set(endTime: pickUpDatePicker.date, for: trip.event)
+        API.set(endTime: pickUpDatePicker.date, for: trip.event) { (error) in
+            print("Error setting endTime")
+        }
     }
     
     @IBAction func onAddChildrenPressed(_ sender: UIButton) {
