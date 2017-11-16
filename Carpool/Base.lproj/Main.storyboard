@@ -958,9 +958,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9T-do-aJ9">
-                                                    <rect key="frame" x="312" y="6" width="49" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9T-do-aJ9">
+                                                    <rect key="frame" x="310" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="onRecurringSwitchChanged:" destination="YKk-bG-fHS" eventType="valueChanged" id="b2c-eD-2M7"/>
                                                     </connections>
@@ -973,6 +972,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="c9T-do-aJ9" firstAttribute="trailing" secondItem="wB9-Lr-RF2" secondAttribute="trailingMargin" id="jbF-n0-gT9"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentsCell" id="ltB-45-0Uk">
@@ -1021,7 +1023,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jV9-Zf-Bdw">
-                                                    <rect key="frame" x="261" y="6" width="98" height="30"/>
+                                                    <rect key="frame" x="239" y="6" width="120" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="PUe-L4-Mte"/>
+                                                        <constraint firstAttribute="width" constant="120" id="Vbe-XC-mGm"/>
+                                                    </constraints>
                                                     <state key="normal" title="Claim Unclaim"/>
                                                     <connections>
                                                         <action selector="onDropOffButtonPressed:" destination="YKk-bG-fHS" eventType="touchUpInside" id="zu9-9E-J4n"/>
@@ -1029,6 +1035,7 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="jV9-Zf-Bdw" firstAttribute="trailing" secondItem="vMB-Cs-7uA" secondAttribute="trailingMargin" id="Qnr-NH-OWp"/>
                                                 <constraint firstItem="jV9-Zf-Bdw" firstAttribute="trailing" secondItem="vMB-Cs-7uA" secondAttribute="trailingMargin" id="gZR-9V-sZg"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1098,15 +1105,21 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDt-hV-1xh">
-                                                    <rect key="frame" x="240" y="3" width="119" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDt-hV-1xh">
+                                                    <rect key="frame" x="239" y="3" width="120" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="D6y-hT-Lhe"/>
+                                                        <constraint firstAttribute="width" constant="120" id="IDS-g3-cRl"/>
+                                                    </constraints>
                                                     <state key="normal" title="Claim Unclaim"/>
                                                     <connections>
                                                         <action selector="onPickUpButtonPressed:" destination="YKk-bG-fHS" eventType="touchUpInside" id="aqt-Eh-PkQ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="TDt-hV-1xh" secondAttribute="trailing" id="aga-qL-qV7"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PickUpTimeCell" id="NBx-fU-CfU">
@@ -1197,6 +1210,7 @@
                         <outlet property="dropOffDatePicker" destination="ZjV-X4-EbC" id="Wgs-3h-vZP"/>
                         <outlet property="dropOffDriverLabel" destination="FIv-tt-h1D" id="jC1-fA-GgJ"/>
                         <outlet property="dropOffTimeButton" destination="F5l-Rf-9Df" id="pDn-fZ-heY"/>
+                        <outlet property="locationLabel" destination="fG5-RK-mXS" id="WAC-HC-ojv"/>
                         <outlet property="pickUpButton" destination="TDt-hV-1xh" id="12j-IL-OnC"/>
                         <outlet property="pickUpDatePicker" destination="aVn-jt-ZKD" id="fA4-Cp-rhS"/>
                         <outlet property="pickUpDriverLabel" destination="Nvu-a4-ENW" id="7yV-gH-ddt"/>
