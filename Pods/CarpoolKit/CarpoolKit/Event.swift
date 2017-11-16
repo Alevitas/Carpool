@@ -16,7 +16,13 @@ public struct Event: Codable, Keyed {
 }
 
 public extension API {
-    static func set(endTime: Date, for event: Event) {
+    static func set(endTime: Date, for event: Event, completion: @escaping (Swift.Error?) -> Void) {
+        guard endTime >= event.time else {
+            return DispatchQueue.main.async {
+                completion(API.Error.eventEndTimeMustBeGreaterThanStartTime)
+            }
+        }
+
         let endTime = endTime.timeIntervalSince1970
         Database.database().reference().child("events").child(event.key).child("endTime").setValue(endTime)
 
@@ -25,8 +31,11 @@ public extension API {
         }.then { snapshot -> Void in
             let ref = Database.database().reference().child("trips")
             for key in snapshot.keys {
-                ref.child(key).child("event").child("endTime").setValue(endTime)
+                ref.child(key).child("event").child(event.key).child("endTime").setValue(endTime)
             }
+            completion(nil)
+        }.catch {
+            completion($0)
         }
     }
 }
