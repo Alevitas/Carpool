@@ -13,6 +13,7 @@ import MessageUI
 class SettingsViewController: UIViewController, MFMessageComposeViewControllerDelegate{
     
     
+    @IBOutlet weak var friendNumberOutlet: UITextField!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     @IBOutlet weak var childrenAddedLabel: UILabel!
     
@@ -64,8 +65,9 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     }
     
     @IBAction func inviteThroughTextButton(_ sender: UIButton) {
+        guard let number = friendNumberOutlet.text else { return }
         if MFMessageComposeViewController.canSendText() == true {
-            let recipients:[String] = ["1"]
+            let recipients:[String] = ["1" + number]
             messageController.recipients = recipients
             messageController.body = "Come join me in the Carpool App"
             self.present(messageController, animated: true, completion: nil)

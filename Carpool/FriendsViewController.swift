@@ -57,15 +57,27 @@ class FriendsViewController: UITableViewController, MFMessageComposeViewControll
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
+        let saveAlert = UIAlertController(title: "Call or Text friend?", message: nil, preferredStyle: .actionSheet)
+        saveAlert.addAction(UIAlertAction(title: "Make a call", style: .default, handler: PhoneCalling.call(friends[indexPath.row].phoneNumber)))
+        saveAlert.addAction(UIAlertAction(title: "Send a text", style: .default, handler: onTextSelected(number: friends[indexPath.row].phoneNumber)))
+        saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(saveAlert, animated: true, completion: nil)
+        
+       
+        
+    }
+    
+    func onTextSelected(number: String?) {
+        guard let number = number else { return }
         if MFMessageComposeViewController.canSendText() == true {
-            let recipients:[String] = ["1"]
+            let recipients:[String] = [number]
             messageController.recipients = recipients
             messageController.body = "Come join me in the Carpool App"
             self.present(messageController, animated: true, completion: nil)
         } else {
             //handle text messaging not available
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -98,15 +110,4 @@ class FriendsViewController: UITableViewController, MFMessageComposeViewControll
     }
 }
 
-protocol PhoneCalling {
-    func call(phoneNumber: String)
-}
 
-extension PhoneCalling {
-    func call(phoneNumber: String) {
-        let cleanNumber = phoneNumber.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
-        guard let number = URL(string: "telprompt://" + cleanNumber) else { return }
-        
-        UIApplication.shared.open(number, options: [:], completionHandler: nil)
-    }
-}
