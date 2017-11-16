@@ -60,7 +60,7 @@ class FriendsViewController: UITableViewController, MFMessageComposeViewControll
         
         let saveAlert = UIAlertController(title: "Call or Text friend?", message: nil, preferredStyle: .actionSheet)
         saveAlert.addAction(UIAlertAction(title: "Make a call", style: .default, handler: PhoneCalling.call(friends[indexPath.row].phoneNumber)))
-        saveAlert.addAction(UIAlertAction(title: "Send a text", style: .default, handler: onTextSelected(number: friends[indexPath.row].phoneNumber)))
+        saveAlert.addAction(UIAlertAction(title: "Send a text", style: .default, handler: onTextSelected))
         saveAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(saveAlert, animated: true, completion: nil)
         
@@ -68,8 +68,10 @@ class FriendsViewController: UITableViewController, MFMessageComposeViewControll
         
     }
     
-    func onTextSelected(number: String?) {
-        guard let number = number else { return }
+    func onTextSelected(action: UIAlertAction) {
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        
+        guard let number = friends[indexPath.row].phoneNumber else { return }
         if MFMessageComposeViewController.canSendText() == true {
             let recipients:[String] = [number]
             messageController.recipients = recipients
