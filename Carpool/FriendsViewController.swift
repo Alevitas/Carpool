@@ -97,3 +97,16 @@ class FriendsViewController: UITableViewController, MFMessageComposeViewControll
         
     }
 }
+
+protocol PhoneCalling {
+    func call(phoneNumber: String)
+}
+
+extension PhoneCalling {
+    func call(phoneNumber: String) {
+        let cleanNumber = phoneNumber.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
+        guard let number = URL(string: "telprompt://" + cleanNumber) else { return }
+        
+        UIApplication.shared.open(number, options: [:], completionHandler: nil)
+    }
+}
