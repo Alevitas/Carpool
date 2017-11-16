@@ -59,10 +59,10 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func onCalendarSelected(action: UIAlertAction) {
         
         generateEvent(title: descriptionTextFieldOutlet.text!, startDate: startTimePicked, endDate: endTimePicked, description: "Carpool Event")
-        
+        guard let query = query, let aLocation = aLocation else { return }
         if let description = descriptionTextFieldOutlet.text {
             if query == "" {
-                API.createTrip(eventDescription: description, eventTime: startTimePicked, eventLocation: (aLocation?.location ?? nil)!) { (result) in
+                API.createTrip(eventDescription: description, eventTime: startTimePicked, eventLocation: (aLocation.location ?? nil)!) { (result) in
                     
                     switch result {
                         
@@ -74,7 +74,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     }
                 }
             } else {
-                API.createTrip(eventDescription: description + ("\nAddress:") + "\(String(describing: query ?? nil))", eventTime: startTimePicked, eventLocation: (aLocation?.location ?? nil)!) { (result) in
+                API.createTrip(eventDescription: description + ("\nAddress:") + query, eventTime: startTimePicked, eventLocation: (aLocation.location ?? nil)!) { (result) in
                     switch result {
                         
                     case .success(let trip):
@@ -89,10 +89,10 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func onCarpoolSelected(action: UIAlertAction) {
-        
+        guard let query = query, let aLocation = aLocation else { return }
         if let description = descriptionTextFieldOutlet.text {
             if query == "" {
-                API.createTrip(eventDescription: description, eventTime: startTimePicked, eventLocation: (aLocation?.location ?? nil)!) { (result) in
+                API.createTrip(eventDescription: description, eventTime: startTimePicked, eventLocation: (aLocation.location ?? nil)!) { (result) in
                     
                     switch result {
                         
@@ -104,7 +104,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     }
                 }
             } else {
-                API.createTrip(eventDescription: description + ("\nAddress:") + "\(String(describing: query ?? nil))", eventTime: startTimePicked, eventLocation: (aLocation?.location ?? nil)!) { (result) in
+                API.createTrip(eventDescription: description + ("\nAddress:") + query, eventTime: startTimePicked, eventLocation: (aLocation.location ?? nil)!) { (result) in
                     
                     switch result {
                         
