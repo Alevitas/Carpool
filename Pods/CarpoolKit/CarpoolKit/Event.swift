@@ -8,10 +8,10 @@ public struct Event: Codable, Keyed {
     public private(set) var owner: User
     public let time: Date
     public let endTime: Date?
-    let geohash: String
+    let geohash: String?
 
     public var clLocation: CLLocation? {
-        return Geohash(value: geohash)?.location
+        return geohash.flatMap(Geohash.init(value:))?.location
     }
 }
 

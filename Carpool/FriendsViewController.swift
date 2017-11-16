@@ -32,8 +32,6 @@ class FriendsViewController: UITableViewController, MFMessageComposeViewControll
                 print("\nError getting Friends: ", error)
             }
         }
-        
-        
     }
     @IBAction func unwindFromAddnewVC(segue: UIStoryboardSegue) {
         tableView.reloadData()

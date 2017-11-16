@@ -197,8 +197,14 @@ public extension API {
                 throw Error.anonymousUsersCannotCreateTrips
             }
 
-            guard let geohash = (location.flatMap{ Geohash(location: $0) })?.value else {
-                throw Error.locationInvalid
+            let geohash: String?
+            if let location = location {
+                geohash = Geohash(location: location).value
+                guard geohash != "s0000000" else {
+                    throw Error.nullIslandIsNotAGoodPlaceForChildren
+                }
+            } else {
+                geohash = nil
             }
 
             var eventDict: [String: Any] = [

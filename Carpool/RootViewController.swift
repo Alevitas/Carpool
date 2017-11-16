@@ -70,8 +70,6 @@ class RootViewController: UITableViewController {
                 }
             }
         } else {
-            
-            
             API.observeMyTripCalendar(sender: self, observer: { (result) in
                 switch result {
                     
@@ -131,6 +129,7 @@ class RootViewController: UITableViewController {
     @IBAction func unwindFromAddNew(segue: UIStoryboardSegue) {
         
     }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         do {
