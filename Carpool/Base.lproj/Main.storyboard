@@ -1181,36 +1181,21 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Location" id="Ito-4v-qiZ">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Nkf-dc-YRG">
-                                        <rect key="frame" x="0.0" y="571" width="375" height="43"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nkf-dc-YRG" id="tH9-p2-JSK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="42.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1w7-mv-6hy">
-                                                    <rect key="frame" x="16" y="6" width="95" height="30"/>
-                                                    <state key="normal" title="Open in Maps"/>
-                                                    <connections>
-                                                        <action selector="onOpenInMapsPressed:" destination="YKk-bG-fHS" eventType="touchUpInside" id="qkb-Rk-2cv"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="1w7-mv-6hy" firstAttribute="leading" secondItem="tH9-p2-JSK" secondAttribute="leadingMargin" id="6Y9-Ii-6Y4"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="YKk-bG-fHS" id="rrY-GO-jUN"/>
                             <outlet property="delegate" destination="YKk-bG-fHS" id="4si-pd-BKh"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="Xhb-Gu-LSm">
+                        <barButtonItem key="rightBarButtonItem" title="Open in Maps" id="Rqb-X5-RVT">
+                            <connections>
+                                <action selector="onOpenInMapsPressed:" destination="YKk-bG-fHS" id="IcU-81-W9R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="childrenNameLabel" destination="m07-K2-Mxg" id="j4w-pt-S9w"/>
@@ -1450,13 +1435,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gwa-DY-KMS">
-                                <rect key="frame" x="16" y="146" width="343" height="175"/>
+                                <rect key="frame" x="16" y="146" width="343" height="131"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czQ-O6-N3h">
-                                <rect key="frame" x="163" y="373" width="49" height="30"/>
+                                <rect key="frame" x="163" y="329" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="onSubmitPressed:" destination="IAa-GP-Clj" eventType="touchUpInside" id="TAd-Wy-zz2"/>
