@@ -59,7 +59,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func onCalendarSelected(action: UIAlertAction) {
         
         generateEvent(title: descriptionTextFieldOutlet.text!, startDate: startTimePicked, endDate: endTimePicked, description: "Carpool Event")
-        guard let query = query, let aLocation = aLocation else { return API.createTrip(eventDescription: descriptionTextFieldOutlet.text, eventTime: startTimePicked, eventLocation: nil) { (result) in
+        guard let query = query, let aLocation = aLocation else { return API.createTrip(eventDescription: descriptionTextFieldOutlet.text!, eventTime: startTimePicked, eventLocation: nil) { (result) in
             
             switch result {
                 
@@ -99,7 +99,7 @@ class AddNewViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func onCarpoolSelected(action: UIAlertAction) {
-        guard let query = query, let aLocation = aLocation else { return  API.createTrip(eventDescription: descriptionTextFieldOutlet.text, eventTime: startTimePicked, eventLocation: nil) { (result) in
+        guard let query = query, let aLocation = aLocation else { return  API.createTrip(eventDescription: descriptionTextFieldOutlet.text!, eventTime: startTimePicked, eventLocation: nil) { (result) in
             
             switch result {
                 
