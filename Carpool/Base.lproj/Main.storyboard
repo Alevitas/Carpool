@@ -1211,6 +1211,8 @@
                             <outlet property="delegate" destination="YKk-bG-fHS" id="4si-pd-BKh"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="childrenNameLabel" destination="m07-K2-Mxg" id="j4w-pt-S9w"/>
@@ -1450,13 +1452,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gwa-DY-KMS">
-                                <rect key="frame" x="16" y="146" width="343" height="175"/>
+                                <rect key="frame" x="16" y="146" width="343" height="131"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czQ-O6-N3h">
-                                <rect key="frame" x="163" y="373" width="49" height="30"/>
+                                <rect key="frame" x="163" y="329" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="onSubmitPressed:" destination="IAa-GP-Clj" eventType="touchUpInside" id="TAd-Wy-zz2"/>

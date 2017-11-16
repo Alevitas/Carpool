@@ -109,6 +109,10 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
             pickUpDriverLabel.text = trip.pickUp?.driver.name
         }
 
+        lookUpCurrentLocation { (placemark) in
+            self.aLocation = placemark
+            print("Location is \(self.aLocation)")
+        }
     }
     
     @IBAction func onSelectTimeButtonPressed(_ sender: UIButton) {
@@ -210,6 +214,29 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         present(saveAlert, animated: true, completion: nil)
     }
     
+    func lookUpCurrentLocation(completionHandler: @escaping (CLPlacemark?) -> Void ) {
+        // Use the last reported location.
+        if let lastLocation = trip.event.clLocation {
+            let geocoder = CLGeocoder()
+            
+            // Look up the location and pass it to the completion handler
+            if let eventLocation = trip.event.clLocation {
+                geocoder.reverseGeocodeLocation(eventLocation, completionHandler: { (placemarks, error) in
+                    if error == nil {
+                        let firstLocation = placemarks?.first
+                        completionHandler(firstLocation)
+                    } else {
+                        completionHandler(nil)
+                    }
+                })
+            }
+        }
+        else {
+            // No location was available.
+            completionHandler(nil)
+        }
+    }
+
     func onClaimPickUp(action: UIAlertAction) {
         pickUpButton.backgroundColor = UIColor.green
         API.claimPickUp(trip: trip) { (error) in
