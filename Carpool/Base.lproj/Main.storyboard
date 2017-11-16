@@ -427,7 +427,7 @@
             </objects>
             <point key="canvasLocation" x="480.80000000000001" y="-680.5097451274363"/>
         </scene>
-        <!--Add Friends View Controller-->
+        <!--Add friends-->
         <scene sceneID="rSb-Qb-Sob">
             <objects>
                 <tableViewController id="9XH-g3-WQv" customClass="AddFriendsViewController" customModule="Carpool" customModuleProvider="target" sceneMemberID="viewController">
@@ -507,6 +507,7 @@
                             <outlet property="delegate" destination="9XH-g3-WQv" id="4gS-1U-VOz"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Add friends" id="8DL-ab-otz"/>
                     <connections>
                         <outlet property="searchTextField" destination="fYS-Ip-X2v" id="2FZ-2V-lRK"/>
                         <segue destination="Tel-NP-wPT" kind="unwind" identifier="UnwindFromAddFriends" unwindAction="unwindFromAddnewVCWithSegue:" id="Got-lh-n2q"/>

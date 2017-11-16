@@ -14,6 +14,7 @@ class AddFriendsViewController: UITableViewController {
     @IBOutlet weak var searchTextField: UITextField!
     
     var friends: [User] = []
+    var currentFriends: [User] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +57,22 @@ class AddFriendsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if !currentFriends.contains(friends[indexPath.row]) {
         API.add(friend: friends[indexPath.row])
         performSegue(withIdentifier: "UnwindFromAddFriends", sender: self)
+        } else {
+            self.title = "Already a friend"
+            var seconds = 5
+            var timer = Timer()
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+                seconds -= 1
+                
+                if seconds <= 0 {
+                    self.title = "Add friends"
+                }
+            })
+        }
     }
     
 }

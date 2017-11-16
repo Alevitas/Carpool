@@ -70,4 +70,9 @@ class FriendsViewController: UITableViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addFriendsVC = segue.destination as! AddFriendsViewController
+        addFriendsVC.currentFriends = friends
+    }
+    
 }
