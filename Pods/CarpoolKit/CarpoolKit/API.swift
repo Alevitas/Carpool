@@ -16,6 +16,7 @@ public enum API {
         case deprecated
         case noChildName
         case eventEndTimeMustBeGreaterThanStartTime
+        case locationInvalid
 
         /// sign-up or sign-in failed
         case signInFailed(underlyingError: Swift.Error)

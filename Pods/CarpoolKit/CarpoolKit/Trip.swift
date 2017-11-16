@@ -197,7 +197,9 @@ public extension API {
                 throw Error.anonymousUsersCannotCreateTrips
             }
 
-            let geohash = location.flatMap{ Geohash(location: $0) }?.value
+            guard let geohash = (location.flatMap{ Geohash(location: $0) })?.value else {
+                throw Error.locationInvalid
+            }
 
             var eventDict: [String: Any] = [
                 "description": desc,
