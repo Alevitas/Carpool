@@ -50,7 +50,14 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let trip = trip else { return }
+        API.observe(trip: trip, sender: self) { (result) in
+            switch result {
+            case .success(let observedTrip):
+                self.trip = observedTrip
+            case .failure(let error):
+                print("Error observing trip.", error)
+            }
+        }
         
         print("Event received is: \(trip.event)")
         locationManager.delegate = self
@@ -278,6 +285,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     }
     
     @IBAction func unwindFromAddChildrenVC(segue: UIStoryboardSegue) {
+        
         tableView.reloadData()
     }
     
