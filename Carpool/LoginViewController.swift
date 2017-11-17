@@ -48,6 +48,7 @@ class LoginViewController: UIViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         if let email = emailTextField.text,
             let password = passwordTextField.text,
+            let number = phoneNumberTextField.text,
             let confirmPassword = confirmPasswordTextField.text,
             let fullName = fullNameTextField.text {
             if loginSignupSegControl.selectedSegmentIndex == 0 {
@@ -56,7 +57,7 @@ class LoginViewController: UIViewController {
                 })
             } else if password == confirmPassword {
                 API.signUp(email: email, password: password, fullName: fullName, completion: { (result) in
-                    
+                    API.set(phoneNumber: number)
                 })
             }
         }
