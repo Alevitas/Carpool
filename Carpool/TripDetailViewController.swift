@@ -38,7 +38,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     var dropOffPickUp: DropOffPickUp = .dropOff
     
     var hasChildren: Bool {
-        return trip.event.owner.children.count > 0
+        return trip.children.count > 0
     }
     
     let dropOffDatePickerRow = IndexPath(row: 2, section: 1)
@@ -78,7 +78,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
         descriptionLabel.setRoundEdge()
         
         recurringSwitch.isOn = trip.repeats
-        childrenNameLabel.text = "\(trip.event.owner.children.count) Children"
+        childrenNameLabel.text = "\(trip.children.count) Children"
         
         viewCommentsButton.setTitle("View", for: .normal)
         if trip.comments.count == 0 {
@@ -291,7 +291,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addChildrenVC = segue.destination as? AddChildrenViewController {
-            addChildrenVC.children = trip.event.owner.children
+            addChildrenVC.children = trip.children
         }
         if let commentsVC = segue.destination as? CommentsViewController {
             commentsVC.comments = trip.comments
