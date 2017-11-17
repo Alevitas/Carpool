@@ -71,6 +71,11 @@ public extension API {
             }
         }
     }
+    static func ruthlesslyKillChildWithoutRemorseOrMoralCompassLikeDudeWhatKindOfPersonAreYouQuestionMark(_ child: Child) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Database.database().reference().child("children").child(child.key).removeValue()
+        Database.database().reference().child("users").child(uid).child("children").child(child.key).removeValue()
+    }
 
     static func addChildren(names: [String], completion: Result<[Child]>) {
         firstly {
