@@ -1298,7 +1298,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.40803158979999998" green="1" blue="0.96010501339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.4237819075" green="1" blue="0.96288935600000003" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Qfi-Nj-NSU" secondAttribute="bottom" constant="8" id="0pe-TY-wkx"/>
                                         <constraint firstAttribute="trailing" secondItem="Qfi-Nj-NSU" secondAttribute="trailing" constant="47" id="cxb-x2-tiv"/>
