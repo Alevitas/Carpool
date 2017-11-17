@@ -11,9 +11,6 @@ import CarpoolKit
 
 class AddChildrenViewController: UITableViewController {
     
-    @IBOutlet weak var childNameTextField: UITextField!
-    @IBOutlet weak var childNameTextFieldView: UIView!
-    
     var trip: Trip!
     var myChildren: [String] = []
     var tripChildren: [String] = []
@@ -23,7 +20,7 @@ class AddChildrenViewController: UITableViewController {
         
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
         myChildren = []
-        for child in trip.event.owner.children {
+        for child in (currentUser?.children)! {
             myChildren.append(child.name)
             tableView.reloadData()
         }
@@ -31,19 +28,6 @@ class AddChildrenViewController: UITableViewController {
         for tripChild in trip.children {
             tripChildren.append(tripChild.name)
             tableView.reloadData()
-        }
-    }
-    
-    @IBAction func onAddButtonPressed(_ sender: Any) {
-        if let childName = childNameTextField.text, childName != "" {
-            do {
-                let indexPath = tableView.indexPathForSelectedRow
-                try API.add(child: trip.event.owner.children[(indexPath?.row)!], to: trip)
-            } catch {
-                print("Error adding child: ", error)
-            }
-        } else { //TODO Child name cannot be blank
-            print("Childname cannot be blank.")
         }
     }
     
@@ -67,6 +51,17 @@ class AddChildrenViewController: UITableViewController {
             return myChildren.count
         } else {
             return tripChildren.count
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            do {
+                try API.add(child: (currentUser?.children[indexPath.row])!, to: trip)
+                tripChildren.append((currentUser?.children[indexPath.row].name)!)
+            } catch {
+                print("Error adding child to trip.", error)
+            }
         }
     }
     
