@@ -197,7 +197,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     }
     
     @IBAction func onPickUpButtonPressed(_ sender: Any) {
-        let saveAlert = UIAlertController(title: "Do you want to claim this leg?", message: nil, preferredStyle: .actionSheet)
+        let saveAlert = UIAlertController(title: "PickUp leg", message: nil, preferredStyle: .actionSheet)
         if !trip.myPickUpLeg {
             saveAlert.addAction(UIAlertAction(title: "Claim PickUp Leg", style: .default, handler: onClaimPickUp))
         }
@@ -209,7 +209,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     }
     
     @IBAction func onDropOffButtonPressed(_ sender: Any) {
-        let saveAlert = UIAlertController(title: "Do you want to claim this leg?", message: nil, preferredStyle: .actionSheet)
+        let saveAlert = UIAlertController(title: "DropOff leg", message: nil, preferredStyle: .actionSheet)
         if !trip.myDropOffLeg {
             saveAlert.addAction(UIAlertAction(title: "Claim DropOff Leg", style: .default, handler: onClaimDropOff))
         }

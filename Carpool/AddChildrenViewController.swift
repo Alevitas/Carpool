@@ -61,6 +61,19 @@ class AddChildrenViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        do {
+            try API.ruthlesslyKillChildWithoutRemorseOrMoralCompassLikeDudeWhatKindOfPersonAreYouQuestionMark((children[indexPath.row]))
+            myChildren.remove(at: indexPath.row)
+            tableView.reloadData()
+        } catch {
+            print("error happened here")
+        }
+        
+    }
+
 }
 
 class ChildNameCell: UITableViewCell {
