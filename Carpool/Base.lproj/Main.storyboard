@@ -360,6 +360,7 @@
                         <outlet property="loginSignupButton" destination="byC-HH-sJH" id="Iae-cH-sEv"/>
                         <outlet property="loginSignupSegControl" destination="82S-nl-VWT" id="fUi-XT-yWR"/>
                         <outlet property="passwordTextField" destination="9gK-Nu-fTA" id="dle-Xv-MAY"/>
+                        <outlet property="phoneNumberTextField" destination="GBA-VN-G7F" id="8JF-6G-Z3I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ci2-TY-b16" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -291,7 +291,7 @@ class TripDetailViewController: UITableViewController, CLLocationManagerDelegate
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let addChildrenVC = segue.destination as? AddChildrenViewController {
-            addChildrenVC.children = trip.children
+            addChildrenVC.trip = trip
         }
         if let commentsVC = segue.destination as? CommentsViewController {
             commentsVC.comments = trip.comments

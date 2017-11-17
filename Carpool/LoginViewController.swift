@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,11 @@ class LoginViewController: UIViewController {
     @IBAction func onLoginSignupPressed(_ sender: UISegmentedControl) {
         if loginSignupSegControl.selectedSegmentIndex == 0 {
             confirmPasswordTextField.isHidden = true
+            phoneNumberTextField.isHidden = true
             loginSignupButton.setTitle("Login", for: .normal)
         } else {
             confirmPasswordTextField.isHidden = false
+            phoneNumberTextField.isHidden = false
             loginSignupButton.setTitle("Signup", for: .normal)
         }
     }
