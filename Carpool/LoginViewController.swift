@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
         
         confirmPasswordTextField.isHidden = true
         loginSignupButton.setTitle("Login", for: .normal)
+        phoneNumberTextField.isHidden = true
     }
     
     @IBAction func onLoginSignupPressed(_ sender: UISegmentedControl) {
