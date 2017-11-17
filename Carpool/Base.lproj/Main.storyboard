@@ -423,7 +423,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.4237819075" green="1" blue="0.96288935600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.4237819075" green="1" blue="0.96288935600000003" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="BNv-SG-4BU" firstAttribute="trailing" secondItem="Vyl-Rr-pEp" secondAttribute="trailingMargin" id="BMX-F8-rGz"/>
                                         <constraint firstItem="BNv-SG-4BU" firstAttribute="top" secondItem="Vyl-Rr-pEp" secondAttribute="topMargin" id="I7M-7b-piN"/>
