@@ -15,27 +15,30 @@ class AddChildrenViewController: UITableViewController {
     @IBOutlet weak var childNameTextFieldView: UIView!
     
     var trip: Trip!
-    var newChild: Child!
     var myChildren: [String] = []
+    var tripChildren: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("children received is: \(trip.children)")
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
         myChildren = []
-        for child in trip.children {
+        for child in trip.event.owner.children {
             myChildren.append(child.name)
             tableView.reloadData()
         }
-        print("myChildren are: \(myChildren)\n")
+        tripChildren = []
+        for tripChild in trip.children {
+            tripChildren.append(tripChild.name)
+            tableView.reloadData()
+        }
     }
     
     @IBAction func onAddButtonPressed(_ sender: Any) {
         if let childName = childNameTextField.text, childName != "" {
             do {
-                try newChild = Child(from: childName as! Decoder)
-                try API.add(child: newChild, to: trip)
+                let indexPath = tableView.indexPathForSelectedRow
+                try API.add(child: trip.event.owner.children[(indexPath?.row)!], to: trip)
             } catch {
                 print("Error adding child: ", error)
             }
@@ -48,30 +51,35 @@ class AddChildrenViewController: UITableViewController {
         cell.backgroundColor = .clear
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "My Children"
+        } else {
+            return "Trip Children"
+        }
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myChildren.count
+        if section == 0 {
+            return myChildren.count
+        } else {
+            return tripChildren.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChildNameCell", for: indexPath) as! ChildNameCell
-        cell.childNameLabel.text = myChildren[indexPath.row]
-        print("Trying to display \(myChildren[indexPath.row])")
-        
+        if indexPath.section == 0 {
+            cell.childNameLabel.text = myChildren[indexPath.row]
+        } else if indexPath.section == 1{
+            cell.childNameLabel.text = tripChildren[indexPath.row]
+        }
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
-        do {
-            try API.ruthlesslyKillChildWithoutRemorseOrMoralCompassLikeDudeWhatKindOfPersonAreYouQuestionMark((trip.children[indexPath.row]))
-            myChildren.remove(at: indexPath.row)
-            tableView.reloadData()
-        } catch {
-            print("error happened here")
-        }
-        
-    }
-
 }
 
 class ChildNameCell: UITableViewCell {
