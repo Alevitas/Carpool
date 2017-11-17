@@ -19,6 +19,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var addChildrenTextFieldOutlet: UITextField!
     
     var children: [Child] = []
     let messageController = MFMessageComposeViewController()
@@ -44,6 +45,21 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         } else {
             print("error")
         }
+        
+        let ViewForDoneButtonOnKeyboard = UIToolbar()
+        ViewForDoneButtonOnKeyboard.sizeToFit()
+        let btnDoneOnKeyboard = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneBtnfromKeyboardClicked))
+        ViewForDoneButtonOnKeyboard.items = [btnDoneOnKeyboard]
+        friendNumberOutlet.inputAccessoryView = ViewForDoneButtonOnKeyboard
+        addChildrenTextFieldOutlet.inputAccessoryView = ViewForDoneButtonOnKeyboard
+        
+        
+    }
+    
+    @IBAction func doneBtnfromKeyboardClicked (sender: Any) {
+        print("Done Button Clicked.")
+        //Hide Keyboard by endEditing or Anything you want.
+        self.view.endEditing(true)
     }
     
     @IBAction func addChildrenTextFieldEnter(_ sender: UITextField) {
