@@ -101,10 +101,12 @@ extension Event {
 
 extension User {
     var stringOfChildNames: String {
-        let foo = self.children.reduce("") { (result, child) -> String in
-            result + ", " + child.name
+        var childNames: [String] = []
+        
+        for child in self.children {
+            childNames.append(child.name)
         }
-        return foo
+        return childNames.joined(separator: ", ")
     }
 }
 
