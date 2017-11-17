@@ -14,16 +14,17 @@ class AddChildrenViewController: UITableViewController {
     @IBOutlet weak var childNameTextField: UITextField!
     @IBOutlet weak var childNameTextFieldView: UIView!
     
-    var children: [Child] = []
+    var trip: Trip!
+    var newChild: Child!
     var myChildren: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("children received is: \(children)")
+        print("children received is: \(trip.children)")
         tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "backGroundimage2"))
         myChildren = []
-        for child in children {
+        for child in trip.children {
             myChildren.append(child.name)
             tableView.reloadData()
         }
@@ -32,15 +33,12 @@ class AddChildrenViewController: UITableViewController {
     
     @IBAction func onAddButtonPressed(_ sender: Any) {
         if let childName = childNameTextField.text, childName != "" {
-            API.addChild(name: childName, completion: { (result) in
-                switch result {
-                case .success(let child):
-                    self.myChildren.append(child.name)
-                    self.tableView.reloadData()
-                case .failure(let error):
-                    print("Error adding child: ", error)
-                }
-            })
+            do {
+                try newChild = Child(from: childName as! Decoder)
+                try API.add(child: newChild, to: trip)
+            } catch {
+                print("Error adding child: ", error)
+            }
         } else { //TODO Child name cannot be blank
             print("Childname cannot be blank.")
         }
@@ -65,7 +63,7 @@ class AddChildrenViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         do {
-            try API.ruthlesslyKillChildWithoutRemorseOrMoralCompassLikeDudeWhatKindOfPersonAreYouQuestionMark((children[indexPath.row]))
+            try API.ruthlesslyKillChildWithoutRemorseOrMoralCompassLikeDudeWhatKindOfPersonAreYouQuestionMark((trip.children[indexPath.row]))
             myChildren.remove(at: indexPath.row)
             tableView.reloadData()
         } catch {
